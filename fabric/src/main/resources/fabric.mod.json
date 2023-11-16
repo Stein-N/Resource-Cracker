@@ -1,6 +1,6 @@
 {
     "schemaVersion": 1,
-    "id": "${mod_id}",
+    "id": "resource_cracker",
     "version": "${version}",
     "name": "${mod_name}",
     "description": "${description}",
@@ -12,11 +12,17 @@
         "sources": "https://github.com/FabricMC/fabric-example-mod"
     },
     "license": "${license}",
-    "icon": "assets/modid/${mod_id}.png",
+    "icon": "assets/resource_cracker/icon.png",
     "environment": "*",
     "entrypoints": {
         "main": [
-            "com.example.examplemod.ExampleMod"
+            "net.xstopho.resource_cracker.ResourceCracker"
+        ],
+        "client": [
+            "net.xstopho.resource_cracker.ResourceCrackerClient"
+        ],
+        "fabric-datagen": [
+            "net.xstopho.resource_cracker.ResourceCrackerDatagen"
         ]
     },
     "mixins": [

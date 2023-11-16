@@ -1,0 +1,56 @@
+{
+  "item-group.resource_cracker": "Resource Cracker",
+
+  "item.chisel.tooltip": "§6Entferne Salpeter von Ziegelsteinen.",
+  "item.crack_hammer.tooltip": "§6Verarbeite Roherze zu Staub.",
+
+  "item.scythe.tooltip": "§6Ernte dein Feld schneller ab.",
+  "item.scythe.tooltip.radius": "§6Aktueller Radius: ",
+
+  "attribute.resource_cracker.attack_range": "Reichweite",
+
+  "item.resource_cracker.crack_hammer_copper": "Kupferhammer",
+  "item.resource_cracker.crack_hammer_gold": "Goldhammer",
+  "item.resource_cracker.crack_hammer_iron": "Eisenhammer",
+  "item.resource_cracker.crack_hammer_diamond": "Diamanthammer",
+  "item.resource_cracker.crack_hammer_netherite": "Netherithammer",
+  "item.resource_cracker.crack_hammer_steel": "Stahlhammer",
+
+  "item.resource_cracker.chisel_copper": "Kupfermeißel",
+  "item.resource_cracker.chisel_gold": "Goldmeißel",
+  "item.resource_cracker.chisel_iron": "Eisenmeißel",
+  "item.resource_cracker.chisel_diamond": "Diamantmeißel",
+  "item.resource_cracker.chisel_netherite": "Netheritmeißel",
+  "item.resource_cracker.chisel_steel": "Stahlmeißel",
+
+  "item.resource_cracker.scythe_copper": "Kupfersense",
+  "item.resource_cracker.scythe_iron": "Eisensense",
+  "item.resource_cracker.scythe_gold": "Goldsense",
+  "item.resource_cracker.scythe_steel": "Stahlsense",
+  "item.resource_cracker.scythe_diamond": "Diamantsense",
+  "item.resource_cracker.scythe_netherite": "Netheritesense",
+
+  "item.resource_cracker.material_dust_carbon": "Kohlestaub",
+  "item.resource_cracker.material_dust_copper": "Kupferstaub",
+  "item.resource_cracker.material_dust_iron": "Eisenstaub",
+  "item.resource_cracker.material_dust_gold": "Goldstaub",
+  "item.resource_cracker.material_dust_diamond": "Diamontstaub",
+  "item.resource_cracker.material_dust_steel": "Stahlstaub",
+  "item.resource_cracker.material_dust_emerald": "Smaragdstaub",
+  "item.resource_cracker.material_dust_netherite_scrap": "Netheritplattenstaub",
+  "item.resource_cracker.material_dust_netherite": "Netheritstaub",
+  "item.resource_cracker.material_dust_sulfur": "Schwefel",
+  "item.resource_cracker.material_dust_saltpeter": "Salpeter",
+
+  "item.resource_cracker.steel_ingot": "Stahlbarren",
+  "item.resource_cracker.diamond_nugget": "Diamantensplitter",
+
+  "item.resource_cracker.garlic": "Knoblauch",
+
+  "block.resource_cracker.garlic_crop": "Knoblauch",
+  "block.resource_cracker.steel_block": "Stahlblock",
+  "block.resource_cracker.lava_spring_block": "Lavabrunnen",
+  "block.resource_cracker.water_spring_block": "Wasserbrunnen",
+
+  "item.resource_cracker.beef_jerky": "Beef Jerky"
+}
