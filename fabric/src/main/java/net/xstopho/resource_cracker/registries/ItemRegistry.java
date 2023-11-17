@@ -8,6 +8,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Tiers;
 import net.xstopho.resource_cracker.Constants;
+import net.xstopho.resource_cracker.config.ConstantConfig;
 import net.xstopho.resource_cracker.item.ChiselItem;
 import net.xstopho.resource_cracker.item.CrackHammerItem;
 import net.xstopho.resource_cracker.item.ScytheBase;
@@ -34,19 +35,19 @@ public class ItemRegistry {
     public static final Item STEEL_INGOT = register("steel_ingot", new Item(new FabricItemSettings()));
     public static final Item DIAMOND_NUGGET = register("diamond_nugget", new Item(new FabricItemSettings()));
 
-    public static final Item CRACK_HAMMER_COPPER = register("crack_hammer_copper", new CrackHammerItem(100));
-    public static final Item CRACK_HAMMER_GOLD = register("crack_hammer_gold",  new CrackHammerItem(100));
-    public static final Item CRACK_HAMMER_IRON = register("crack_hammer_iron",  new CrackHammerItem(100));
-    public static final Item CRACK_HAMMER_STEEL = register("crack_hammer_steel",  new CrackHammerItem(100));
-    public static final Item CRACK_HAMMER_DIAMOND = register("crack_hammer_diamond",  new CrackHammerItem(100));
-    public static final Item CRACK_HAMMER_NETHERITE = register("crack_hammer_netherite",  new CrackHammerItem(100));
+    public static final Item CRACK_HAMMER_COPPER = register("crack_hammer_copper", new CrackHammerItem(ConstantConfig.CRACK_HAMMER_COPPER.get()));
+    public static final Item CRACK_HAMMER_GOLD = register("crack_hammer_gold",  new CrackHammerItem(ConstantConfig.CRACK_HAMMER_GOLD.get()));
+    public static final Item CRACK_HAMMER_IRON = register("crack_hammer_iron",  new CrackHammerItem(ConstantConfig.CRACK_HAMMER_IRON.get()));
+    public static final Item CRACK_HAMMER_STEEL = register("crack_hammer_steel",  new CrackHammerItem(ConstantConfig.CRACK_HAMMER_STEEL.get()));
+    public static final Item CRACK_HAMMER_DIAMOND = register("crack_hammer_diamond",  new CrackHammerItem(ConstantConfig.CRACK_HAMMER_DIAMOND.get()));
+    public static final Item CRACK_HAMMER_NETHERITE = register("crack_hammer_netherite",  new CrackHammerItem(ConstantConfig.CRACK_HAMMER_NETHERITE.get()));
 
-    public static final Item CHISEL_COPPER = register("chisel_copper", new ChiselItem(100, MATERIAL_DUST_SALTPETER));
-    public static final Item CHISEL_GOLD = register("chisel_gold", new ChiselItem(100, MATERIAL_DUST_SALTPETER));
-    public static final Item CHISEL_IRON = register("chisel_iron", new ChiselItem(100, MATERIAL_DUST_SALTPETER));
-    public static final Item CHISEL_STEEL = register("chisel_steel", new ChiselItem(100, MATERIAL_DUST_SALTPETER));
-    public static final Item CHISEL_DIAMOND = register("chisel_diamond", new ChiselItem(100, MATERIAL_DUST_SALTPETER));
-    public static final Item CHISEL_NETHERITE = register("chisel_netherite", new ChiselItem(100, MATERIAL_DUST_SALTPETER));
+    public static final Item CHISEL_COPPER = register("chisel_copper", new ChiselItem(ConstantConfig.CHISEL_COPPER.get(), MATERIAL_DUST_SALTPETER));
+    public static final Item CHISEL_GOLD = register("chisel_gold", new ChiselItem(ConstantConfig.CHISEL_GOLD.get(), MATERIAL_DUST_SALTPETER));
+    public static final Item CHISEL_IRON = register("chisel_iron", new ChiselItem(ConstantConfig.CHISEL_IRON.get(), MATERIAL_DUST_SALTPETER));
+    public static final Item CHISEL_STEEL = register("chisel_steel", new ChiselItem(ConstantConfig.CHISEL_STEEL.get(), MATERIAL_DUST_SALTPETER));
+    public static final Item CHISEL_DIAMOND = register("chisel_diamond", new ChiselItem(ConstantConfig.CHISEL_DIAMOND.get(), MATERIAL_DUST_SALTPETER));
+    public static final Item CHISEL_NETHERITE = register("chisel_netherite", new ChiselItem(ConstantConfig.CHISEL_NETHERITE.get(), MATERIAL_DUST_SALTPETER));
 
     public static final Item SCYTHE_COPPER = register("scythe_copper", new ScytheItem(Tiers.GOLD, 2, -1.8f));
     public static final Item SCYTHE_IRON = register("scythe_iron", new ScytheItem(Tiers.IRON, 3, -1.8f));

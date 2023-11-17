@@ -7,6 +7,8 @@ import net.neoforged.fml.common.Mod;
 public class ResourceCracker {
 
     public ResourceCracker() {
+        //ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ConstantConfig.SPEC, Constants.MOD_ID + ".toml");
+
         Constants.LOG.info("Hello NeoForge world!");
     }
 }

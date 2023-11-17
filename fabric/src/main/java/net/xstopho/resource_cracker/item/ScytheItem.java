@@ -10,7 +10,7 @@ import net.xstopho.resource_cracker.registries.AttributeRegistry;
 
 import java.util.UUID;
 
-public class ScytheItem extends ScytheBase{
+public class ScytheItem extends ScytheBase {
     public static final UUID BASE_ATTACK_RANGE_UUID = UUID.fromString("DB0F1F0B-7DF7-4D45-BA75-9BA60DABCCCD");
 
     public ScytheItem(Tier toolTier, int attackDamage, float attackSpeed) {

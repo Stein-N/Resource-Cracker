@@ -2,8 +2,7 @@ package net.xstopho.resource_cracker;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.xstopho.resource_cracker.datagen.ItemTagProv;
-import net.xstopho.resource_cracker.datagen.ModelProv;
+import net.xstopho.resource_cracker.datagen.*;
 
 public class ResourceCrackerDatagen implements DataGeneratorEntrypoint {
     @Override
@@ -12,5 +11,8 @@ public class ResourceCrackerDatagen implements DataGeneratorEntrypoint {
 
         pack.addProvider(ModelProv::new);
         pack.addProvider(ItemTagProv::new);
+        pack.addProvider(BlockTagProv::new);
+        pack.addProvider(RecipeProv::new);
+        pack.addProvider(LootProv::new);
     }
 }
