@@ -13,11 +13,16 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.xstopho.resource_cracker.config.ConstantConfig;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.UUID;
 
 public class ScytheBase extends SwordItem {
+    public static final UUID BASE_ENTITY_REACH_UUID = UUID.fromString("DB0F1F0B-7DF7-4D45-BA75-9BA60DABCCCD");
+    private static final int radius = 1;
+
     public ScytheBase(Tier toolTier, int attackDamage, float attackSpeed) {
         super(toolTier, attackDamage, attackSpeed, new Properties());
     }
@@ -35,8 +40,8 @@ public class ScytheBase extends SwordItem {
         BlockState clickedState = context.getLevel().getBlockState(clickedPos);
 
         if (clickedState.getBlock() instanceof CropBlock clickedCrop && clickedCrop.isMaxAge(clickedState)) {
-            for (int x = -1; x <= 1; x++) {
-                for (int z = -1; z <= 1; z++) {
+            for (int x = -radius; x <= radius; x++) {
+                for (int z = -radius; z <= radius; z++) {
                     BlockPos crop = clickedPos.offset(x, 0, z);
                     BlockState cropState = context.getLevel().getBlockState(crop);
                     if (cropState.getBlock() instanceof CropBlock replantCrop && replantCrop.isMaxAge(cropState)) {
@@ -54,8 +59,9 @@ public class ScytheBase extends SwordItem {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
-        tooltip.add(Component.translatable("item.scythe.tooltip"));
-        tooltip.add(Component.translatable("item.scythe.tooltip.radius").append(String.valueOf(1)).withStyle(ChatFormatting.RED));
+        tooltip.add(Component.translatable("item.scythe.tooltip").withStyle(ChatFormatting.GOLD));
+        tooltip.add(Component.translatable("item.scythe.tooltip.radius").withStyle(ChatFormatting.GOLD)
+                .append(Component.literal(String.valueOf(ConstantConfig.SCYTHE_RADIUS.get())).withStyle(ChatFormatting.RED)));
 
         super.appendHoverText(stack, world, tooltip, flag);
     }

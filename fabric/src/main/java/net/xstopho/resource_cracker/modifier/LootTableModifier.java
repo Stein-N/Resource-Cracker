@@ -23,56 +23,56 @@ public class LootTableModifier {
             build = tableBuilder;
             location = id;
 
-            modifyLootTables(getEntityID("zombie"), 0.15f, ItemRegistry.GARLIC, 2f);
-            modifyLootTables(getEntityID("creeper"), 0.15f, ItemRegistry.MATERIAL_DUST_SULFUR, 1f);
-            modifyLootTables(getEntityID("creeper"), 0.10f, ItemRegistry.MATERIAL_DUST_SALTPETER, 1f);
+            modifyLootTables(getEntityID("zombie"), ConstantConfig.GARLIC_FROM_ZOMBIE.get().floatValue(), ItemRegistry.GARLIC, 2f);
+            modifyLootTables(getEntityID("creeper"), ConstantConfig.SULFUR_FROM_CREEPER.get().floatValue(), ItemRegistry.MATERIAL_DUST_SULFUR, 1f);
+            modifyLootTables(getEntityID("creeper"), ConstantConfig.SALTPETER_FROM_CREEPER.get().floatValue(), ItemRegistry.MATERIAL_DUST_SALTPETER, 1f);
 
-            modifyLootTables(getBlockID("diamond_ore"), 0.15f, ItemRegistry.DIAMOND_NUGGET, 2f);
-            modifyLootTables(getBlockID("deepslate_diamond_ore"), 0.15f, ItemRegistry.DIAMOND_NUGGET, 2f);
+            modifyLootTables(getBlockID("diamond_ore"), ConstantConfig.DIAMOND_NUGGET_FROM_DIAMOND.get().floatValue(), ItemRegistry.DIAMOND_NUGGET, 2f);
+            modifyLootTables(getBlockID("deepslate_diamond_ore"), ConstantConfig.DIAMOND_NUGGET_FROM_DIAMOND.get().floatValue(), ItemRegistry.DIAMOND_NUGGET, 2f);
 
-            modifyLootTables(getBlockID("coal_ore"), 0.025f, ItemRegistry.DIAMOND_NUGGET, 1f);
-            modifyLootTables(getBlockID("deepslate_coal_ore"), 0.025f, ItemRegistry.DIAMOND_NUGGET, 1f);
+            modifyLootTables(getBlockID("coal_ore"), ConstantConfig.DIAMOND_NUGGET_FROM_COAL.get().floatValue(), ItemRegistry.DIAMOND_NUGGET, 1f);
+            modifyLootTables(getBlockID("deepslate_coal_ore"), ConstantConfig.DIAMOND_NUGGET_FROM_COAL.get().floatValue(), ItemRegistry.DIAMOND_NUGGET, 1f);
 
-            modifyStructureLoot(ItemRegistry.MATERIAL_DUST_SULFUR, ConstantConfig.SULFUR.get(),6f,
+            modifyStructureLoot(ItemRegistry.MATERIAL_DUST_SULFUR, ConstantConfig.SULFUR.get().floatValue(),6f,
                     "ruined_portal", "bastion_other", "bastion_bridge", "nether_bridge", "village/village_desert_house");
 
-            modifyStructureLoot(ItemRegistry.MATERIAL_DUST_SALTPETER, ConstantConfig.SALTPETER.get(), 6f,
+            modifyStructureLoot(ItemRegistry.MATERIAL_DUST_SALTPETER, ConstantConfig.SALTPETER.get().floatValue(), 6f,
                     "ruined_portal", "bastion_other", "bastion_bridge", "nether_bridge", "desert_pyramid", "village/village_desert_house");
 
-            modifyStructureLoot(ItemRegistry.MATERIAL_DUST_COPPER, ConstantConfig.COPPER_DUST.get(), 6f,
+            modifyStructureLoot(ItemRegistry.MATERIAL_DUST_COPPER, ConstantConfig.COPPER_DUST.get().floatValue(), 6f,
                     "village/village_armorer", "village/village_toolsmith", "village/village_weaponsmith", "abandoned_mineshafts");
 
-            modifyStructureLoot(ItemRegistry.MATERIAL_DUST_IRON, ConstantConfig.IRON_DUST.get(), 6f,
+            modifyStructureLoot(ItemRegistry.MATERIAL_DUST_IRON, ConstantConfig.IRON_DUST.get().floatValue(), 6f,
                     "village/village_armorer", "village/village_toolsmith", "village/village_weaponsmith", "abandoned_mineshafts");
 
-            modifyStructureLoot(ItemRegistry.MATERIAL_DUST_GOLD, ConstantConfig.GOLD_DUST.get(), 6f,
+            modifyStructureLoot(ItemRegistry.MATERIAL_DUST_GOLD, ConstantConfig.GOLD_DUST.get().floatValue(), 6f,
                     "village/village_armorer", "village/village_toolsmith", "village/village_weaponsmith", "abandoned_mineshafts");
 
-            modifyStructureLoot(ItemRegistry.MATERIAL_DUST_EMERALD, ConstantConfig.EMERALD_DUST.get(), 3f,
+            modifyStructureLoot(ItemRegistry.MATERIAL_DUST_EMERALD, ConstantConfig.EMERALD_DUST.get().floatValue(), 3f,
                     "shipwreck_treasure", "abandoned_mineshafts");
 
-            modifyStructureLoot(ItemRegistry.MATERIAL_DUST_DIAMOND, ConstantConfig.DIAMOND_DUST.get(), 3f,
+            modifyStructureLoot(ItemRegistry.MATERIAL_DUST_DIAMOND, ConstantConfig.DIAMOND_DUST.get().floatValue(), 3f,
                     "shipwreck_treasure", "ancient_city");
 
-            modifyStructureLoot(ItemRegistry.MATERIAL_DUST_NETHERITE_SCRAP, ConstantConfig.NETHERITE_SCRAP.get(), 2f,
+            modifyStructureLoot(ItemRegistry.MATERIAL_DUST_NETHERITE_SCRAP, ConstantConfig.NETHERITE_SCRAP.get().floatValue(), 2f,
                     "ruined_portal", "bastion_other", "bastion_bridge", "nether_bridge", "ancient_city");
 
-            modifyStructureLoot(ItemRegistry.MATERIAL_DUST_NETHERITE, ConstantConfig.NETHERITE.get(), 2f,
+            modifyStructureLoot(ItemRegistry.MATERIAL_DUST_NETHERITE, ConstantConfig.NETHERITE.get().floatValue(), 2f,
                     "ruined_portal", "bastion_other", "bastion_bridge", "nether_bridge", "ancient_city");
 
-            modifyStructureLoot(ItemRegistry.DIAMOND_NUGGET, ConstantConfig.DIAMOND_NUGGET.get(), 4f,
+            modifyStructureLoot(ItemRegistry.DIAMOND_NUGGET, ConstantConfig.DIAMOND_NUGGET.get().floatValue(), 4f,
                     "desert_pyramid", "shipwreck_treasure", "abandoned_mineshafts", "ancient_city");
 
-            modifyStructureLoot(ItemRegistry.GARLIC, ConstantConfig.GARLIC.get(), 6f,
+            modifyStructureLoot(ItemRegistry.GARLIC, ConstantConfig.GARLIC.get().floatValue(), 6f,
                     "spawn_bonus_chest");
 
-            modifyStructureLoot(ItemRegistry.CRACK_HAMMER_COPPER, ConstantConfig.HAMMER_COPPER.get(), 1f,
+            modifyStructureLoot(ItemRegistry.CRACK_HAMMER_COPPER, ConstantConfig.HAMMER_COPPER.get().floatValue(), 1f,
                     "spawn_bonus_chest");
 
-            modifyStructureLoot(ItemRegistry.CRACK_HAMMER_IRON, ConstantConfig.HAMMER_IRON.get(), 1f,
+            modifyStructureLoot(ItemRegistry.CRACK_HAMMER_IRON, ConstantConfig.HAMMER_IRON.get().floatValue(), 1f,
                     "spawn_bonus_chest", "village/village_armorer", "village/village_toolsmith", "village/village_weaponsmith");
 
-            modifyStructureLoot(ItemRegistry.CRACK_HAMMER_STEEL, ConstantConfig.HAMMER_STEEL.get(), 1f,
+            modifyStructureLoot(ItemRegistry.CRACK_HAMMER_STEEL, ConstantConfig.HAMMER_STEEL.get().floatValue(), 1f,
                     "village/village_armorer", "village/village_toolsmith", "village/village_weaponsmith");
 
         });

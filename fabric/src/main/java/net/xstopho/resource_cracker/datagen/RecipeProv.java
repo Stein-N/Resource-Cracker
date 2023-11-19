@@ -68,6 +68,9 @@ public class RecipeProv extends FabricRecipeProvider {
         offerMaterialDustRecipe(ItemRegistry.MATERIAL_DUST_EMERALD, Items.DEEPSLATE_EMERALD_ORE, 2);
         offerMaterialDustRecipe(ItemRegistry.MATERIAL_DUST_NETHERITE_SCRAP, Items.ANCIENT_DEBRIS, 2);
 
+        createSpringRecipe(BlockRegistry.WATER_SPRING_BLOCK, Items.WATER_BUCKET);
+        createSpringRecipe(BlockRegistry.LAVA_SPRING_BLOCK, Items.LAVA_BUCKET);
+
         // Netherite Dust Recipe
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ItemRegistry.MATERIAL_DUST_NETHERITE, 1)
                 .pattern("AAA").pattern("AGG").pattern("GG ")
@@ -170,6 +173,15 @@ public class RecipeProv extends FabricRecipeProvider {
                 .define('I', input)
                 .unlockedBy(getHasName(input), has(input))
                 .save(exporter, new ResourceLocation("tools/scythe/" + getSimpleRecipeName(output)));
+    }
+
+    private static void createSpringRecipe(ItemLike output, ItemLike input) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, output, 1)
+                .pattern("SSS").pattern("SBS").pattern("SSS")
+                .define('S', Ingredient.of(TagKey.create(Registries.ITEM, new ResourceLocation("c", "steel_blocks"))))
+                .define('B', input)
+                .unlockedBy(getHasName(input), has(input))
+                .save(exporter, new ResourceLocation("blocks/" + getSimpleRecipeName(output)));
     }
 
     private static void offerMaterialDustRecipe(ItemLike output, ItemLike input, int outputAmount) {

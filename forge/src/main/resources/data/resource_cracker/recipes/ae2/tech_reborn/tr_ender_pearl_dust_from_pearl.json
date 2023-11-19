@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "techreborn"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "c:crack_hammers"
+    },
+    {
+      "item": "minecraft:ender_pearl"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "techreborn:ender_pearl_dust"
+  }
+}

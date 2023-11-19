@@ -16,7 +16,6 @@ public class ResourceCracker implements ModInitializer {
         AttributeRegistry.init();
         BlockRegistry.init();
         ItemRegistry.init();
-        FuelFoodRegistry.init();
         ItemGroupRegistry.init();
 
         LootTableModifier.init();

@@ -8,6 +8,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.xstopho.resource_cracker.registries.BlockRegistry;
 import net.xstopho.resource_cracker.registries.ItemRegistry;
 
 import java.util.concurrent.CompletableFuture;
@@ -52,7 +53,7 @@ public class ItemTagProv extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(TagKey.create(Registries.ITEM, new ResourceLocation("c", "saltpeter_dusts"))).add(ItemRegistry.MATERIAL_DUST_SALTPETER);
         getOrCreateTagBuilder(TagKey.create(Registries.ITEM, new ResourceLocation("c", "steel_dusts"))).add(ItemRegistry.MATERIAL_DUST_STEEL);
         getOrCreateTagBuilder(TagKey.create(Registries.ITEM, new ResourceLocation("c", "steel_ingots"))).add(ItemRegistry.STEEL_INGOT);
-        //getOrCreateTagBuilder(TagKey.of(RegistryKeys.ITEM, new ResourceLocation("c", "steel_blocks"))).add(BlockRegistry.STEEL_BLOCK.asItem());
+        getOrCreateTagBuilder(TagKey.create(Registries.ITEM, new ResourceLocation("c", "steel_blocks"))).add(BlockRegistry.STEEL_BLOCK.asItem());
         getOrCreateTagBuilder(TagKey.create(Registries.ITEM, new ResourceLocation("c", "netherite_scrap_dusts"))).add(ItemRegistry.MATERIAL_DUST_NETHERITE_SCRAP);
         getOrCreateTagBuilder(TagKey.create(Registries.ITEM, new ResourceLocation("c", "netherite_dusts"))).add(ItemRegistry.MATERIAL_DUST_NETHERITE);
     }

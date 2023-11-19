@@ -1,11 +1,11 @@
 {
   "item-group.resource_cracker": "Resource Cracker",
 
-  "item.chisel.tooltip": "§6Entferne Salpeter von Ziegelsteinen.",
-  "item.crack_hammer.tooltip": "§6Verarbeite Roherze zu Staub.",
+  "item.chisel.tooltip": "Entferne Salpeter von Ziegelsteinen.",
+  "item.crack_hammer.tooltip": "Verarbeite Roherze zu Staub.",
 
-  "item.scythe.tooltip": "§6Ernte dein Feld schneller ab.",
-  "item.scythe.tooltip.radius": "§6Aktueller Radius: ",
+  "item.scythe.tooltip": "Ernte dein Feld schneller ab.",
+  "item.scythe.tooltip.radius": "Aktueller Radius: ",
 
   "attribute.resource_cracker.attack_range": "Reichweite",
 

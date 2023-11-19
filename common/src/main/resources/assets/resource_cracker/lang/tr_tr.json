@@ -1,0 +1,52 @@
+{
+  "item-group.resource_cracker": "Resource Cracker",
+
+  "item.chisel.tooltip": "Tuğla duvarlardan potasyum nitrat kazı",
+  "item.crack_hammer.tooltip": "Process raw ores into dust.",
+
+  "item.scythe.tooltip": "Harvest Crops much faster",
+  "item.scythe.tooltip.radius": "Current radius: ",
+
+  "attribute.resource_cracker.attack_range": "Attack Range",
+
+  "item.resource_cracker.crack_hammer_copper": "Bakır Parçalama Çekici",
+  "item.resource_cracker.crack_hammer_gold": "Altın Parçalama Çekici",
+  "item.resource_cracker.crack_hammer_iron": "Demir Parçalama Çekici",
+  "item.resource_cracker.crack_hammer_diamond": "Elmas Parçalama Çekici",
+  "item.resource_cracker.crack_hammer_netherite": "Netherit Parçalama Çekici",
+  "item.resource_cracker.crack_hammer_steel": "Çelik Parçalama Çekici",
+
+  "item.resource_cracker.chisel_copper": "Bakır Keski",
+  "item.resource_cracker.chisel_gold": "Altın Keski",
+  "item.resource_cracker.chisel_iron": "Demir Keski",
+  "item.resource_cracker.chisel_diamond": "Elmas Keski",
+  "item.resource_cracker.chisel_netherite": "Netherit Keski",
+  "item.resource_cracker.chisel_steel": "Çelik Keski",
+
+  "item.resource_cracker.scythe_copper": "Copper Scythe",
+  "item.resource_cracker.scythe_iron": "Iron Scythe",
+  "item.resource_cracker.scythe_gold": "Gold Scythe",
+  "item.resource_cracker.scythe_steel": "Steel Scythe",
+  "item.resource_cracker.scythe_diamond": "Diamond Scythe",
+  "item.resource_cracker.scythe_netherite": "Netherite Scythe",
+
+  "item.resource_cracker.material_dust_carbon": "Karbon Tozu",
+  "item.resource_cracker.material_dust_copper": "Bakır Tozu",
+  "item.resource_cracker.material_dust_iron": "Demir Tozu",
+  "item.resource_cracker.material_dust_gold": "Altın Tozu",
+  "item.resource_cracker.material_dust_diamond": "Elmas Tozu",
+  "item.resource_cracker.material_dust_steel": "Çelik Tozu",
+  "item.resource_cracker.material_dust_emerald": "Zümrüt Tozu",
+  "item.resource_cracker.material_dust_netherite_scrap": "Netherit Hurdası Tozu",
+  "item.resource_cracker.material_dust_netherite": "Netherit Tozu",
+  "item.resource_cracker.material_dust_sulfur": "Kükürt",
+  "item.resource_cracker.material_dust_saltpeter": "Potasyum Nitrat",
+
+  "item.resource_cracker.steel_ingot": "Çelik Külçesi",
+  "item.resource_cracker.diamond_nugget": "Elmas Parçası",
+
+  "item.resource_cracker.garlic": "Sarımsak",
+  "block.resource_cracker.garlic_crop": "Sarımsak Tohumu",
+
+  "item.resource_cracker.beef_jerky": "Jerky Biftek"
+}

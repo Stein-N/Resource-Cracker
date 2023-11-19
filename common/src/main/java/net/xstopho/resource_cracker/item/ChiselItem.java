@@ -1,5 +1,6 @@
 package net.xstopho.resource_cracker.item;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.ContainerHelper;
@@ -13,6 +14,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.xstopho.resource_cracker.Constants;
+import net.xstopho.resource_cracker.config.ConstantConfig;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -24,7 +26,7 @@ public class ChiselItem extends Item {
     private static Item drop;
 
     public ChiselItem(int durability, Item drop) {
-        super(new Item.Properties().defaultDurability(durability));
+        super(new Item.Properties().durability(durability));
         ChiselItem.drop = drop;
     }
 
@@ -39,13 +41,13 @@ public class ChiselItem extends Item {
                 Containers.dropItemStack(context.getLevel(), pos.getX(), pos.getY(), pos.getZ(), new ItemStack(drop));
             }
         }
-
+        context.getItemInHand().hurtAndBreak(1, context.getPlayer(), entity -> entity.broadcastBreakEvent(entity.getUsedItemHand()));
         return InteractionResult.SUCCESS;
     }
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
-        tooltip.add(Component.translatable("item.chisel.tooltip"));
+        tooltip.add(Component.translatable("item.chisel.tooltip").withStyle(ChatFormatting.GOLD));
 
         super.appendHoverText(stack, world, tooltip, flag);
     }

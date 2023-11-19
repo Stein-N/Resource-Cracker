@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "techreborn"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "c:crack_hammers"
+    },
+    {
+      "item": "techreborn:brass_ingot"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "techreborn:brass_dust"
+  }
+}

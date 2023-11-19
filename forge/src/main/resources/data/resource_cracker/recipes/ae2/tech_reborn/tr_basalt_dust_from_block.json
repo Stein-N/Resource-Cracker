@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "techreborn"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "c:crack_hammers"
+    },
+    {
+      "tag": "c:basalt"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "techreborn:basalt_dust"
+  }
+}

@@ -12,13 +12,14 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.xstopho.resource_cracker.Constants;
+import org.jetbrains.annotations.NotNull;
 
 public class GarlicCropBlock extends CropBlock {
     public static final int MAX_AGE = 5;
     public static final IntegerProperty AGE = BlockStateProperties.AGE_5;
 
-    public GarlicCropBlock() {
-        super(BlockBehaviour.Properties.copy(Blocks.WHEAT));
+    public GarlicCropBlock(Properties properties) {
+        super(properties);
     }
 
     @Override
