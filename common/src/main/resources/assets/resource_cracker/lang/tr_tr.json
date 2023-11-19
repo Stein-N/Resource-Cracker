@@ -2,12 +2,12 @@
   "item-group.resource_cracker": "Resource Cracker",
 
   "item.chisel.tooltip": "Tuğla duvarlardan potasyum nitrat kazı",
-  "item.crack_hammer.tooltip": "Process raw ores into dust.",
+  "item.crack_hammer.tooltip": "Çiğ madenleri parçalayıp toz elde et.",
 
-  "item.scythe.tooltip": "Harvest Crops much faster",
-  "item.scythe.tooltip.radius": "Current radius: ",
+  "item.scythe.tooltip": "Ekinleri çok daha hızlı topla.",
+  "item.scythe.tooltip.radius": "Şuanki alan: ",
 
-  "attribute.resource_cracker.attack_range": "Attack Range",
+  "attribute.resource_cracker.attack_range": "Saldırı Menzili",
 
   "item.resource_cracker.crack_hammer_copper": "Bakır Parçalama Çekici",
   "item.resource_cracker.crack_hammer_gold": "Altın Parçalama Çekici",
@@ -23,12 +23,12 @@
   "item.resource_cracker.chisel_netherite": "Netherit Keski",
   "item.resource_cracker.chisel_steel": "Çelik Keski",
 
-  "item.resource_cracker.scythe_copper": "Copper Scythe",
-  "item.resource_cracker.scythe_iron": "Iron Scythe",
-  "item.resource_cracker.scythe_gold": "Gold Scythe",
-  "item.resource_cracker.scythe_steel": "Steel Scythe",
-  "item.resource_cracker.scythe_diamond": "Diamond Scythe",
-  "item.resource_cracker.scythe_netherite": "Netherite Scythe",
+  "item.resource_cracker.scythe_copper": "Bakır Tırpan",
+  "item.resource_cracker.scythe_iron": "Demir Tırpan",
+  "item.resource_cracker.scythe_gold": "Altın Tırpan",
+  "item.resource_cracker.scythe_steel": "Çelik Tırpan",
+  "item.resource_cracker.scythe_diamond": "Elmas Tırpan",
+  "item.resource_cracker.scythe_netherite": "Netherit Tırpan",
 
   "item.resource_cracker.material_dust_carbon": "Karbon Tozu",
   "item.resource_cracker.material_dust_copper": "Bakır Tozu",
