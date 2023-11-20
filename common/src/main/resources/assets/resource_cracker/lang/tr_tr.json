@@ -46,7 +46,11 @@
   "item.resource_cracker.diamond_nugget": "Elmas Parçası",
 
   "item.resource_cracker.garlic": "Sarımsak",
+
   "block.resource_cracker.garlic_crop": "Sarımsak Tohumu",
+  "block.resource_cracker.steel_block": "Steel Block",
+  "block.resource_cracker.lava_spring_block": "Lava Spring",
+  "block.resource_cracker.water_spring_block": "Water Spring",
 
   "item.resource_cracker.beef_jerky": "Jerky Biftek"
 }
