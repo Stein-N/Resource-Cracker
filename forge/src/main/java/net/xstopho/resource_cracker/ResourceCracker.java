@@ -1,8 +1,6 @@
 package net.xstopho.resource_cracker;
 
-import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ConfigTracker;
@@ -10,7 +8,6 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLPaths;
 import net.xstopho.resource_cracker.config.ConstantConfig;
-import net.xstopho.resource_cracker.modifier.LootTableMod;
 import net.xstopho.resource_cracker.registries.BlockRegistry;
 import net.xstopho.resource_cracker.registries.ItemGroupRegistry;
 import net.xstopho.resource_cracker.registries.ItemRegistry;
@@ -45,8 +42,6 @@ public class ResourceCracker {
         ItemRegistry.register(eventBus);
         BlockRegistry.register(eventBus);
         ItemGroupRegistry.register(eventBus);
-
-        LootTableMod.register(eventBus);
 
         Constants.LOG.info("Hello Forge world!");
     }

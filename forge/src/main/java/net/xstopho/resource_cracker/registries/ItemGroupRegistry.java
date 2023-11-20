@@ -15,7 +15,7 @@ public class ItemGroupRegistry {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Constants.MOD_ID);
 
     public static final RegistryObject<CreativeModeTab> RESOURCE_CRACKER = CREATIVE_MODE_TABS.register("item-group",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(Items.DIAMOND))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ItemRegistry.CRACK_HAMMER_DIAMOND.get()))
                     .title(Component.translatable("item-group.resource_cracker"))
                     .displayItems((displayContext, output) -> {
 

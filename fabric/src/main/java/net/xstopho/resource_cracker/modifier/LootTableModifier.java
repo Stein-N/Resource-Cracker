@@ -23,17 +23,15 @@ public class LootTableModifier {
             build = tableBuilder;
             location = id;
 
-            modifyLootTables(getEntityID("zombie"), ConstantConfig.GARLIC_FROM_ZOMBIE.get().floatValue(), ItemRegistry.GARLIC, 2f);
-            modifyLootTables(getEntityID("creeper"), ConstantConfig.SULFUR_FROM_CREEPER.get().floatValue(), ItemRegistry.MATERIAL_DUST_SULFUR, 1f);
-            modifyLootTables(getEntityID("creeper"), ConstantConfig.SALTPETER_FROM_CREEPER.get().floatValue(), ItemRegistry.MATERIAL_DUST_SALTPETER, 1f);
 
-            modifyLootTables(getBlockID("diamond_ore"), ConstantConfig.DIAMOND_NUGGET_FROM_DIAMOND.get().floatValue(), ItemRegistry.DIAMOND_NUGGET, 2f);
-            modifyLootTables(getBlockID("deepslate_diamond_ore"), ConstantConfig.DIAMOND_NUGGET_FROM_DIAMOND.get().floatValue(), ItemRegistry.DIAMOND_NUGGET, 2f);
+            modifyEntityLoot(ItemRegistry.GARLIC, ConstantConfig.GARLIC_FROM_ZOMBIE.get().floatValue(), 2f, "zombie");
+            modifyEntityLoot( ItemRegistry.MATERIAL_DUST_SULFUR, ConstantConfig.SULFUR_FROM_CREEPER.get().floatValue(), 1f, "creeper");
+            modifyEntityLoot( ItemRegistry.MATERIAL_DUST_SALTPETER, ConstantConfig.SALTPETER_FROM_CREEPER.get().floatValue(), 1f, "creeper");
 
-            modifyLootTables(getBlockID("coal_ore"), ConstantConfig.DIAMOND_NUGGET_FROM_COAL.get().floatValue(), ItemRegistry.DIAMOND_NUGGET, 1f);
-            modifyLootTables(getBlockID("deepslate_coal_ore"), ConstantConfig.DIAMOND_NUGGET_FROM_COAL.get().floatValue(), ItemRegistry.DIAMOND_NUGGET, 1f);
+            modifyBlockLoot( ItemRegistry.DIAMOND_NUGGET, ConstantConfig.DIAMOND_NUGGET_FROM_DIAMOND.get().floatValue(), 2f, "diamond_ore", "deepslate_diamond_ore");
+            modifyBlockLoot( ItemRegistry.DIAMOND_NUGGET, ConstantConfig.DIAMOND_NUGGET_FROM_COAL.get().floatValue(), 1f, "coal_ore", "deepslate_coal_ore");
 
-            modifyStructureLoot(ItemRegistry.MATERIAL_DUST_SULFUR, ConstantConfig.SULFUR.get().floatValue(),6f,
+            modifyStructureLoot(ItemRegistry.MATERIAL_DUST_SULFUR, ConstantConfig.SULFUR.get().floatValue(), 6f,
                     "ruined_portal", "bastion_other", "bastion_bridge", "nether_bridge", "village/village_desert_house");
 
             modifyStructureLoot(ItemRegistry.MATERIAL_DUST_SALTPETER, ConstantConfig.SALTPETER.get().floatValue(), 6f,
@@ -78,41 +76,27 @@ public class LootTableModifier {
         });
     }
 
-    private static void modifyLootTables(ResourceLocation id, float chance, Item dropItem, float amount) {
-        if (location.equals(id)) {
-            build.withPool(getBuilder(dropItem, chance, amount));
+    private static void modifyEntityLoot(Item item, float chance, float maxAmount, String... entities) {
+        for (String entity : entities) {
+            if (location.equals(ConstantLootModifier.getEntityID(entity))) {
+                build.withPool(ConstantLootModifier.createPool(item, chance, maxAmount));
+            }
+        }
+    }
+
+    private static void modifyBlockLoot(Item item, float chance, float maxAmount, String... blocks) {
+        for (String block : blocks) {
+            if (location.equals(ConstantLootModifier.getBlockID(block))) {
+                build.withPool(ConstantLootModifier.createPool(item, chance, maxAmount));
+            }
         }
     }
 
     private static void modifyStructureLoot(Item item, float chance, float maxAmount, String... structures) {
         for (String id : structures) {
-            if (location.equals(getChestID(id))) {
-                build.withPool(getBuilder(item, chance, maxAmount));
+            if (location.equals(ConstantLootModifier.getChestID(id))) {
+                build.withPool(ConstantLootModifier.createPool(item, chance, maxAmount));
             }
         }
-    }
-
-    private static LootPool.Builder getBuilder(Item item, float chance, float maxAmount) {
-        return LootPool.lootPool()
-                .setRolls(ConstantValue.exactly(1))
-                .when(LootItemRandomChanceCondition.randomChance(value(chance)))
-                .add(LootItem.lootTableItem(item))
-                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, maxAmount)));
-    }
-
-    private static ResourceLocation getBlockID(String id) {
-        return new ResourceLocation("blocks/" + id);
-    }
-
-    private static ResourceLocation getChestID(String id) {
-        return new ResourceLocation("chests/" + id);
-    }
-
-    private static ResourceLocation getEntityID(String id) {
-        return new ResourceLocation("entities/" + id);
-    }
-
-    private static float value(float chance) {
-        return Math.min(1.0f, Math.max(0.0f, chance));
     }
 }
