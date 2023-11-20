@@ -12,7 +12,8 @@ public class ConstantConfig {
             SCYTHE_RADIUS;
 
     public static final ForgeConfigSpec.ConfigValue<Double>
-            DIAMOND_NUGGET_FROM_COAL, DIAMOND_NUGGET_FROM_DIAMOND, GARLIC_FROM_ZOMBIE, SULFUR_FROM_CREEPER, SALTPETER_FROM_CREEPER;
+            DIAMOND_NUGGET_FROM_COAL, DIAMOND_NUGGET_FROM_DIAMOND, GARLIC_FROM_ZOMBIE, SULFUR_FROM_CREEPER, SALTPETER_FROM_CREEPER,
+            SALTPETER_FROM_BRICKS;
 
     public static final ForgeConfigSpec.ConfigValue<Double>
             SULFUR, SALTPETER, NETHERITE_SCRAP, NETHERITE, DIAMOND_NUGGET, GARLIC, HAMMER_COPPER, HAMMER_IRON, HAMMER_STEEL, COPPER_DUST,
@@ -32,7 +33,7 @@ public class ConstantConfig {
         CHISEL_GOLD = BUILDER.define("goldChisel", 15);
         CHISEL_IRON = BUILDER.define("ironChisel", 30);
         CHISEL_STEEL = BUILDER.define("steelChisel", 45);
-        CHISEL_DIAMOND = BUILDER.define("DdiamondCHisel", 64);
+        CHISEL_DIAMOND = BUILDER.define("diamondCHisel", 64);
         CHISEL_NETHERITE = BUILDER.define("netheriteChisel", 96);
 
         BUILDER.pop().push("Scythe Harvest Radius");
@@ -47,6 +48,7 @@ public class ConstantConfig {
         GARLIC_FROM_ZOMBIE = BUILDER.define("garlicFromZombie", 0.20);
         SULFUR_FROM_CREEPER = BUILDER.define("sulfurFromCreeper", 0.20);
         SALTPETER_FROM_CREEPER = BUILDER.define("saltpeterFromCreeper", 0.20);
+        SALTPETER_FROM_BRICKS = BUILDER.define("saltpeterFromBricks", 0.50);
 
         BUILDER.pop().push("Structure Loot Settings")
                 .comment("Determine the chance with which an item could be generated in structures.\n   0.0 = 0%    1.0 = 100%");

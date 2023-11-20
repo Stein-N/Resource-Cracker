@@ -37,7 +37,7 @@ public class ChiselItem extends Item {
         BlockPos pos = context.getClickedPos().relative(context.getClickedFace());
 
         if (block == Blocks.BRICKS) {
-            if (rnd.nextFloat() <= 0.10f) {
+            if (rnd.nextFloat() <= ConstantConfig.SALTPETER_FROM_BRICKS.get().floatValue()) {
                 Containers.dropItemStack(context.getLevel(), pos.getX(), pos.getY(), pos.getZ(), new ItemStack(drop));
             }
         }

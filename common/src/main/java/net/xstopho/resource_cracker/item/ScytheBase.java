@@ -21,7 +21,7 @@ import java.util.UUID;
 
 public class ScytheBase extends SwordItem {
     public static final UUID BASE_ENTITY_REACH_UUID = UUID.fromString("DB0F1F0B-7DF7-4D45-BA75-9BA60DABCCCD");
-    private static final int radius = 1;
+    private static final int radius = ConstantConfig.SCYTHE_RADIUS.get();
 
     public ScytheBase(Tier toolTier, int attackDamage, float attackSpeed) {
         super(toolTier, attackDamage, attackSpeed, new Properties());
