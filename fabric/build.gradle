@@ -23,7 +23,7 @@ dependencies {
     implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
     implementation project(":common")
 
-    modImplementation "fuzs.forgeconfigapiport:forgeconfigapiport-fabric:9.0.0"
+    modImplementation "fuzs.forgeconfigapiport:forgeconfigapiport-fabric:${fusz_forge_config_api}"
 }
 
 sourceSets {

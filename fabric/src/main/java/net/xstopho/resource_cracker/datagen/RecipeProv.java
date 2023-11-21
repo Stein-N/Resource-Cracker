@@ -15,14 +15,14 @@ import net.xstopho.resource_cracker.registries.ItemRegistry;
 import java.util.function.Consumer;
 
 public class RecipeProv extends FabricRecipeProvider {
-    private static RecipeOutput exporter;
+    private static Consumer<FinishedRecipe> exporter;
 
     public RecipeProv(FabricDataOutput output) {
         super(output);
     }
 
     @Override
-    public void buildRecipes(RecipeOutput exporter) {
+    public void buildRecipes(Consumer<FinishedRecipe> exporter) {
         RecipeProv.exporter = exporter;
 
         /*  Crack Hammers */
