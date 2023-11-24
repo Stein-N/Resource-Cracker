@@ -23,6 +23,15 @@ But since he is still on break, I decided to create my own Mod with similar Bloc
 
 ### You are allowed to use this Mod in your Modpack
 
+### Provides Recipes for:
+- Fabric
+  - Applied Energetics 2
+  - Tech Reborn
+
+- Forge
+  - Applied Energetics
+  - Mekanism
+
 ### Item and Tools Overview
 
 <img src=https://cdn.modrinth.com/data/hwfBSwLz/images/d7abbf1f06291d2a19a3418ca7f61eca70cf96a3.png width=500px>
