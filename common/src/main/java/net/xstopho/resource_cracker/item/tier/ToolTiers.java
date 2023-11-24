@@ -6,12 +6,13 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.xstopho.resource_cracker.Constants;
 
 import java.util.function.Supplier;
 
 public enum ToolTiers implements Tier {
 
-    STEEL(2, 450, 6.0F, 2.0F, 14, () -> Ingredient.of(TagKey.create(Registries.ITEM, new ResourceLocation("c:steel_ingots"))));
+    STEEL(2, 450, 6.0F, 2.0F, 14, () -> Ingredient.of(TagKey.create(Registries.ITEM, new ResourceLocation(Constants.MOD_ID, "steel_ingot"))));
 
     private final int level;
     private final int uses;
