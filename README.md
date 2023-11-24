@@ -21,16 +21,16 @@ But since he is still on break, I decided to create my own Mod with similar Bloc
 
 ### Most used Textures are made by [Malcom Riley](https://github.com/malcolmriley/unused-textures).
 
-### You are allowed to use this Mod in your Modpack
+### You are allowed to use this Mod in your ModPack
 
 ### Provides Recipes for:
 - Fabric
-  - Applied Energetics 2
-  - Tech Reborn
+  - [Applied Energetics 2](https://www.curseforge.com/minecraft/mc-mods/applied-energistics-2)
+  - [Tech Reborn](https://www.curseforge.com/minecraft/mc-mods/techreborn)
 
 - Forge
-  - Applied Energetics
-  - Mekanism
+  - [Applied Energetics 2](https://www.curseforge.com/minecraft/mc-mods/applied-energistics-2)
+  - [Mekanism](https://www.curseforge.com/minecraft/mc-mods/mekanism)
 
 ### Item and Tools Overview
 
