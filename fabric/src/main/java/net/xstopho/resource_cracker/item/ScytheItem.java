@@ -8,8 +8,6 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.Tier;
 import net.xstopho.resource_cracker.registries.AttributeRegistry;
 
-import java.util.UUID;
-
 public class ScytheItem extends ScytheBase {
 
     public ScytheItem(Tier toolTier, int attackDamage, float attackSpeed) {

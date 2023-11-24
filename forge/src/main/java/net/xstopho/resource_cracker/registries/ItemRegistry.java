@@ -1,6 +1,5 @@
 package net.xstopho.resource_cracker.registries;
 
-import com.mojang.datafixers.kinds.Const;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Tiers;

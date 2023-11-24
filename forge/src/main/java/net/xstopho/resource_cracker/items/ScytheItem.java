@@ -9,8 +9,6 @@ import net.minecraft.world.item.Tier;
 import net.minecraftforge.common.ForgeMod;
 import net.xstopho.resource_cracker.item.ScytheBase;
 
-import java.util.UUID;
-
 public class ScytheItem extends ScytheBase {
 
     public ScytheItem(Tier toolTier, int attackDamage, float attackSpeed) {

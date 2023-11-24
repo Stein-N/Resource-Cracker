@@ -3,7 +3,6 @@ package net.xstopho.resource_cracker.item;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
@@ -13,7 +12,6 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.xstopho.resource_cracker.Constants;
 import net.xstopho.resource_cracker.config.ConstantConfig;
 import org.jetbrains.annotations.Nullable;
 

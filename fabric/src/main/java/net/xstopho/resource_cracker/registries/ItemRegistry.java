@@ -6,14 +6,12 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Tiers;
 import net.xstopho.resource_cracker.Constants;
 import net.xstopho.resource_cracker.config.ConstantConfig;
 import net.xstopho.resource_cracker.food.ConstantFoodProperties;
 import net.xstopho.resource_cracker.item.ChiselItem;
 import net.xstopho.resource_cracker.item.CrackHammerItem;
-import net.xstopho.resource_cracker.item.ScytheBase;
 import net.xstopho.resource_cracker.item.ScytheItem;
 import net.xstopho.resource_cracker.item.tier.ToolTiers;
 

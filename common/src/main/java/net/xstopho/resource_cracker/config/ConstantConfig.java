@@ -51,7 +51,7 @@ public class ConstantConfig {
         SALTPETER_FROM_BRICKS = BUILDER.define("saltpeterFromBricks", 0.50);
 
         BUILDER.pop().push("Structure Loot Settings")
-                .comment("Determine the chance with which an item could be generated in structures.\n   0.0 = 0%    1.0 = 100%");
+                .comment("Determine the chance with which an item could be generated in any structures.\n   0.0 = 0%    1.0 = 100%");
 
         SULFUR = BUILDER.define("sulfurDust", 0.25);
         SALTPETER = BUILDER.define("saltpeterDust", 0.25);
