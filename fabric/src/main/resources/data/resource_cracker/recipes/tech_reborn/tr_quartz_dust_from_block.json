@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "techreborn"
+      ]
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "c:crack_hammers"
+    },
+    {
+      "item": "minecraft:quartz_block"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "techreborn:quartz_dust"
+  }
+}
