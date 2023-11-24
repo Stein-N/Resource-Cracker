@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "mekanism"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "c:crack_hammers"
+    },
+    {
+      "item": "mekanism:clump_uranium"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "mekanism:dirty_dust_uranium"
+  }
+}
