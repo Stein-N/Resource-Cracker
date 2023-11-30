@@ -21,8 +21,6 @@ But since he is still on break, I decided to create my own Mod with similar Bloc
 
 ### Most used Textures are made by [Malcom Riley](https://github.com/malcolmriley/unused-textures).
 
-### You are allowed to use this Mod in your ModPack
-
 ### Provides Recipes for:
 - Fabric
   - [Applied Energetics 2](https://www.curseforge.com/minecraft/mc-mods/applied-energistics-2)
@@ -34,4 +32,6 @@ But since he is still on break, I decided to create my own Mod with similar Bloc
 
 ### Item and Tools Overview
 
-<img src=https://cdn.modrinth.com/data/hwfBSwLz/images/d7abbf1f06291d2a19a3418ca7f61eca70cf96a3.png width=500px>
+<img src=https://cdn.modrinth.com/data/hwfBSwLz/images/36b1e2d709f7e6cf9831a5033f0ccbfa131206b1.png width=500px>
+
+### You are allowed to use this Mod in your ModPack
