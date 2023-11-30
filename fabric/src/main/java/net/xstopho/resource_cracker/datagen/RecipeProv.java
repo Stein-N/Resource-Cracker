@@ -6,6 +6,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
@@ -30,16 +31,16 @@ public class RecipeProv extends FabricRecipeProvider {
         offerCrackHammerRecipe(ItemRegistry.CRACK_HAMMER_GOLD, Items.GOLD_INGOT);
         offerCrackHammerRecipe(ItemRegistry.CRACK_HAMMER_IRON, Items.IRON_INGOT);
         offerCrackHammerRecipe(ItemRegistry.CRACK_HAMMER_DIAMOND, Items.DIAMOND);
-        offerCrackHammerRecipe(ItemRegistry.CRACK_HAMMER_NETHERITE, Items.NETHERITE_INGOT);
         offerCrackHammerRecipe(ItemRegistry.CRACK_HAMMER_STEEL, ItemRegistry.STEEL_INGOT);
+        offerNetheriteUpgrade(ItemRegistry.CRACK_HAMMER_NETHERITE, ItemRegistry.CRACK_HAMMER_DIAMOND);
 
         /*  Chisel  */
         offerChiselRecipe(ItemRegistry.CHISEL_COPPER, Items.COPPER_INGOT);
         offerChiselRecipe(ItemRegistry.CHISEL_GOLD, Items.GOLD_INGOT);
         offerChiselRecipe(ItemRegistry.CHISEL_IRON, Items.IRON_INGOT);
         offerChiselRecipe(ItemRegistry.CHISEL_DIAMOND, Items.DIAMOND);
-        offerChiselRecipe(ItemRegistry.CHISEL_NETHERITE, Items.NETHERITE_INGOT);
         offerChiselRecipe(ItemRegistry.CHISEL_STEEL, ItemRegistry.STEEL_INGOT);
+        offerNetheriteUpgrade(ItemRegistry.CHISEL_NETHERITE, ItemRegistry.CHISEL_DIAMOND);
 
         /* Scythe */
         offerScytheRecipe(ItemRegistry.SCYTHE_COPPER, Items.COPPER_INGOT);
@@ -47,7 +48,7 @@ public class RecipeProv extends FabricRecipeProvider {
         offerScytheRecipe(ItemRegistry.SCYTHE_GOLD, Items.GOLD_INGOT);
         offerScytheRecipe(ItemRegistry.SCYTHE_STEEL, ItemRegistry.STEEL_INGOT);
         offerScytheRecipe(ItemRegistry.SCYTHE_DIAMOND, Items.DIAMOND);
-        netheriteSmithing(exporter, ItemRegistry.SCYTHE_DIAMOND, RecipeCategory.MISC, ItemRegistry.SCYTHE_NETHERITE);
+        offerNetheriteUpgrade(ItemRegistry.SCYTHE_NETHERITE, ItemRegistry.SCYTHE_DIAMOND);
 
         offerMaterialDustRecipe(ItemRegistry.MATERIAL_DUST_CARBON, Items.CHARCOAL, 2);
         offerMaterialDustRecipe(ItemRegistry.MATERIAL_DUST_COPPER, Items.RAW_COPPER, 2);
@@ -173,6 +174,13 @@ public class RecipeProv extends FabricRecipeProvider {
                 .define('I', input)
                 .unlockedBy(getHasName(input), has(input))
                 .save(exporter, new ResourceLocation("tools/scythe/" + getSimpleRecipeName(output)));
+    }
+
+    private static void offerNetheriteUpgrade(Item output, ItemLike input) {
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), Ingredient.of(input),
+                        Ingredient.of(Items.NETHERITE_INGOT), RecipeCategory.TOOLS, output)
+                .unlocks(getHasName(input), has(input))
+                .save(exporter, new ResourceLocation("smithing/" + getSimpleRecipeName(output)));
     }
 
     private static void createSpringRecipe(ItemLike output, ItemLike input) {

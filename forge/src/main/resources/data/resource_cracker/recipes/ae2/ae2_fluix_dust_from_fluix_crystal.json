@@ -9,7 +9,7 @@
   ],
   "ingredients": [
     {
-      "tag": "c:crack_hammers"
+      "tag": "forge:tools/crack_hammers"
     },
     {
       "item": "ae2:fluix_crystal"

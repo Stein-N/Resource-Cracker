@@ -1,0 +1,61 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_charcoal": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:charcoal"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_material_dust_saltpeter": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "resource_cracker:material_dust_saltpeter"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_material_dust_sulfur": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "resource_cracker:material_dust_sulfur"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "resource_cracker:crafting/gunpowder"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_charcoal",
+      "has_material_dust_saltpeter",
+      "has_material_dust_sulfur",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "resource_cracker:crafting/gunpowder"
+    ]
+  },
+  "sends_telemetry_event": false
+}

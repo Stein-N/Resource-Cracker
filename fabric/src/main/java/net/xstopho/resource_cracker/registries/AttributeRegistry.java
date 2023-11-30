@@ -14,7 +14,7 @@ import net.xstopho.resource_cracker.Constants;
 public class AttributeRegistry {
 
     public static final Attribute ATTACK_RANGE = register("attack_range",
-            new RangedAttribute("attribute.resource_cracker.attack_range", 3, 3, 1024.0D).setSyncable(true));
+            new RangedAttribute("attribute.resource_cracker.attack_range", 4.5, 4.5, 1024.0D).setSyncable(true));
 
     private static Attribute register(String id, Attribute attribute) {
         return Registry.register(BuiltInRegistries.ATTRIBUTE, new ResourceLocation(Constants.MOD_ID, id), attribute);
@@ -26,7 +26,7 @@ public class AttributeRegistry {
                     player.getMainHandItem().getAttributeModifiers(EquipmentSlot.MAINHAND)
                             .get(attribute).stream().mapToDouble(AttributeModifier::getAmount).sum();
         }
-        return 3.0;
+        return 4.5;
     }
 
     public static boolean contains(Player player, Attribute attribute) {
