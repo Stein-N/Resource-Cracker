@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:tools/chisel/chisel_gold"
+        "recipe": "resource_cracker:tools/chisel/chisel_gold"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:tools/chisel/chisel_gold"
+      "resource_cracker:tools/chisel/chisel_gold"
     ]
   },
   "sends_telemetry_event": false

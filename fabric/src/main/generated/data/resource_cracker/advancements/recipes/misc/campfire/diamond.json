@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:campfire/diamond"
+        "recipe": "resource_cracker:campfire/diamond"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:campfire/diamond"
+      "resource_cracker:campfire/diamond"
     ]
   },
   "sends_telemetry_event": false

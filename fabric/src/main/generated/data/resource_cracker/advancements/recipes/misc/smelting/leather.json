@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:smelting/leather"
+        "recipe": "resource_cracker:smelting/leather"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:smelting/leather"
+      "resource_cracker:smelting/leather"
     ]
   },
   "sends_telemetry_event": false

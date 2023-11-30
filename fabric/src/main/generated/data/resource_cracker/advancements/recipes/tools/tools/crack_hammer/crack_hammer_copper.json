@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:tools/crack_hammer/crack_hammer_copper"
+        "recipe": "resource_cracker:tools/crack_hammer/crack_hammer_copper"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:tools/crack_hammer/crack_hammer_copper"
+      "resource_cracker:tools/crack_hammer/crack_hammer_copper"
     ]
   },
   "sends_telemetry_event": false

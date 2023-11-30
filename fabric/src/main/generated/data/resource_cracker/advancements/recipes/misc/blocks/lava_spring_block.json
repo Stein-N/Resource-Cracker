@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:blocks/lava_spring_block"
+        "recipe": "resource_cracker:blocks/lava_spring_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:blocks/lava_spring_block"
+      "resource_cracker:blocks/lava_spring_block"
     ]
   },
   "sends_telemetry_event": false

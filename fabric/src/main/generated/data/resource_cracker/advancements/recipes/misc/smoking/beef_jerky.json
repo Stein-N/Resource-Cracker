@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:smoking/beef_jerky"
+        "recipe": "resource_cracker:smoking/beef_jerky"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:smoking/beef_jerky"
+      "resource_cracker:smoking/beef_jerky"
     ]
   },
   "sends_telemetry_event": false

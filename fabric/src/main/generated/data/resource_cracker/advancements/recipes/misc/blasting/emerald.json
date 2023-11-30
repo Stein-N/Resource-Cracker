@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:blasting/emerald"
+        "recipe": "resource_cracker:blasting/emerald"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:blasting/emerald"
+      "resource_cracker:blasting/emerald"
     ]
   },
   "sends_telemetry_event": false

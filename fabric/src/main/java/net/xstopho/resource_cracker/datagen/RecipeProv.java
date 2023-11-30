@@ -9,14 +9,15 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.ItemLike;
+import net.xstopho.resource_cracker.recipes.Recipes;
 import net.xstopho.resource_cracker.registries.BlockRegistry;
 import net.xstopho.resource_cracker.registries.ItemRegistry;
 
 import java.util.function.Consumer;
 
 public class RecipeProv extends FabricRecipeProvider {
-    private static Consumer<FinishedRecipe> exporter;
 
     public RecipeProv(FabricDataOutput output) {
         super(output);
@@ -24,53 +25,65 @@ public class RecipeProv extends FabricRecipeProvider {
 
     @Override
     public void buildRecipes(Consumer<FinishedRecipe> exporter) {
-        RecipeProv.exporter = exporter;
 
         /*  Crack Hammers */
-        offerCrackHammerRecipe(ItemRegistry.CRACK_HAMMER_COPPER, Items.COPPER_INGOT);
-        offerCrackHammerRecipe(ItemRegistry.CRACK_HAMMER_GOLD, Items.GOLD_INGOT);
-        offerCrackHammerRecipe(ItemRegistry.CRACK_HAMMER_IRON, Items.IRON_INGOT);
-        offerCrackHammerRecipe(ItemRegistry.CRACK_HAMMER_DIAMOND, Items.DIAMOND);
-        offerCrackHammerRecipe(ItemRegistry.CRACK_HAMMER_STEEL, ItemRegistry.STEEL_INGOT);
-        offerNetheriteUpgrade(ItemRegistry.CRACK_HAMMER_NETHERITE, ItemRegistry.CRACK_HAMMER_DIAMOND);
+        Recipes.offerCrackHammerRecipe(exporter, ItemRegistry.CRACK_HAMMER_COPPER, Items.COPPER_INGOT, ItemTagProv.CRAFT_INGREDIENTS);
+        Recipes.offerCrackHammerRecipe(exporter, ItemRegistry.CRACK_HAMMER_GOLD, Items.GOLD_INGOT, ItemTagProv.CRAFT_INGREDIENTS);
+        Recipes.offerCrackHammerRecipe(exporter, ItemRegistry.CRACK_HAMMER_IRON, Items.IRON_INGOT, ItemTagProv.CRAFT_INGREDIENTS);
+        Recipes.offerCrackHammerRecipe(exporter, ItemRegistry.CRACK_HAMMER_DIAMOND, Items.DIAMOND, ItemTagProv.CRAFT_INGREDIENTS);
+        Recipes.offerCrackHammerRecipe(exporter, ItemRegistry.CRACK_HAMMER_STEEL, ItemRegistry.STEEL_INGOT, ItemTagProv.CRAFT_INGREDIENTS);
+        Recipes.offerNetheriteUpgrade(exporter, ItemRegistry.CRACK_HAMMER_NETHERITE, ItemRegistry.CRACK_HAMMER_DIAMOND);
 
         /*  Chisel  */
-        offerChiselRecipe(ItemRegistry.CHISEL_COPPER, Items.COPPER_INGOT);
-        offerChiselRecipe(ItemRegistry.CHISEL_GOLD, Items.GOLD_INGOT);
-        offerChiselRecipe(ItemRegistry.CHISEL_IRON, Items.IRON_INGOT);
-        offerChiselRecipe(ItemRegistry.CHISEL_DIAMOND, Items.DIAMOND);
-        offerChiselRecipe(ItemRegistry.CHISEL_STEEL, ItemRegistry.STEEL_INGOT);
-        offerNetheriteUpgrade(ItemRegistry.CHISEL_NETHERITE, ItemRegistry.CHISEL_DIAMOND);
+        Recipes.offerChiselRecipe(exporter, ItemRegistry.CHISEL_COPPER, Items.COPPER_INGOT);
+        Recipes.offerChiselRecipe(exporter, ItemRegistry.CHISEL_GOLD, Items.GOLD_INGOT);
+        Recipes.offerChiselRecipe(exporter, ItemRegistry.CHISEL_IRON, Items.IRON_INGOT);
+        Recipes.offerChiselRecipe(exporter, ItemRegistry.CHISEL_DIAMOND, Items.DIAMOND);
+        Recipes.offerChiselRecipe(exporter, ItemRegistry.CHISEL_STEEL, ItemRegistry.STEEL_INGOT);
+        Recipes.offerNetheriteUpgrade(exporter, ItemRegistry.CHISEL_NETHERITE, ItemRegistry.CHISEL_DIAMOND);
 
         /* Scythe */
-        offerScytheRecipe(ItemRegistry.SCYTHE_COPPER, Items.COPPER_INGOT);
-        offerScytheRecipe(ItemRegistry.SCYTHE_IRON, Items.IRON_INGOT);
-        offerScytheRecipe(ItemRegistry.SCYTHE_GOLD, Items.GOLD_INGOT);
-        offerScytheRecipe(ItemRegistry.SCYTHE_STEEL, ItemRegistry.STEEL_INGOT);
-        offerScytheRecipe(ItemRegistry.SCYTHE_DIAMOND, Items.DIAMOND);
-        offerNetheriteUpgrade(ItemRegistry.SCYTHE_NETHERITE, ItemRegistry.SCYTHE_DIAMOND);
+        Recipes.offerScytheRecipe(exporter, ItemRegistry.SCYTHE_COPPER, Items.COPPER_INGOT, ItemTagProv.CRAFT_INGREDIENTS);
+        Recipes.offerScytheRecipe(exporter, ItemRegistry.SCYTHE_IRON, Items.IRON_INGOT, ItemTagProv.CRAFT_INGREDIENTS);
+        Recipes.offerScytheRecipe(exporter, ItemRegistry.SCYTHE_GOLD, Items.GOLD_INGOT, ItemTagProv.CRAFT_INGREDIENTS);
+        Recipes.offerScytheRecipe(exporter, ItemRegistry.SCYTHE_STEEL, ItemRegistry.STEEL_INGOT, ItemTagProv.CRAFT_INGREDIENTS);
+        Recipes.offerScytheRecipe(exporter, ItemRegistry.SCYTHE_DIAMOND, Items.DIAMOND, ItemTagProv.CRAFT_INGREDIENTS);
+        Recipes.offerNetheriteUpgrade(exporter, ItemRegistry.SCYTHE_NETHERITE, ItemRegistry.SCYTHE_DIAMOND);
 
-        offerMaterialDustRecipe(ItemRegistry.MATERIAL_DUST_CARBON, Items.CHARCOAL, 2);
-        offerMaterialDustRecipe(ItemRegistry.MATERIAL_DUST_COPPER, Items.RAW_COPPER, 2);
-        offerMaterialDustRecipe(ItemRegistry.MATERIAL_DUST_IRON, Items.RAW_IRON, 2);
-        offerMaterialDustRecipe(ItemRegistry.MATERIAL_DUST_GOLD, Items.RAW_GOLD, 2);
+        Recipes.offerMaterialDustRecipe(exporter, ItemRegistry.MATERIAL_DUST_CARBON, Items.CHARCOAL, 2, ItemTagProv.CRACK_HAMMER);
+        Recipes.offerMaterialDustRecipe(exporter, ItemRegistry.MATERIAL_DUST_COPPER, Items.RAW_COPPER, 2, ItemTagProv.CRACK_HAMMER);
+        Recipes.offerMaterialDustRecipe(exporter, ItemRegistry.MATERIAL_DUST_IRON, Items.RAW_IRON, 2, ItemTagProv.CRACK_HAMMER);
+        Recipes.offerMaterialDustRecipe(exporter, ItemRegistry.MATERIAL_DUST_GOLD, Items.RAW_GOLD, 2, ItemTagProv.CRACK_HAMMER);
 
-        offerMaterialDustRecipe(ItemRegistry.MATERIAL_DUST_COPPER, Items.COPPER_INGOT, 1);
-        offerMaterialDustRecipe(ItemRegistry.MATERIAL_DUST_IRON, Items.IRON_INGOT, 1);
-        offerMaterialDustRecipe(ItemRegistry.MATERIAL_DUST_GOLD, Items.GOLD_INGOT, 1);
-        offerMaterialDustRecipe(ItemRegistry.MATERIAL_DUST_STEEL, ItemRegistry.STEEL_INGOT, 1);
-        offerMaterialDustRecipe(ItemRegistry.MATERIAL_DUST_DIAMOND, Items.DIAMOND, 1);
-        offerMaterialDustRecipe(ItemRegistry.MATERIAL_DUST_NETHERITE, Items.NETHERITE_INGOT, 1);
-        offerMaterialDustRecipe(ItemRegistry.MATERIAL_DUST_EMERALD, Items.EMERALD, 1);
+        Recipes.offerMaterialDustRecipe(exporter, ItemRegistry.MATERIAL_DUST_COPPER, Items.COPPER_INGOT, 1, ItemTagProv.CRACK_HAMMER);
+        Recipes.offerMaterialDustRecipe(exporter, ItemRegistry.MATERIAL_DUST_IRON, Items.IRON_INGOT, 1, ItemTagProv.CRACK_HAMMER);
+        Recipes.offerMaterialDustRecipe(exporter, ItemRegistry.MATERIAL_DUST_GOLD, Items.GOLD_INGOT, 1, ItemTagProv.CRACK_HAMMER);
+        Recipes.offerMaterialDustRecipe(exporter, ItemRegistry.MATERIAL_DUST_STEEL, ItemRegistry.STEEL_INGOT, 1, ItemTagProv.CRACK_HAMMER);
+        Recipes.offerMaterialDustRecipe(exporter, ItemRegistry.MATERIAL_DUST_DIAMOND, Items.DIAMOND, 1, ItemTagProv.CRACK_HAMMER);
+        Recipes.offerMaterialDustRecipe(exporter, ItemRegistry.MATERIAL_DUST_NETHERITE, Items.NETHERITE_INGOT, 1, ItemTagProv.CRACK_HAMMER);
+        Recipes.offerMaterialDustRecipe(exporter, ItemRegistry.MATERIAL_DUST_EMERALD, Items.EMERALD, 1, ItemTagProv.CRACK_HAMMER);
 
-        offerMaterialDustRecipe(ItemRegistry.MATERIAL_DUST_DIAMOND, Items.DIAMOND_ORE, 2);
-        offerMaterialDustRecipe(ItemRegistry.MATERIAL_DUST_DIAMOND, Items.DEEPSLATE_DIAMOND_ORE, 2);
-        offerMaterialDustRecipe(ItemRegistry.MATERIAL_DUST_EMERALD, Items.EMERALD_ORE, 2);
-        offerMaterialDustRecipe(ItemRegistry.MATERIAL_DUST_EMERALD, Items.DEEPSLATE_EMERALD_ORE, 2);
-        offerMaterialDustRecipe(ItemRegistry.MATERIAL_DUST_NETHERITE_SCRAP, Items.ANCIENT_DEBRIS, 2);
+        Recipes.offerMaterialDustRecipe(exporter, ItemRegistry.MATERIAL_DUST_DIAMOND, Items.DIAMOND_ORE, 2, ItemTagProv.CRACK_HAMMER);
+        Recipes.offerMaterialDustRecipe(exporter, ItemRegistry.MATERIAL_DUST_DIAMOND, Items.DEEPSLATE_DIAMOND_ORE, 2, ItemTagProv.CRACK_HAMMER);
+        Recipes.offerMaterialDustRecipe(exporter, ItemRegistry.MATERIAL_DUST_EMERALD, Items.EMERALD_ORE, 2, ItemTagProv.CRACK_HAMMER);
+        Recipes.offerMaterialDustRecipe(exporter, ItemRegistry.MATERIAL_DUST_EMERALD, Items.DEEPSLATE_EMERALD_ORE, 2, ItemTagProv.CRACK_HAMMER);
+        Recipes.offerMaterialDustRecipe(exporter, ItemRegistry.MATERIAL_DUST_NETHERITE_SCRAP, Items.ANCIENT_DEBRIS, 2, ItemTagProv.CRACK_HAMMER);
 
-        createSpringRecipe(BlockRegistry.WATER_SPRING_BLOCK, Items.WATER_BUCKET);
-        createSpringRecipe(BlockRegistry.LAVA_SPRING_BLOCK, Items.LAVA_BUCKET);
+        Recipes.createSpringRecipe(exporter, BlockRegistry.WATER_SPRING_BLOCK, Items.WATER_BUCKET);
+        Recipes.createSpringRecipe(exporter, BlockRegistry.LAVA_SPRING_BLOCK, Items.LAVA_BUCKET);
+
+        Recipes.createProcessingRecipes(exporter, ItemRegistry.MATERIAL_DUST_COPPER, Items.COPPER_INGOT, true, false, true);
+        Recipes.createProcessingRecipes(exporter, ItemRegistry.MATERIAL_DUST_IRON, Items.IRON_INGOT, true, false, true);
+        Recipes.createProcessingRecipes(exporter, ItemRegistry.MATERIAL_DUST_GOLD, Items.GOLD_INGOT, true, false, true);
+        Recipes.createProcessingRecipes(exporter, ItemRegistry.MATERIAL_DUST_DIAMOND, Items.DIAMOND, true, false, true);
+        Recipes.createProcessingRecipes(exporter, ItemRegistry.MATERIAL_DUST_EMERALD, Items.EMERALD, true, false, true);
+        Recipes.createProcessingRecipes(exporter, ItemRegistry.MATERIAL_DUST_NETHERITE_SCRAP, Items.NETHERITE_SCRAP, true, false, true);
+        Recipes.createProcessingRecipes(exporter, ItemRegistry.MATERIAL_DUST_STEEL, ItemRegistry.STEEL_INGOT, true, false, true);
+        Recipes.createProcessingRecipes(exporter, ItemRegistry.GARLIC, ItemRegistry.MATERIAL_DUST_SULFUR, true, false, true);
+        Recipes.createProcessingRecipes(exporter, Items.ROTTEN_FLESH, Items.LEATHER, true, false, true);
+
+        Recipes.createBlastingRecipe(exporter, ItemRegistry.MATERIAL_DUST_NETHERITE, Items.NETHERITE_INGOT);
+        Recipes.createSmokingRecipe(exporter, Items.ROTTEN_FLESH, ItemRegistry.BEEF_JERKY);
 
         // Netherite Dust Recipe
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ItemRegistry.MATERIAL_DUST_NETHERITE, 1)
@@ -127,107 +140,5 @@ public class RecipeProv extends FabricRecipeProvider {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ItemRegistry.STEEL_INGOT, 9)
                 .requires(BlockRegistry.STEEL_BLOCK).unlockedBy(getHasName(BlockRegistry.STEEL_BLOCK), has(BlockRegistry.STEEL_BLOCK))
                 .save(exporter, new ResourceLocation("crafting/" + getSimpleRecipeName(ItemRegistry.STEEL_INGOT) + "_from_" + getSimpleRecipeName(BlockRegistry.STEEL_BLOCK)));
-
-        createProcessingRecipes(ItemRegistry.MATERIAL_DUST_COPPER, Items.COPPER_INGOT, true, false, true);
-        createProcessingRecipes(ItemRegistry.MATERIAL_DUST_IRON, Items.IRON_INGOT, true, false, true);
-        createProcessingRecipes(ItemRegistry.MATERIAL_DUST_GOLD, Items.GOLD_INGOT, true, false, true);
-        createProcessingRecipes(ItemRegistry.MATERIAL_DUST_DIAMOND, Items.DIAMOND, true, false, true);
-        createProcessingRecipes(ItemRegistry.MATERIAL_DUST_EMERALD, Items.EMERALD, true, false, true);
-        createProcessingRecipes(ItemRegistry.MATERIAL_DUST_NETHERITE_SCRAP, Items.NETHERITE_SCRAP, true, false, true);
-        createProcessingRecipes(ItemRegistry.MATERIAL_DUST_STEEL, ItemRegistry.STEEL_INGOT, true, false, true);
-        createProcessingRecipes(ItemRegistry.GARLIC, ItemRegistry.MATERIAL_DUST_SULFUR, true, false, true);
-        createProcessingRecipes(Items.ROTTEN_FLESH, Items.LEATHER, true, false, true);
-
-        createBlastingRecipe(ItemRegistry.MATERIAL_DUST_NETHERITE, Items.NETHERITE_INGOT);
-        createSmokingRecipe(Items.ROTTEN_FLESH, ItemRegistry.BEEF_JERKY);
-    }
-
-    private static void offerCrackHammerRecipe(ItemLike output, ItemLike input) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, output, 1)
-                .pattern(" IT")
-                .pattern(" SI")
-                .pattern("S  ")
-                .define('T', Ingredient.of(ItemTagProv.CRAFT_INGREDIENTS))
-                .define('S', Items.STICK)
-                .define('I', input)
-                .unlockedBy(getHasName(input), has(input))
-                .save(exporter, new ResourceLocation("tools/crack_hammer/" + getSimpleRecipeName(output)));
-    }
-
-    private static void offerChiselRecipe(ItemLike output, ItemLike input) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, output, 1)
-                .pattern(" I")
-                .pattern("S ")
-                .define('I', input)
-                .define('S', Items.STICK)
-                .unlockedBy(getHasName(input), has(input))
-                .save(exporter, new ResourceLocation("tools/chisel/" + getSimpleRecipeName(output)));
-    }
-
-    private static void offerScytheRecipe(ItemLike output, ItemLike input) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, output, 1)
-                .pattern("IIT")
-                .pattern(" SI")
-                .pattern("S  ")
-                .define('T', Ingredient.of(ItemTagProv.CRAFT_INGREDIENTS))
-                .define('S', Items.STICK)
-                .define('I', input)
-                .unlockedBy(getHasName(input), has(input))
-                .save(exporter, new ResourceLocation("tools/scythe/" + getSimpleRecipeName(output)));
-    }
-
-    private static void offerNetheriteUpgrade(Item output, ItemLike input) {
-        SmithingTransformRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), Ingredient.of(input),
-                        Ingredient.of(Items.NETHERITE_INGOT), RecipeCategory.TOOLS, output)
-                .unlocks(getHasName(input), has(input))
-                .save(exporter, new ResourceLocation("smithing/" + getSimpleRecipeName(output)));
-    }
-
-    private static void createSpringRecipe(ItemLike output, ItemLike input) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, output, 1)
-                .pattern("SSS").pattern("SBS").pattern("SSS")
-                .define('S', Ingredient.of(TagKey.create(Registries.ITEM, new ResourceLocation("c", "steel_blocks"))))
-                .define('B', input)
-                .unlockedBy(getHasName(input), has(input))
-                .save(exporter, new ResourceLocation("blocks/" + getSimpleRecipeName(output)));
-    }
-
-    private static void offerMaterialDustRecipe(ItemLike output, ItemLike input, int outputAmount) {
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, output, outputAmount)
-                .requires(Ingredient.of(ItemTagProv.CRACK_HAMMER))
-                .requires(input)
-                .unlockedBy(getHasName(input), has(input))
-                .save(exporter, new ResourceLocation("material_dusts/" + getSimpleRecipeName(output) + "_from_" + getSimpleRecipeName(input)));
-    }
-
-    private static void createProcessingRecipes(ItemLike input, ItemLike output, boolean smeltingBlasting, boolean smoking, boolean campfire) {
-        if (smeltingBlasting) createSmeltingRecipe(input, output); createBlastingRecipe(input, output);
-        if (smoking) createSmokingRecipe(input, output);
-        if (campfire) createCampfireRecipe(input, output);
-
-    }
-
-    private static void createSmeltingRecipe(ItemLike input, ItemLike output) {
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(input), RecipeCategory.MISC, output, 0.7f, 200)
-                .unlockedBy(getHasName(input), has(input))
-                .save(exporter, new ResourceLocation("smelting/" + getSimpleRecipeName(output)));
-    }
-
-    private static void createBlastingRecipe(ItemLike input, ItemLike output) {
-        SimpleCookingRecipeBuilder.blasting(Ingredient.of(input), RecipeCategory.MISC, output, 0.7f, 100)
-                .unlockedBy(getHasName(input), has(input))
-                .save(exporter, new ResourceLocation("blasting/" + getSimpleRecipeName(output)));
-    }
-
-    private static void createSmokingRecipe(ItemLike input, ItemLike output) {
-        SimpleCookingRecipeBuilder.smoking(Ingredient.of(input), RecipeCategory.MISC, output, 0.7f, 150)
-                .unlockedBy(getHasName(input), has(input))
-                .save(exporter, new ResourceLocation("smoking/" + getSimpleRecipeName(output)));
-    }
-
-    private static void createCampfireRecipe(ItemLike input, ItemLike output) {
-        SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(input), RecipeCategory.MISC, output, 0.7f, 600)
-                .unlockedBy(getHasName(input), has(input))
-                .save(exporter, new ResourceLocation("campfire/" + getSimpleRecipeName(output)));
     }
 }

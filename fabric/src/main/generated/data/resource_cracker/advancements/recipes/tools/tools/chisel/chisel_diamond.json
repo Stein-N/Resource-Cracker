@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:tools/chisel/chisel_diamond"
+        "recipe": "resource_cracker:tools/chisel/chisel_diamond"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:tools/chisel/chisel_diamond"
+      "resource_cracker:tools/chisel/chisel_diamond"
     ]
   },
   "sends_telemetry_event": false

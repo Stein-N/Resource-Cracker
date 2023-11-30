@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:smelting/diamond"
+        "recipe": "resource_cracker:smelting/diamond"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:smelting/diamond"
+      "resource_cracker:smelting/diamond"
     ]
   },
   "sends_telemetry_event": false

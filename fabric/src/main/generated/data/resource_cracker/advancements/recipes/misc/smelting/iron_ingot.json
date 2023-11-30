@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:smelting/iron_ingot"
+        "recipe": "resource_cracker:smelting/iron_ingot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:smelting/iron_ingot"
+      "resource_cracker:smelting/iron_ingot"
     ]
   },
   "sends_telemetry_event": false

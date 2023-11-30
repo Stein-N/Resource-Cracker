@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:campfire/copper_ingot"
+        "recipe": "resource_cracker:campfire/copper_ingot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:campfire/copper_ingot"
+      "resource_cracker:campfire/copper_ingot"
     ]
   },
   "sends_telemetry_event": false

@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:material_dusts/material_dust_emerald_from_emerald"
+        "recipe": "resource_cracker:material_dusts/material_dust_emerald_from_emerald"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:material_dusts/material_dust_emerald_from_emerald"
+      "resource_cracker:material_dusts/material_dust_emerald_from_emerald"
     ]
   },
   "sends_telemetry_event": false

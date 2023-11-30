@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:blasting/netherite_scrap"
+        "recipe": "resource_cracker:blasting/netherite_scrap"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:blasting/netherite_scrap"
+      "resource_cracker:blasting/netherite_scrap"
     ]
   },
   "sends_telemetry_event": false

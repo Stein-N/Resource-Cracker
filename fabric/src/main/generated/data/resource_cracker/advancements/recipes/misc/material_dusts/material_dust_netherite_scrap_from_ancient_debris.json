@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:material_dusts/material_dust_netherite_scrap_from_ancient_debris"
+        "recipe": "resource_cracker:material_dusts/material_dust_netherite_scrap_from_ancient_debris"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:material_dusts/material_dust_netherite_scrap_from_ancient_debris"
+      "resource_cracker:material_dusts/material_dust_netherite_scrap_from_ancient_debris"
     ]
   },
   "sends_telemetry_event": false

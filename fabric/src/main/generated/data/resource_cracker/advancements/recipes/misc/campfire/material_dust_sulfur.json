@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:campfire/material_dust_sulfur"
+        "recipe": "resource_cracker:campfire/material_dust_sulfur"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:campfire/material_dust_sulfur"
+      "resource_cracker:campfire/material_dust_sulfur"
     ]
   },
   "sends_telemetry_event": false

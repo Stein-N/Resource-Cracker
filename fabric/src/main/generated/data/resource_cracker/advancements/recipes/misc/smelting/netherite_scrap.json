@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:smelting/netherite_scrap"
+        "recipe": "resource_cracker:smelting/netherite_scrap"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:smelting/netherite_scrap"
+      "resource_cracker:smelting/netherite_scrap"
     ]
   },
   "sends_telemetry_event": false

@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:campfire/leather"
+        "recipe": "resource_cracker:campfire/leather"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:campfire/leather"
+      "resource_cracker:campfire/leather"
     ]
   },
   "sends_telemetry_event": false

@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:smelting/emerald"
+        "recipe": "resource_cracker:smelting/emerald"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:smelting/emerald"
+      "resource_cracker:smelting/emerald"
     ]
   },
   "sends_telemetry_event": false

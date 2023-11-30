@@ -6,7 +6,7 @@
       "item": "minecraft:lava_bucket"
     },
     "S": {
-      "tag": "c:steel_blocks"
+      "tag": "forge:blocks/steel"
     }
   },
   "pattern": [

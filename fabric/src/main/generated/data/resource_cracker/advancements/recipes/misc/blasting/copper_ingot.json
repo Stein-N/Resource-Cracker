@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:blasting/copper_ingot"
+        "recipe": "resource_cracker:blasting/copper_ingot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:blasting/copper_ingot"
+      "resource_cracker:blasting/copper_ingot"
     ]
   },
   "sends_telemetry_event": false

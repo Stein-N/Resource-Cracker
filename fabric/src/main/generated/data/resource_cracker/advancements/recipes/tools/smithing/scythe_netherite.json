@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:smithing/scythe_netherite"
+        "recipe": "resource_cracker:smithing/scythe_netherite"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:smithing/scythe_netherite"
+      "resource_cracker:smithing/scythe_netherite"
     ]
   },
   "sends_telemetry_event": false
