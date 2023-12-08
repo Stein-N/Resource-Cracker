@@ -18,22 +18,22 @@ import net.xstopho.resource_cracker.item.tier.ToolTiers;
 public class ItemRegistry {
 
     /*   Vanilla Resources   */
-    public static final Item MATERIAL_DUST_COPPER = register("material_dust_copper", new Item(new Item.Properties()));
-    public static final Item MATERIAL_DUST_IRON = register("material_dust_iron", new Item(new Item.Properties()));
-    public static final Item MATERIAL_DUST_GOLD = register("material_dust_gold", new Item(new Item.Properties()));
-    public static final Item MATERIAL_DUST_DIAMOND = register("material_dust_diamond", new Item(new Item.Properties()));
-    public static final Item MATERIAL_DUST_EMERALD = register("material_dust_emerald", new Item(new Item.Properties()));
-    public static final Item MATERIAL_DUST_NETHERITE_SCRAP = register("material_dust_netherite_scrap", new Item(new Item.Properties()));
-    public static final Item MATERIAL_DUST_NETHERITE = register("material_dust_netherite", new Item(new Item.Properties()));
+    public static final Item MATERIAL_DUST_COPPER = register("material_dust_copper");
+    public static final Item MATERIAL_DUST_IRON = register("material_dust_iron",);
+    public static final Item MATERIAL_DUST_GOLD = register("material_dust_gold");
+    public static final Item MATERIAL_DUST_DIAMOND = register("material_dust_diamond");
+    public static final Item MATERIAL_DUST_EMERALD = register("material_dust_emerald",);
+    public static final Item MATERIAL_DUST_NETHERITE_SCRAP = register("material_dust_netherite_scrap");
+    public static final Item MATERIAL_DUST_NETHERITE = register("material_dust_netherite");
 
     /*   Mod Resources   */
-    public static final Item MATERIAL_DUST_CARBON = register("material_dust_carbon", new Item(new Item.Properties()));
-    public static final Item MATERIAL_DUST_STEEL = register("material_dust_steel", new Item(new Item.Properties()));
-    public static final Item MATERIAL_DUST_SULFUR = register("material_dust_sulfur", new Item(new Item.Properties()));
-    public static final Item MATERIAL_DUST_SALTPETER = register("material_dust_saltpeter", new Item(new Item.Properties()));
+    public static final Item MATERIAL_DUST_CARBON = register("material_dust_carbon");
+    public static final Item MATERIAL_DUST_STEEL = register("material_dust_steel");
+    public static final Item MATERIAL_DUST_SULFUR = register("material_dust_sulfur");
+    public static final Item MATERIAL_DUST_SALTPETER = register("material_dust_saltpeter");
 
-    public static final Item STEEL_INGOT = register("steel_ingot", new Item(new Item.Properties()));
-    public static final Item DIAMOND_NUGGET = register("diamond_nugget", new Item(new Item.Properties()));
+    public static final Item STEEL_INGOT = register("steel_ingot");
+    public static final Item DIAMOND_NUGGET = register("diamond_nugget");
 
     public static final Item CRACK_HAMMER_COPPER = register("crack_hammer_copper", new CrackHammerItem(ConstantConfig.CRACK_HAMMER_COPPER.get()));
     public static final Item CRACK_HAMMER_GOLD = register("crack_hammer_gold",  new CrackHammerItem(ConstantConfig.CRACK_HAMMER_GOLD.get()));
@@ -63,6 +63,10 @@ public class ItemRegistry {
 
     private static Item register(String id, Item item) {
         return Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(Constants.MOD_ID, id), item);
+    }
+
+    private static Item register(String id) {
+        return Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(Constants.MOD_ID, id), new Item(new Item.Properties()))
     }
 
     public static void init() {
