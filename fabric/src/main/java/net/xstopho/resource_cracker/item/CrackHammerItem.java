@@ -18,4 +18,6 @@ public class CrackHammerItem extends CrackHammerBase {
 
         return item;
     }
+
+
 }

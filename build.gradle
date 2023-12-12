@@ -42,10 +42,6 @@ subprojects {
             name = 'Sponge / Mixin'
             url = 'https://repo.spongepowered.org/repository/maven-public/'
         }
-        maven {
-            name = 'BlameJared Maven (JEI / CraftTweaker / Bookshelf)'
-            url = 'https://maven.blamejared.com'
-        }
     }
 
     tasks.withType(JavaCompile).configureEach {
@@ -65,6 +61,8 @@ subprojects {
                 "minecraft_version_range": minecraft_version_range,
                 "fabric_version": fabric_version,
                 "fabric_loader_version": fabric_loader_version,
+                "neoforge_version": neoforge_version,
+                "neoforge_loader_version_range": neoforge_loader_version_range,
                 "mod_name": mod_name,
                 "mod_author": mod_author,
                 "mod_id": mod_id,

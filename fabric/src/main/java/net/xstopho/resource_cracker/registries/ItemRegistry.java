@@ -19,10 +19,10 @@ public class ItemRegistry {
 
     /*   Vanilla Resources   */
     public static final Item MATERIAL_DUST_COPPER = register("material_dust_copper");
-    public static final Item MATERIAL_DUST_IRON = register("material_dust_iron",);
+    public static final Item MATERIAL_DUST_IRON = register("material_dust_iron");
     public static final Item MATERIAL_DUST_GOLD = register("material_dust_gold");
     public static final Item MATERIAL_DUST_DIAMOND = register("material_dust_diamond");
-    public static final Item MATERIAL_DUST_EMERALD = register("material_dust_emerald",);
+    public static final Item MATERIAL_DUST_EMERALD = register("material_dust_emerald");
     public static final Item MATERIAL_DUST_NETHERITE_SCRAP = register("material_dust_netherite_scrap");
     public static final Item MATERIAL_DUST_NETHERITE = register("material_dust_netherite");
 
@@ -66,7 +66,7 @@ public class ItemRegistry {
     }
 
     private static Item register(String id) {
-        return Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(Constants.MOD_ID, id), new Item(new Item.Properties()))
+        return register(id, new Item(new Item.Properties()));
     }
 
     public static void init() {

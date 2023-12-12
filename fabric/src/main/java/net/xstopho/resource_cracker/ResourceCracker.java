@@ -2,12 +2,16 @@ package net.xstopho.resource_cracker;
 
 import fuzs.forgeconfigapiport.api.config.v2.ForgeConfigRegistry;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraftforge.fml.config.ModConfig;
+import net.xstopho.resource_cracker.config.ConfigManager;
 import net.xstopho.resource_cracker.config.ConstantConfig;
 import net.xstopho.resource_cracker.modifier.LootTableModifier;
 import net.xstopho.resource_cracker.registries.*;
 
 public class ResourceCracker implements ModInitializer {
+
+    private static final ConfigManager manager = new ConfigManager(FabricLoader.getInstance().getConfigDir().toString(), Constants.MOD_ID + "44.json");
 
     @Override
     public void onInitialize() {

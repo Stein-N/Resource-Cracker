@@ -1,5 +1,6 @@
 package net.xstopho.resource_cracker.config;
 
+
 import net.minecraftforge.common.ForgeConfigSpec;
 
 public class ConstantConfig {
@@ -33,15 +34,15 @@ public class ConstantConfig {
         CHISEL_GOLD = BUILDER.define("goldChisel", 15);
         CHISEL_IRON = BUILDER.define("ironChisel", 30);
         CHISEL_STEEL = BUILDER.define("steelChisel", 45);
-        CHISEL_DIAMOND = BUILDER.define("diamondCHisel", 64);
+        CHISEL_DIAMOND = BUILDER.define("diamondChisel", 64);
         CHISEL_NETHERITE = BUILDER.define("netheriteChisel", 96);
 
         BUILDER.pop().push("Scythe Harvest Radius");
 
         SCYTHE_RADIUS = BUILDER.defineInRange("radius", 1, 1, 3);
 
-        BUILDER.pop().push("Block and Mob Loot Settings")
-                .comment("Determine the chance with which an item can drop from Ores and Mobs.\n   0.0 = 0%    1.0 = 100%");
+        BUILDER.pop().comment("Determine the chance with which an item can drop from Ores and Mobs.\n   0.0 = 0%    1.0 = 100%")
+                .push("Block and Mob Loot Settings");
 
         DIAMOND_NUGGET_FROM_DIAMOND = BUILDER.define("diamondNuggetFromDiamondOre", 0.15);
         DIAMOND_NUGGET_FROM_COAL = BUILDER.define("diamondNuggetFromCoalOre", 0.025);
@@ -50,8 +51,8 @@ public class ConstantConfig {
         SALTPETER_FROM_CREEPER = BUILDER.define("saltpeterFromCreeper", 0.20);
         SALTPETER_FROM_BRICKS = BUILDER.define("saltpeterFromBricks", 0.50);
 
-        BUILDER.pop().push("Structure Loot Settings")
-                .comment("Determine the chance with which an item could be generated in any structures.\n   0.0 = 0%    1.0 = 100%");
+        BUILDER.pop().comment("Determine the chance with which an item could be generated in any structures.\n   0.0 = 0%    1.0 = 100%")
+                .push("Structure Loot Settings");
 
         SULFUR = BUILDER.define("sulfurDust", 0.25);
         SALTPETER = BUILDER.define("saltpeterDust", 0.25);

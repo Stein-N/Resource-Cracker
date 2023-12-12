@@ -1,4 +1,4 @@
-// 1.20.1	2023-11-30T20:57:57.8287245	Resource Cracker/Recipes
+// 1.20.1	2023-12-01T17:59:13.5216432	Resource Cracker/Recipes
 8a1de78f27027f09b0e4f8d36ac9f3103bdc4890 data\resource_cracker\advancements\recipes\tools\tools\scythe\scythe_iron.json
 8d85fbcf2e73ce985c270ffc0424316b2510d266 data\resource_cracker\recipes\smelting\material_dust_sulfur.json
 14bf791f40aa4fda2b39ab82d59cceeaf7cddf0c data\resource_cracker\recipes\smelting\copper_ingot.json
@@ -136,8 +136,8 @@ fb3086b9d31ab5be05930f6dba7aac7ffb3369aa data\resource_cracker\recipes\blasting\
 fffab97d20b21366438d9844a3ed454b804f4db0 data\resource_cracker\recipes\smelting\diamond.json
 87a17ebdfa04ac2bb112260a937dbfb8b70a3169 data\resource_cracker\recipes\material_dusts\material_dust_emerald_from_deepslate_emerald_ore.json
 a830dbba57906d433b2cbed80c8238ddedf8a03f data\resource_cracker\advancements\recipes\misc\smoking\beef_jerky.json
-7a4a8ca55949ea4260ddb4a0dd02dde8fe8123d4 data\resource_cracker\recipes\campfire\material_dust_sulfur.json
 94fe600081bdbe00fa8c2ad65965a5141db9bd6e data\resource_cracker\advancements\recipes\misc\smelting\material_dust_sulfur.json
+7a4a8ca55949ea4260ddb4a0dd02dde8fe8123d4 data\resource_cracker\recipes\campfire\material_dust_sulfur.json
 21b1c35183bc934e8478502572f9e4553ee1cf04 data\resource_cracker\advancements\recipes\misc\crafting\steel_block_from_steel_ingot.json
 21954c66b2559059582067bb353d1a4809e29010 data\resource_cracker\advancements\recipes\misc\smelting\leather.json
 83fb4753b8e5c2bdd1880b59981971ccd6c679b8 data\resource_cracker\recipes\smithing\scythe_netherite.json
