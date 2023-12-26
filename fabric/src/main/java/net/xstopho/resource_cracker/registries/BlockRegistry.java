@@ -16,11 +16,11 @@ import net.xstopho.resource_cracker.block.WaterSpringBlock;
 
 public class BlockRegistry {
 
-    public static final Block GARLIC_CROP = Registry.register(BuiltInRegistries.BLOCK, new ResourceLocation(Constants.MOD_ID, "garlic_crop"), new GarlicCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
+    public static final Block GARLIC_CROP = Registry.register(BuiltInRegistries.BLOCK, new ResourceLocation(Constants.MOD_ID, "garlic_crop"), new GarlicCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT)));
 
     public static final Block STEEL_BLOCK = register("steel_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
-    public static final Block LAVA_SPRING_BLOCK = register("lava_spring_block", new LavaSpringBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
-    public static final Block WATER_SPRING_BLOCK = register("water_spring_block", new WaterSpringBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    public static final Block LAVA_SPRING_BLOCK = register("lava_spring_block", new LavaSpringBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+    public static final Block WATER_SPRING_BLOCK = register("water_spring_block", new WaterSpringBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
 
     private static Block register(String id, Block block) {
         Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(Constants.MOD_ID, id), new BlockItem(block, new Item.Properties()));

@@ -19,10 +19,10 @@ import java.util.function.Supplier;
 public class BlockRegistry {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Constants.MOD_ID);
 
-    public static final RegistryObject<Block> GARLIC_CROP = BLOCKS.register("garlic_crop", () -> new GarlicCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
-    public static final RegistryObject<Block> STEEL_BLOCK = register("steel_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
-    public static final RegistryObject<Block> LAVA_SPRING_BLOCK = register("lava_spring_block", () -> new LavaSpringBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
-    public static final RegistryObject<Block> WATER_SPRING_BLOCK = register("water_spring_block", () -> new WaterSpringBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<Block> GARLIC_CROP = BLOCKS.register("garlic_crop", () -> new GarlicCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT)));
+    public static final RegistryObject<Block> STEEL_BLOCK = register("steel_block", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<Block> LAVA_SPRING_BLOCK = register("lava_spring_block", () -> new LavaSpringBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<Block> WATER_SPRING_BLOCK = register("water_spring_block", () -> new WaterSpringBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
 
     public static <T extends Block> RegistryObject<T> register(String id, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(id, block);

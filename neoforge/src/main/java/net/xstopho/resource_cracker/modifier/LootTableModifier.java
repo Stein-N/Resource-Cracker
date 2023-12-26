@@ -25,7 +25,7 @@ public class LootTableModifier {
         modifyEntityLoot(ItemRegistry.MATERIAL_DUST_SULFUR.get(), ConstantConfig.SULFUR_FROM_CREEPER.get().floatValue(), 2f, "creeper");
         modifyEntityLoot(ItemRegistry.MATERIAL_DUST_SALTPETER.get(), ConstantConfig.SALTPETER_FROM_CREEPER.get().floatValue(), 2f, "creeper");
 
-        modifyBlockLoot(ItemRegistry.DIAMOND_NUGGET.get(), 1f, 2f,
+        modifyBlockLoot(ItemRegistry.DIAMOND_NUGGET.get(), ConstantConfig.DIAMOND_NUGGET_FROM_DIAMOND.get().floatValue(), 2f,
                 "diamond_ore", "deepslate_diamond_ore");
         modifyBlockLoot(ItemRegistry.DIAMOND_NUGGET.get(), ConstantConfig.DIAMOND_NUGGET_FROM_COAL.get().floatValue(), 1f,
                 "coal_ore", "deepslate_coal_ore");

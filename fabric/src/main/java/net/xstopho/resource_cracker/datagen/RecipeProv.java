@@ -23,7 +23,7 @@ public class RecipeProv extends FabricRecipeProvider {
     }
 
     @Override
-    public void buildRecipes(Consumer<FinishedRecipe> exporter) {
+    public void buildRecipes(RecipeOutput exporter) {
 
         /*  Crack Hammers */
         offerCrackHammerRecipe(exporter, ItemRegistry.CRACK_HAMMER_COPPER, Items.COPPER_INGOT, ItemTagProv.CRAFT_INGREDIENTS);
@@ -141,7 +141,7 @@ public class RecipeProv extends FabricRecipeProvider {
                 .save(exporter, new ResourceLocation("crafting/" + getSimpleRecipeName(ItemRegistry.STEEL_INGOT) + "_from_" + getSimpleRecipeName(BlockRegistry.STEEL_BLOCK)));
     }
 
-    public static void offerCrackHammerRecipe(Consumer<FinishedRecipe> exporter, ItemLike output, ItemLike input, TagKey<Item> ingredients) {
+    public static void offerCrackHammerRecipe(RecipeOutput exporter, ItemLike output, ItemLike input, TagKey<Item> ingredients) {
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, output, 1)
                 .pattern(" IT")
                 .pattern(" SI")
@@ -153,7 +153,7 @@ public class RecipeProv extends FabricRecipeProvider {
                 .save(exporter, location("tools/crack_hammer/" + getSimpleRecipeName(output)));
     }
 
-    public static void offerChiselRecipe(Consumer<FinishedRecipe> exporter, ItemLike output, ItemLike input) {
+    public static void offerChiselRecipe(RecipeOutput exporter, ItemLike output, ItemLike input) {
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, output, 1)
                 .pattern(" I")
                 .pattern("S ")
@@ -163,7 +163,7 @@ public class RecipeProv extends FabricRecipeProvider {
                 .save(exporter, location("tools/chisel/" + getSimpleRecipeName(output)));
     }
 
-    public static void offerScytheRecipe(Consumer<FinishedRecipe> exporter, ItemLike output, ItemLike input, TagKey<Item> ingredients) {
+    public static void offerScytheRecipe(RecipeOutput exporter, ItemLike output, ItemLike input, TagKey<Item> ingredients) {
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, output, 1)
                 .pattern("IIT")
                 .pattern(" SI")
@@ -175,14 +175,14 @@ public class RecipeProv extends FabricRecipeProvider {
                 .save(exporter, location("tools/scythe/" + getSimpleRecipeName(output)));
     }
 
-    public static void offerNetheriteUpgrade(Consumer<FinishedRecipe> exporter, Item output, ItemLike input) {
+    public static void offerNetheriteUpgrade(RecipeOutput exporter, Item output, ItemLike input) {
         SmithingTransformRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), Ingredient.of(input),
                         Ingredient.of(Items.NETHERITE_INGOT), RecipeCategory.TOOLS, output)
                 .unlocks(getHasName(input), has(input))
                 .save(exporter, location("smithing/" + getSimpleRecipeName(output)));
     }
 
-    public static void createSpringRecipe(Consumer<FinishedRecipe> exporter, ItemLike output, ItemLike input) {
+    public static void createSpringRecipe(RecipeOutput exporter, ItemLike output, ItemLike input) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, output, 1)
                 .pattern("SSS").pattern("SBS").pattern("SSS")
                 .define('S', Ingredient.of(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "blocks/steel"))))
@@ -191,7 +191,7 @@ public class RecipeProv extends FabricRecipeProvider {
                 .save(exporter, location("blocks/" + getSimpleRecipeName(output)));
     }
 
-    public static void offerMaterialDustRecipe(Consumer<FinishedRecipe> exporter, ItemLike output, ItemLike input, int outputAmount, TagKey<Item> crackHammer) {
+    public static void offerMaterialDustRecipe(RecipeOutput exporter, ItemLike output, ItemLike input, int outputAmount, TagKey<Item> crackHammer) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, output, outputAmount)
                 .requires(Ingredient.of(crackHammer))
                 .requires(input)
@@ -199,32 +199,32 @@ public class RecipeProv extends FabricRecipeProvider {
                 .save(exporter, location("material_dusts/" + getSimpleRecipeName(output) + "_from_" + getSimpleRecipeName(input)));
     }
 
-    public static void createProcessingRecipes(Consumer<FinishedRecipe> exporter, ItemLike input, ItemLike output, boolean smeltingBlasting, boolean smoking, boolean campfire) {
+    public static void createProcessingRecipes(RecipeOutput exporter, ItemLike input, ItemLike output, boolean smeltingBlasting, boolean smoking, boolean campfire) {
         if (smeltingBlasting) createSmeltingRecipe(exporter, input, output); createBlastingRecipe(exporter, input, output);
         if (smoking) createSmokingRecipe(exporter, input, output);
         if (campfire) createCampfireRecipe(exporter, input, output);
 
     }
 
-    public static void createSmeltingRecipe(Consumer<FinishedRecipe> exporter, ItemLike input, ItemLike output) {
+    public static void createSmeltingRecipe(RecipeOutput exporter, ItemLike input, ItemLike output) {
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(input), RecipeCategory.MISC, output, 0.7f, 200)
                 .unlockedBy(getHasName(input), has(input))
                 .save(exporter, location("smelting/" + getSimpleRecipeName(output)));
     }
 
-    public static void createBlastingRecipe(Consumer<FinishedRecipe> exporter, ItemLike input, ItemLike output) {
+    public static void createBlastingRecipe(RecipeOutput exporter, ItemLike input, ItemLike output) {
         SimpleCookingRecipeBuilder.blasting(Ingredient.of(input), RecipeCategory.MISC, output, 0.7f, 100)
                 .unlockedBy(getHasName(input), has(input))
                 .save(exporter, location("blasting/" + getSimpleRecipeName(output)));
     }
 
-    public static void createSmokingRecipe(Consumer<FinishedRecipe> exporter, ItemLike input, ItemLike output) {
+    public static void createSmokingRecipe(RecipeOutput exporter, ItemLike input, ItemLike output) {
         SimpleCookingRecipeBuilder.smoking(Ingredient.of(input), RecipeCategory.MISC, output, 0.7f, 150)
                 .unlockedBy(getHasName(input), has(input))
                 .save(exporter, location("smoking/" + getSimpleRecipeName(output)));
     }
 
-    public static void createCampfireRecipe(Consumer<FinishedRecipe> exporter, ItemLike input, ItemLike output) {
+    public static void createCampfireRecipe(RecipeOutput exporter, ItemLike input, ItemLike output) {
         SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(input), RecipeCategory.MISC, output, 0.7f, 600)
                 .unlockedBy(getHasName(input), has(input))
                 .save(exporter, location("campfire/" + getSimpleRecipeName(output)));

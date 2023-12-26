@@ -30,9 +30,9 @@
         "${mod_id}.fabric.mixins.json"
     ],
     "depends": {
-        "fabricloader": ">=0.14",
+        "fabricloader": ">=0.15",
         "fabric": "*",
-        "minecraft": ">=1.20",
+        "minecraft": ">=1.20.3",
         "java": ">=17",
         "simpleconfigapi": ">=0.1.2"
     },
