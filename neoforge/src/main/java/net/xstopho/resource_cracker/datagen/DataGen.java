@@ -1,0 +1,29 @@
+package net.xstopho.resource_cracker.datagen;
+
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.data.event.GatherDataEvent;
+import net.xstopho.resource_cracker.Constants;
+
+import java.util.concurrent.CompletableFuture;
+
+@Mod.EventBusSubscriber(modid = Constants.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+public class DataGen {
+
+    @SubscribeEvent
+    public static void dataGen(GatherDataEvent event) {
+        DataGenerator generator = event.getGenerator();
+        PackOutput output = generator.getPackOutput();
+        ExistingFileHelper helper = event.getExistingFileHelper();
+        CompletableFuture<HolderLookup.Provider> provider = event.getLookupProvider();
+
+        BlockTagGen blockTags = generator.addProvider(event.includeServer(), new BlockTagGen(output, provider, helper));
+        generator.addProvider(event.includeServer(), new ItemTagGen(output, provider, blockTags.contentsGetter(), helper));
+
+        generator.addProvider(event.includeServer(), new RecipeGen(output, provider));
+    }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "I": {
+      "item": "minecraft:copper_ingot"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " I",
+    "S "
+  ],
+  "result": {
+    "item": "resource_cracker:chisel_copper"
+  },
+  "show_notification": true
+}

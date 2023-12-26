@@ -18,11 +18,11 @@ public class DataGen {
     public static void dataGen(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
         PackOutput output = generator.getPackOutput();
-        ExistingFileHelper fileHelper = event.getExistingFileHelper();
+        ExistingFileHelper helper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> provider = event.getLookupProvider();
 
-        BlockTagGen blockTags = generator.addProvider(event.includeServer(), new BlockTagGen(output, provider, fileHelper));
-        generator.addProvider(event.includeServer(), new ItemTagGen(output, provider, blockTags.contentsGetter(), fileHelper));
+        BlockTagGen blockTags = generator.addProvider(event.includeServer(), new BlockTagGen(output, provider, helper));
+        generator.addProvider(event.includeServer(), new ItemTagGen(output, provider, blockTags.contentsGetter(), helper));
 
         generator.addProvider(event.includeServer(), new RecipeGen(output));
     }
