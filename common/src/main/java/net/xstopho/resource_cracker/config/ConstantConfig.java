@@ -1,22 +1,24 @@
 package net.xstopho.resource_cracker.config;
 
+import net.xstopho.resource_cracker.Constants;
+import net.xstopho.simpleconfig.api.ConfigBuilder;
+import net.xstopho.simpleconfig.api.ISimpleConfigBuilder;
 
-import net.minecraftforge.common.ForgeConfigSpec;
+import java.util.function.Supplier;
 
 public class ConstantConfig {
-    public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
-    public static final ForgeConfigSpec SPEC;
+    public static final ISimpleConfigBuilder BUILDER = ConfigBuilder.create(Constants.MOD_ID);
 
-    public static final ForgeConfigSpec.ConfigValue<Integer>
+    public static final Supplier<Integer>
             CRACK_HAMMER_COPPER, CRACK_HAMMER_GOLD, CRACK_HAMMER_IRON, CRACK_HAMMER_STEEL, CRACK_HAMMER_DIAMOND, CRACK_HAMMER_NETHERITE,
             CHISEL_COPPER, CHISEL_GOLD, CHISEL_IRON, CHISEL_STEEL, CHISEL_DIAMOND, CHISEL_NETHERITE,
             SCYTHE_RADIUS;
 
-    public static final ForgeConfigSpec.ConfigValue<Double>
+    public static final Supplier<Double>
             DIAMOND_NUGGET_FROM_COAL, DIAMOND_NUGGET_FROM_DIAMOND, GARLIC_FROM_ZOMBIE, SULFUR_FROM_CREEPER, SALTPETER_FROM_CREEPER,
             SALTPETER_FROM_BRICKS;
 
-    public static final ForgeConfigSpec.ConfigValue<Double>
+    public static final Supplier<Double>
             SULFUR, SALTPETER, NETHERITE_SCRAP, NETHERITE, DIAMOND_NUGGET, GARLIC, HAMMER_COPPER, HAMMER_IRON, HAMMER_STEEL, COPPER_DUST,
             IRON_DUST, GOLD_DUST, CARBON_DUST, STEEL_DUST, EMERALD_DUST, DIAMOND_DUST, STEEL_INGOT;
 
@@ -41,20 +43,20 @@ public class ConstantConfig {
 
         SCYTHE_RADIUS = BUILDER.defineInRange("radius", 1, 1, 3);
 
-        BUILDER.pop().comment("Determine the chance with which an item can drop from Ores and Mobs.\n   0.0 = 0%    1.0 = 100%")
-                .push("Block and Mob Loot Settings");
+        BUILDER.pop().push("Block and Mob Loot Settings");
 
-        DIAMOND_NUGGET_FROM_DIAMOND = BUILDER.define("diamondNuggetFromDiamondOre", 0.15);
+        DIAMOND_NUGGET_FROM_DIAMOND = BUILDER.comment("Determine the chance with which an item can drop from Ores and Mobs.\n0.0 = 0% ~ 1.0 = 100%")
+                                            .define("diamondNuggetFromDiamondOre", 0.15);
         DIAMOND_NUGGET_FROM_COAL = BUILDER.define("diamondNuggetFromCoalOre", 0.025);
         GARLIC_FROM_ZOMBIE = BUILDER.define("garlicFromZombie", 0.20);
         SULFUR_FROM_CREEPER = BUILDER.define("sulfurFromCreeper", 0.20);
         SALTPETER_FROM_CREEPER = BUILDER.define("saltpeterFromCreeper", 0.20);
         SALTPETER_FROM_BRICKS = BUILDER.define("saltpeterFromBricks", 0.50);
 
-        BUILDER.pop().comment("Determine the chance with which an item could be generated in any structures.\n   0.0 = 0%    1.0 = 100%")
-                .push("Structure Loot Settings");
+        BUILDER.pop().push("Structure Loot Settings");
 
-        SULFUR = BUILDER.define("sulfurDust", 0.25);
+        SULFUR = BUILDER.comment("Determine the chance with which an item could be generated in any structures.\n0.0 = 0% ~ 1.0 = 100%")
+                        .define("sulfurDust", 0.25);
         SALTPETER = BUILDER.define("saltpeterDust", 0.25);
         NETHERITE_SCRAP = BUILDER.define("netheriteScrapDust", 0.05);
         NETHERITE = BUILDER.define("netheriteDust", 0.05);
@@ -72,9 +74,5 @@ public class ConstantConfig {
         EMERALD_DUST = BUILDER.define("emeraldDust", 0.10);
         STEEL_DUST = BUILDER.define("steelDust", 0.20);
         STEEL_INGOT = BUILDER.define("steelIngot", 0.10);
-
-        BUILDER.pop();
-
-        SPEC = BUILDER.build();
     }
 }

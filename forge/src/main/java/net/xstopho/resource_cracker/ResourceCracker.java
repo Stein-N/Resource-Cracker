@@ -11,6 +11,7 @@ import net.xstopho.resource_cracker.config.ConstantConfig;
 import net.xstopho.resource_cracker.registries.BlockRegistry;
 import net.xstopho.resource_cracker.registries.ItemGroupRegistry;
 import net.xstopho.resource_cracker.registries.ItemRegistry;
+import net.xstopho.simpleconfig.api.SimpleConfigRegistry;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -20,21 +21,7 @@ import java.nio.file.Path;
 public class ResourceCracker {
 
     public ResourceCracker() {
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ConstantConfig.SPEC, Constants.MOD_ID + ".toml");
-
-        ModConfig commonConfig = ConfigTracker.INSTANCE.configSets().get(ModConfig.Type.COMMON)
-                .stream().filter(modConfig -> modConfig.getModId().equals(Constants.MOD_ID))
-                .findFirst().orElseThrow(IllegalStateException::new);
-        Method openConfig;
-        try {
-            openConfig = ConfigTracker.INSTANCE.getClass().getDeclaredMethod("openConfig", ModConfig.class, Path.class);
-            openConfig.setAccessible(true);
-            openConfig.invoke(ConfigTracker.INSTANCE, commonConfig, FMLPaths.CONFIGDIR.get());
-            openConfig.setAccessible(false);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException exception) {
-            throw new RuntimeException(exception);
-        }
-
+        SimpleConfigRegistry.INSTANCE.register(ConstantConfig.BUILDER);
 
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
