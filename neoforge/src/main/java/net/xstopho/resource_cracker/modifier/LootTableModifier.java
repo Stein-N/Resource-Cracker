@@ -7,6 +7,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.event.LootTableLoadEvent;
 import net.xstopho.resource_cracker.Constants;
+import net.xstopho.resource_cracker.config.ConstantConfig;
 import net.xstopho.resource_cracker.registries.ItemRegistry;
 
 @Mod.EventBusSubscriber(modid = Constants.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)

@@ -7,6 +7,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.xstopho.resource_cracker.Constants;
+import net.xstopho.resource_cracker.config.ConstantConfig;
 import net.xstopho.resource_cracker.food.ConstantFoodProperties;
 import net.xstopho.resource_cracker.item.ChiselItem;
 import net.xstopho.resource_cracker.item.tier.ToolTiers;

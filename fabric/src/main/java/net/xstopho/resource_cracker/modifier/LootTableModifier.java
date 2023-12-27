@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.storage.loot.LootTable;
+import net.xstopho.resource_cracker.config.ConstantConfig;
 import net.xstopho.resource_cracker.registries.ItemRegistry;
 
 public class LootTableModifier {
