@@ -6,7 +6,7 @@
       "item": "minecraft:water_bucket"
     },
     "S": {
-      "tag": "forge:blocks/steel"
+      "tag": "c:steel_blocks"
     }
   },
   "pattern": [
