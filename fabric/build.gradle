@@ -5,7 +5,7 @@ plugins {
     id 'fabric-loom' version '1.2-SNAPSHOT'
 }
 base {
-    archivesName = "${mod_name}-fabric-${minecraft_version_base}"
+    archivesName = "${mod_name}-fabric-1.20-1.20.2"
 }
 
 dependencies {

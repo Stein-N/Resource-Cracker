@@ -5,7 +5,7 @@ plugins {
     id 'org.spongepowered.mixin' version '0.7-SNAPSHOT'
 }
 base {
-    archivesName = "${mod_name}-forge-${minecraft_version_base}"
+    archivesName = "${mod_name}-forge-1.20.1-1.20.2"
 }
 mixin {
     add(sourceSets.main, "${mod_id}.refmap.json")
