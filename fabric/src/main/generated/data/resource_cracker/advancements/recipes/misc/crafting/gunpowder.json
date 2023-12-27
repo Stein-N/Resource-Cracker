@@ -46,16 +46,15 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_charcoal",
       "has_material_dust_saltpeter",
-      "has_material_dust_sulfur",
-      "has_the_recipe"
+      "has_material_dust_sulfur"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:crafting/gunpowder"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

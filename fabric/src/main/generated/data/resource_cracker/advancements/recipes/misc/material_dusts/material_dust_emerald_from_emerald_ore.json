@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_emerald_ore",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_emerald_ore"
     ]
   ],
   "rewards": {
     "recipes": [
       "resource_cracker:material_dusts/material_dust_emerald_from_emerald_ore"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

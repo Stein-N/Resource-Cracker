@@ -34,15 +34,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_material_dust_iron",
-      "has_material_dust_carbon",
-      "has_the_recipe"
+      "has_material_dust_carbon"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:crafting/material_dust_steel"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

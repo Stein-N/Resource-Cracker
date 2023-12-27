@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_material_dust_iron",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_material_dust_iron"
     ]
   ],
   "rewards": {
     "recipes": [
       "resource_cracker:blasting/iron_ingot"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

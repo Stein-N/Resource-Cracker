@@ -123,6 +123,8 @@ public class RecipeGen extends RecipeProvider implements IConditionBuilder {
                 .unlockedBy(getHasName(ItemRegistry.MATERIAL_DUST_SULFUR.get()), has(ItemRegistry.MATERIAL_DUST_SULFUR.get()))
                 .save(exporter, location("crafting/" + getSimpleRecipeName(Items.GUNPOWDER)));
 
+
+
         // Diamond Compression Recipe
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.DIAMOND, 1)
                 .pattern("NNN").pattern("NNN").pattern("NNN")

@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_ancient_debris",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_ancient_debris"
     ]
   ],
   "rewards": {
     "recipes": [
       "resource_cracker:material_dusts/material_dust_netherite_scrap_from_ancient_debris"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

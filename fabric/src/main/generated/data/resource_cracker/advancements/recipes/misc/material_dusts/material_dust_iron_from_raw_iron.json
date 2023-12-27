@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_raw_iron",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_raw_iron"
     ]
   ],
   "rewards": {
     "recipes": [
       "resource_cracker:material_dusts/material_dust_iron_from_raw_iron"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

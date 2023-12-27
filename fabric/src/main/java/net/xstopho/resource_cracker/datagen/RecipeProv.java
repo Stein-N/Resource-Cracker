@@ -185,7 +185,7 @@ public class RecipeProv extends FabricRecipeProvider {
     public static void createSpringRecipe(RecipeOutput exporter, ItemLike output, ItemLike input) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, output, 1)
                 .pattern("SSS").pattern("SBS").pattern("SSS")
-                .define('S', Ingredient.of(TagKey.create(Registries.ITEM, new ResourceLocation("forge", "blocks/steel"))))
+                .define('S', Ingredient.of(TagKey.create(Registries.ITEM, new ResourceLocation("c", "steel_blocks"))))
                 .define('B', input)
                 .unlockedBy(getHasName(input), has(input))
                 .save(exporter, location("blocks/" + getSimpleRecipeName(output)));

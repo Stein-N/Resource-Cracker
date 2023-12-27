@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_chisel_diamond",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_chisel_diamond"
     ]
   ],
   "rewards": {
     "recipes": [
       "resource_cracker:smithing/chisel_netherite"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_garlic",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_garlic"
     ]
   ],
   "rewards": {
     "recipes": [
       "resource_cracker:blasting/material_dust_sulfur"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_material_dust_emerald",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_material_dust_emerald"
     ]
   ],
   "rewards": {
     "recipes": [
       "resource_cracker:campfire/emerald"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

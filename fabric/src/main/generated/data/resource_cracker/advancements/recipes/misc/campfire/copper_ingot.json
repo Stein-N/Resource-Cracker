@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_material_dust_copper",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_material_dust_copper"
     ]
   ],
   "rewards": {
     "recipes": [
       "resource_cracker:campfire/copper_ingot"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

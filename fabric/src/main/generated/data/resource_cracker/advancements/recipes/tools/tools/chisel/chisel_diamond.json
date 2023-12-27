@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_diamond",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_diamond"
     ]
   ],
   "rewards": {
     "recipes": [
       "resource_cracker:tools/chisel/chisel_diamond"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

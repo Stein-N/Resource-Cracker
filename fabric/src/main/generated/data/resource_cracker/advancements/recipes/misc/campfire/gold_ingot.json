@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_material_dust_gold",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_material_dust_gold"
     ]
   ],
   "rewards": {
     "recipes": [
       "resource_cracker:campfire/gold_ingot"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_material_dust_steel",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_material_dust_steel"
     ]
   ],
   "rewards": {
     "recipes": [
       "resource_cracker:smelting/steel_ingot"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

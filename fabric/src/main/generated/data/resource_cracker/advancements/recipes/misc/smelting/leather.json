@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_rotten_flesh",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_rotten_flesh"
     ]
   ],
   "rewards": {
     "recipes": [
       "resource_cracker:smelting/leather"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

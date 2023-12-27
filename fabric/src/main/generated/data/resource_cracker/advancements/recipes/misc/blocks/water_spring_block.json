@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_water_bucket",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_water_bucket"
     ]
   ],
   "rewards": {
     "recipes": [
       "resource_cracker:blocks/water_spring_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

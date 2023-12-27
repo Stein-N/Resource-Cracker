@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_netherite_ingot",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_netherite_ingot"
     ]
   ],
   "rewards": {
     "recipes": [
       "resource_cracker:material_dusts/material_dust_netherite_from_netherite_ingot"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

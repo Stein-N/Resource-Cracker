@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_material_dust_netherite",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_material_dust_netherite"
     ]
   ],
   "rewards": {
     "recipes": [
       "resource_cracker:blasting/netherite_ingot"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

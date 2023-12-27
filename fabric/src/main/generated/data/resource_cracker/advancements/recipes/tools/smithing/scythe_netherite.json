@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_scythe_diamond",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_scythe_diamond"
     ]
   ],
   "rewards": {
     "recipes": [
       "resource_cracker:smithing/scythe_netherite"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

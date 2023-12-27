@@ -34,15 +34,14 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_material_dust_netherite_scrap",
-      "has_material_dust_gold",
-      "has_the_recipe"
+      "has_material_dust_gold"
     ]
   ],
   "rewards": {
     "recipes": [
       "minecraft:crafting/material_dust_netherite"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }
