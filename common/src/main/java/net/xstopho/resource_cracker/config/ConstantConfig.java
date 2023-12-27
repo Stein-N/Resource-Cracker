@@ -46,7 +46,7 @@ public class ConstantConfig {
         BUILDER.pop().push("Block and Mob Loot Settings");
 
         DIAMOND_NUGGET_FROM_DIAMOND = BUILDER.comment("Determine the chance with which an item can drop from Ores and Mobs.\n0.0 = 0% ~ 1.0 = 100%")
-                                            .define("diamondNuggetFromDiamondOre", 0.15);
+                .define("diamondNuggetFromDiamondOre", 0.15);
         DIAMOND_NUGGET_FROM_COAL = BUILDER.define("diamondNuggetFromCoalOre", 0.025);
         GARLIC_FROM_ZOMBIE = BUILDER.define("garlicFromZombie", 0.20);
         SULFUR_FROM_CREEPER = BUILDER.define("sulfurFromCreeper", 0.20);
@@ -56,7 +56,7 @@ public class ConstantConfig {
         BUILDER.pop().push("Structure Loot Settings");
 
         SULFUR = BUILDER.comment("Determine the chance with which an item could be generated in any structures.\n0.0 = 0% ~ 1.0 = 100%")
-                        .define("sulfurDust", 0.25);
+                .define("sulfurDust", 0.25);
         SALTPETER = BUILDER.define("saltpeterDust", 0.25);
         NETHERITE_SCRAP = BUILDER.define("netheriteScrapDust", 0.05);
         NETHERITE = BUILDER.define("netheriteDust", 0.05);

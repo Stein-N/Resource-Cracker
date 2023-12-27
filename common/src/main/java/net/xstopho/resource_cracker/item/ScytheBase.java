@@ -61,7 +61,7 @@ public class ScytheBase extends SwordItem {
     public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
         tooltip.add(Component.translatable("item.scythe.tooltip").withStyle(ChatFormatting.GOLD));
         tooltip.add(Component.translatable("item.scythe.tooltip.radius").withStyle(ChatFormatting.GOLD)
-                .append(Component.literal(String.valueOf(ConstantConfig.SCYTHE_RADIUS.get())).withStyle(ChatFormatting.RED)));
+                .append(Component.literal(String.valueOf(radius)).withStyle(ChatFormatting.RED)));
 
         super.appendHoverText(stack, world, tooltip, flag);
     }
