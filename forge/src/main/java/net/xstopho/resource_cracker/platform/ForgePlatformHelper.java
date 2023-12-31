@@ -1,8 +1,8 @@
 package net.xstopho.resource_cracker.platform;
 
-import net.xstopho.resource_cracker.platform.services.IPlatformHelper;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.loading.FMLLoader;
+import net.xstopho.resource_cracker.platform.services.IPlatformHelper;
 
 public class ForgePlatformHelper implements IPlatformHelper {
 

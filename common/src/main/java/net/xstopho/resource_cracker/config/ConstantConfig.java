@@ -1,13 +1,11 @@
 package net.xstopho.resource_cracker.config;
 
-import net.xstopho.resource_cracker.Constants;
-import net.xstopho.simpleconfig.api.ConfigBuilder;
-import net.xstopho.simpleconfig.api.ISimpleConfigBuilder;
+import net.xstopho.simpleconfig.builder.SimpleConfigBuilder;
 
 import java.util.function.Supplier;
 
 public class ConstantConfig {
-    public static final ISimpleConfigBuilder BUILDER = ConfigBuilder.create(Constants.MOD_ID);
+    public static final SimpleConfigBuilder BUILDER = new SimpleConfigBuilder();
 
     public static final Supplier<Integer>
             CRACK_HAMMER_COPPER, CRACK_HAMMER_GOLD, CRACK_HAMMER_IRON, CRACK_HAMMER_STEEL, CRACK_HAMMER_DIAMOND, CRACK_HAMMER_NETHERITE,
@@ -23,21 +21,23 @@ public class ConstantConfig {
             IRON_DUST, GOLD_DUST, CARBON_DUST, STEEL_DUST, EMERALD_DUST, DIAMOND_DUST, STEEL_INGOT;
 
     static {
-        BUILDER.push("Tool Durability");
+        BUILDER.push("Crack Hammer Durability");
 
-        CRACK_HAMMER_COPPER = BUILDER.define("copperCrackHammer", 64);
-        CRACK_HAMMER_GOLD = BUILDER.define("goldCrackHammer", 96);
-        CRACK_HAMMER_IRON = BUILDER.define("ironCrackHammer", 128);
-        CRACK_HAMMER_STEEL = BUILDER.define("steelCrackHammer", 160);
-        CRACK_HAMMER_DIAMOND = BUILDER.define("diamondCrackHammer", 256);
-        CRACK_HAMMER_NETHERITE = BUILDER.define("netheriteCrackHammer", 384);
+        CRACK_HAMMER_COPPER = BUILDER.define("copper", 64);
+        CRACK_HAMMER_GOLD = BUILDER.define("gold", 96);
+        CRACK_HAMMER_IRON = BUILDER.define("iron", 128);
+        CRACK_HAMMER_STEEL = BUILDER.define("steel", 160);
+        CRACK_HAMMER_DIAMOND = BUILDER.define("diamond", 256);
+        CRACK_HAMMER_NETHERITE = BUILDER.define("netherite", 384);
 
-        CHISEL_COPPER = BUILDER.define("copperChisel", 10);
-        CHISEL_GOLD = BUILDER.define("goldChisel", 15);
-        CHISEL_IRON = BUILDER.define("ironChisel", 30);
-        CHISEL_STEEL = BUILDER.define("steelChisel", 45);
-        CHISEL_DIAMOND = BUILDER.define("diamondChisel", 64);
-        CHISEL_NETHERITE = BUILDER.define("netheriteChisel", 96);
+        BUILDER.pop().push("Chisel Durability");
+
+        CHISEL_COPPER = BUILDER.define("copper", 10);
+        CHISEL_GOLD = BUILDER.define("gold", 15);
+        CHISEL_IRON = BUILDER.define("iron", 30);
+        CHISEL_STEEL = BUILDER.define("steel", 45);
+        CHISEL_DIAMOND = BUILDER.define("diamond", 64);
+        CHISEL_NETHERITE = BUILDER.define("netherite", 96);
 
         BUILDER.pop().push("Scythe Harvest Radius");
 

@@ -1,6 +1,5 @@
 package net.xstopho.resource_cracker.registries;
 
-import net.fabricmc.fabric.mixin.object.builder.DefaultAttributeRegistryMixin;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
