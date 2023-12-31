@@ -34,7 +34,7 @@
         "fabric": "*",
         "minecraft": ">=1.20.3 <1.21",
         "java": ">=17",
-        "simpleconfigapi": ">=0.1.2"
+        "simpleconfigapi": ">=0.2.2"
     },
     "suggests": {
         "another-mod": "*"

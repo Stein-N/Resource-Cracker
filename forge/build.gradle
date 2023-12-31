@@ -79,8 +79,7 @@ dependencies {
     compileOnly project(":common")
     annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT:processor")
 
-    implementation fg.deobf("curse.maven:simple-config-api-954054:4984839")
-    //implementation "xstopho.simpleconfigapi:simpleconfigapi-forge:${simple_config_api}"
+    implementation "xstopho.simpleconfigapi:simpleconfigapi-forge:${simple_config_api}"
 }
 
 tasks.withType(JavaCompile).configureEach {

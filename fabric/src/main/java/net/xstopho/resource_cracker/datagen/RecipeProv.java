@@ -14,8 +14,6 @@ import net.xstopho.resource_cracker.Constants;
 import net.xstopho.resource_cracker.registries.BlockRegistry;
 import net.xstopho.resource_cracker.registries.ItemRegistry;
 
-import java.util.function.Consumer;
-
 public class RecipeProv extends FabricRecipeProvider {
 
     public RecipeProv(FabricDataOutput output) {

@@ -18,7 +18,7 @@ import net.xstopho.simpleconfig.api.SimpleConfigRegistry;
 public class ResourceCracker {
 
     public ResourceCracker() {
-        SimpleConfigRegistry.INSTANCE.register(ConstantConfig.BUILDER);
+        SimpleConfigRegistry.INSTANCE.register(Constants.MOD_ID, ConstantConfig.BUILDER);
 
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 

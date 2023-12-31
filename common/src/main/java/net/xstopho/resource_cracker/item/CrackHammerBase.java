@@ -12,6 +12,7 @@ import java.util.List;
 
 public class CrackHammerBase extends Item {
     public CrackHammerBase(int durability) {
+        //TODO: Sync the durability between Server and Client to prevent visual bugs
         super(new Properties().defaultDurability(durability));
     }
 

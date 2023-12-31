@@ -1,7 +1,7 @@
 package net.xstopho.resource_cracker.platform;
 
-import net.xstopho.resource_cracker.platform.services.IPlatformHelper;
 import net.fabricmc.loader.api.FabricLoader;
+import net.xstopho.resource_cracker.platform.services.IPlatformHelper;
 
 public class FabricPlatformHelper implements IPlatformHelper {
 
