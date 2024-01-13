@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "resource_cracker:item/diamond_nugget"
-  }
-}

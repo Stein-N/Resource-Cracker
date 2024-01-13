@@ -19,6 +19,7 @@ dependencies {
     implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
 
     implementation "xstopho.simpleconfigapi:simpleconfigapi-common:${simple_config_api}"
+    implementation "xstopho.stophoslib:stophoslib-common:${stophos_lib}"
 }
 
 publishing {

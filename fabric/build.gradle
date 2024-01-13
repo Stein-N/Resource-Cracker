@@ -17,6 +17,8 @@ dependencies {
     implementation project(":common")
 
     modImplementation "xstopho.simpleconfigapi:simpleconfigapi-fabric:${simple_config_api}"
+    modImplementation "xstopho.stophoslib:stophoslib-fabric:${stophos_lib}"
+    include "xstopho.stophoslib:stophoslib-fabric:${stophos_lib}"
 }
 
 sourceSets {

@@ -9,6 +9,6 @@ public class ResourceCrackerClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        BlockRenderLayerMapImpl.INSTANCE.putBlock(BlockRegistry.GARLIC_CROP, RenderType.cutout());
+        BlockRenderLayerMapImpl.INSTANCE.putBlock(BlockRegistry.GARLIC_CROP.get(), RenderType.cutout());
     }
 }

@@ -2,29 +2,34 @@ package net.xstopho.resource_cracker;
 
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.xstopho.resource_cracker.config.ConstantConfig;
+import net.xstopho.resource_cracker.config.Config;
+import net.xstopho.resource_cracker.modifier.LootModifier;
+import net.xstopho.resource_cracker.registries.AttributeRegistry;
 import net.xstopho.resource_cracker.registries.BlockRegistry;
 import net.xstopho.resource_cracker.registries.ItemGroupRegistry;
 import net.xstopho.resource_cracker.registries.ItemRegistry;
 import net.xstopho.simpleconfig.api.SimpleConfigRegistry;
+import net.xstopho.stophoslib.modifier.loot_tables.ChestLootTables;
 
 @Mod(Constants.MOD_ID)
 public class ResourceCracker {
 
     public ResourceCracker() {
-        SimpleConfigRegistry.INSTANCE.register(Constants.MOD_ID, ConstantConfig.BUILDER);
+        SimpleConfigRegistry.INSTANCE.register(Constants.MOD_ID, Config.BUILDER);
 
-        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        AttributeRegistry.init();
+        ItemRegistry.init();
+        BlockRegistry.init();
+        ItemGroupRegistry.init();
 
-        ItemRegistry.register(eventBus);
-        BlockRegistry.register(eventBus);
-        ItemGroupRegistry.register(eventBus);
+        LootModifier.init();
 
         Constants.LOG.info("Initialisation finished!");
     }

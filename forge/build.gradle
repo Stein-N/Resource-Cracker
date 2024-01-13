@@ -80,6 +80,8 @@ dependencies {
     annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT:processor")
 
     implementation "xstopho.simpleconfigapi:simpleconfigapi-forge:${simple_config_api}"
+    implementation(fg.deobf("xstopho.stophoslib:stophoslib-forge:${stophos_lib}"))
+    jarJar(group: 'xstopho.stophoslib', name: 'stophoslib-forge', version: "[${stophos_lib}, )")
 }
 
 tasks.withType(JavaCompile).configureEach {
@@ -93,6 +95,7 @@ processResources {
     from project(":common").sourceSets.main.resources
 }
 
+jarJar.enable()
 jar.finalizedBy('reobfJar')
 
 publishing {
