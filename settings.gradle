@@ -29,4 +29,3 @@ rootProject.name = 'Resource-Cracker'
 include("common")
 include("fabric")
 include("forge")
-include("neoforge")
