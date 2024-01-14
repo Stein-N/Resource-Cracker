@@ -60,12 +60,25 @@ public class Recipes {
                 .save(exporter, location("blocks/" + getSimpleRecipeName(output)));
     }
 
-    public static void materialDustRecipe(Consumer<FinishedRecipe> exporter, ItemLike output, ItemLike input, int outputAmount, TagKey<Item> crackHammer) {
+    public static void materialDustRecipe(Consumer<FinishedRecipe> exporter, ItemLike output, ItemLike input, int outputAmount) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, output, outputAmount)
-                .requires(Ingredient.of(crackHammer))
+                .requires(Ingredient.of(FabricItemTags.CRACK_HAMMER))
                 .requires(input)
                 .unlockedBy(getHasName(input), has(input))
                 .save(exporter, location("material_dusts/" + getSimpleRecipeName(output) + "_from_" + getSimpleRecipeName(input)));
+    }
+
+    public static void compressionRecipe(Consumer<FinishedRecipe> exporter, ItemLike output, ItemLike input, boolean compress, boolean decompress) {
+        if (compress) {
+            ShapedRecipeBuilder.shaped(RecipeCategory.MISC, output, 1).pattern("###").pattern("###").pattern("###")
+                    .define('#', input).unlockedBy(getHasName(input), has(input))
+                    .save(exporter, location(getSimpleRecipeName(output) + "_from_" + getSimpleRecipeName(input)));
+        }
+        if (decompress) {
+            ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, input, 9)
+                    .requires(output).unlockedBy(getHasName(output), has(output))
+                    .save(exporter, location(getSimpleRecipeName(input) + "_from_" + getSimpleRecipeName(output)));
+        }
     }
 
     public static void processingRecipes(Consumer<FinishedRecipe> exporter, ItemLike input, ItemLike output, boolean smelting, boolean blasting, boolean smoking, boolean campfire) {
