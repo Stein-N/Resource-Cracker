@@ -22,4 +22,4 @@ build
 eclipse
 run
 runs
-/fabric/src/main/generated/
+/fabric/src/main/generated/*

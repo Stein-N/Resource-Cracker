@@ -2,7 +2,6 @@ package net.xstopho.resource_cracker;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.minecraft.data.info.BlockListReport;
 import net.xstopho.resource_cracker.datagen.*;
 
 public class ResourceCrackerDatagen implements DataGeneratorEntrypoint {

@@ -4,10 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class Constants {
-
 	public static final String MOD_ID = "resource_cracker";
 	public static final String MOD_NAME = "Resource Cracker";
 	public static final Logger LOG = LoggerFactory.getLogger(MOD_NAME);
-	//TODO: reimplement Datagen or create any json by hand
-	//TODO: create all Tags for every platform
 }
