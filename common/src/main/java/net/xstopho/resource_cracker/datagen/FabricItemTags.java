@@ -5,8 +5,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 
-import javax.swing.text.html.HTML;
-
 public class FabricItemTags {
 
     public static final TagKey<Item> CRACK_HAMMER = getTagKey("crack_hammer");

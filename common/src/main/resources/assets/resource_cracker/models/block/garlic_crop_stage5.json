@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "resource_cracker:block/garlic_crop_stage5"
+  }
+}
