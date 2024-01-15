@@ -4,14 +4,26 @@ plugins {
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
     id 'org.spongepowered.mixin' version '0.7-SNAPSHOT'
 }
+
 base {
-    archivesName = "${mod_name}-forge-1.20.1-1.20.2"
+    archivesName = "${mod_name}-forge-${minecraft_version}"
 }
+
 mixin {
     add(sourceSets.main, "${mod_id}.refmap.json")
 
     config("${mod_id}.mixins.json")
     config("${mod_id}.forge.mixins.json")
+}
+
+dependencies {
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+    compileOnly project(":common")
+    annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT:processor")
+
+    implementation "xstopho.simpleconfigapi:simpleconfigapi-forge:${simple_config_api}"
+    implementation fg.deobf("xstopho.stophoslib:stophoslib-forge:${stophos_lib}")
+    jarJar("xstopho.stophoslib:stophoslib-forge:${stophos_lib}")
 }
 
 minecraft {
@@ -74,18 +86,11 @@ minecraft {
 
 sourceSets.main.resources.srcDir 'src/generated/resources'
 
-dependencies {
-    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
-    compileOnly project(":common")
-    annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT:processor")
-
-    implementation "xstopho.simpleconfigapi:simpleconfigapi-forge:${simple_config_api}"
-    implementation(fg.deobf("xstopho.stophoslib:stophoslib-forge:${stophos_lib}"))
-    jarJar(group: 'xstopho.stophoslib', name: 'stophoslib-forge', version: "[${stophos_lib}, )")
-}
-
 tasks.withType(JavaCompile).configureEach {
     source(project(":common").sourceSets.main.allSource)
+}
+tasks.withType(Javadoc).configureEach {
+    source(project(":common").sourceSets.main.allJava)
 }
 tasks.named("sourcesJar", Jar) {
     from(project(":common").sourceSets.main.allSource)
@@ -95,7 +100,6 @@ processResources {
     from project(":common").sourceSets.main.resources
 }
 
-jarJar.enable()
 jar.finalizedBy('reobfJar')
 
 publishing {

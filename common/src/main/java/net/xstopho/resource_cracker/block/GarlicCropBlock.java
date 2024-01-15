@@ -17,8 +17,8 @@ public class GarlicCropBlock extends CropBlock {
     public static final int MAX_AGE = 5;
     public static final IntegerProperty AGE = BlockStateProperties.AGE_5;
 
-    public GarlicCropBlock() {
-        super(BlockBehaviour.Properties.copy(Blocks.WHEAT));
+    public GarlicCropBlock(Properties propertis) {
+        super(propertis);
     }
 
     @Override

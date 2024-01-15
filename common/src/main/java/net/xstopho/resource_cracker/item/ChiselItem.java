@@ -24,7 +24,7 @@ public class ChiselItem extends Item {
     private static Item drop;
 
     public ChiselItem(int durability, Item drop) {
-        super(new Item.Properties().durability(durability));
+        super(new Properties().durability(durability));
         ChiselItem.drop = drop;
     }
 

@@ -6,12 +6,12 @@ pluginManagement {
             url = 'https://maven.fabricmc.net/'
         }
         maven {
-            name = 'Forge'
-            url = 'https://maven.minecraftforge.net/'
-        }
-        maven {
             name = 'NeoForge'
             url = 'https://maven.neoforged.net/releases/'
+        }
+        maven {
+            name = 'Forge'
+            url = 'https://maven.minecraftforge.net/'
         }
         maven {
             name = 'Sponge Snapshots'
@@ -29,3 +29,4 @@ rootProject.name = 'Resource-Cracker'
 include("common")
 include("fabric")
 include("forge")
+include("neoforge")

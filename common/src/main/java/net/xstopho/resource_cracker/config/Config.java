@@ -81,7 +81,5 @@ public class Config {
         HAMMER_COPPER = BUILDER.define("copper_crack_hammer", 0.15);
         HAMMER_IRON = BUILDER.define("iron_crack_hammer", 0.10);
         HAMMER_STEEL = BUILDER.define("steel_crack_hammer", 0.08);
-
-
     }
 }

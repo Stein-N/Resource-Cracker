@@ -23,8 +23,8 @@ import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 
 public class WaterSpringBlock extends Block {
-    public WaterSpringBlock() {
-        super(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK));
+    public WaterSpringBlock(Properties properties) {
+        super(properties);
         this.registerDefaultState(defaultBlockState().setValue(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH));
     }
 

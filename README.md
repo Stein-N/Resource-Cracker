@@ -21,12 +21,12 @@ But since he is still on break, I decided to create my own Mod with similar Bloc
 
 ### Provides Recipes for:
 - Fabric
-  - [Applied Energetics 2](https://www.curseforge.com/minecraft/mc-mods/applied-energistics-2)
-  - [Tech Reborn](https://www.curseforge.com/minecraft/mc-mods/techreborn)
+    - [Applied Energetics 2](https://www.curseforge.com/minecraft/mc-mods/applied-energistics-2)
+    - [Tech Reborn](https://www.curseforge.com/minecraft/mc-mods/techreborn)
 
 - Forge
-  - [Applied Energetics 2](https://www.curseforge.com/minecraft/mc-mods/applied-energistics-2)
-  - [Mekanism](https://www.curseforge.com/minecraft/mc-mods/mekanism)
+    - [Applied Energetics 2](https://www.curseforge.com/minecraft/mc-mods/applied-energistics-2)
+    - [Mekanism](https://www.curseforge.com/minecraft/mc-mods/mekanism)
 
 ### Item and Tools Overview
 

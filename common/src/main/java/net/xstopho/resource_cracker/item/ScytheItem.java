@@ -27,7 +27,7 @@ public class ScytheItem extends SwordItem {
     private static final int radius = Config.SCYTHE_RADIUS.get();
 
     public ScytheItem(Tier toolTier, int attackDamage, float attackSpeed) {
-        super(toolTier, attackDamage, attackSpeed, new Item.Properties());
+        super(toolTier, attackDamage, attackSpeed, new Properties());
     }
 
     @Override

@@ -43,10 +43,12 @@ subprojects {
             url = 'https://repo.spongepowered.org/repository/maven-public/'
         }
         maven {
-            url = "https://raw.githubusercontent.com/Stein-N/resources/main/maven"
+            name = 'BlameJared Maven (JEI / CraftTweaker / Bookshelf)'
+            url = 'https://maven.blamejared.com'
         }
         maven {
-            url = "https://cursemaven.com"
+            name = 'xStopho Mods'
+            url = 'https://raw.githubusercontent.com/Stein-N/resources/main/maven'
         }
     }
 
@@ -67,14 +69,16 @@ subprojects {
                 "minecraft_version_range": minecraft_version_range,
                 "fabric_version": fabric_version,
                 "fabric_loader_version": fabric_loader_version,
-                "neoforge_version": neoforge_version,
-                "neoforge_loader_version_range": neoforge_loader_version_range,
                 "mod_name": mod_name,
                 "mod_author": mod_author,
                 "mod_id": mod_id,
                 "license": license,
                 "description": project.description,
-                "credits": credits
+                "neoforge_version": neoforge_version,
+                "neoforge_loader_version_range": neoforge_loader_version_range,
+                "credits": credits,
+                "stophos_lib": stophos_lib,
+                "simple_config_api": simple_config_api
         ]
 
         filesMatching(['pack.mcmeta', 'fabric.mod.json', 'META-INF/mods.toml', '*.mixins.json']) {
