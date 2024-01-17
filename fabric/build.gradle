@@ -1,52 +1,48 @@
-plugins {
-    id 'java'
-    id 'idea'
-    id 'maven-publish'
-    id 'fabric-loom' version '1.2-SNAPSHOT'
-}
 base {
-    archivesName = "${mod_name}-fabric-${minecraft_version}"
+    archivesName = "${mod_id}-fabric"
 }
-dependencies {
-    minecraft "com.mojang:minecraft:${minecraft_version}"
-    mappings loom.officialMojangMappings()
-    modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
-    implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
-    implementation project(":common")
 
-    modImplementation "xstopho.simpleconfigapi:simpleconfigapi-fabric:${simple_config_api}"
-    modImplementation "xstopho.stophoslib:stophoslib-fabric:${stophos_lib}"
-    include "xstopho.stophoslib:stophoslib-fabric:${stophos_lib}"
+architectury {
+    platformSetupLoomIde()
+    fabric()
 }
 
 loom {
-    if (project(":common").file("src/main/resources/${mod_id}.accesswidener").exists()) {
+    if(project(":common").file("src/main/resources/${mod_id}.accesswidener").exists()){
         accessWidenerPath.set(project(":common").file("src/main/resources/${mod_id}.accesswidener"))
     }
     mixin {
         defaultRefmapName.set("${mod_id}.refmap.json")
     }
+
     runs {
         client {
             client()
             setConfigName("Fabric Client")
-            ideConfigGenerated(true)
-            runDir("run")
         }
         server {
             server()
             setConfigName("Fabric Server")
-            ideConfigGenerated(true)
-            runDir("run")
         }
     }
+}
+
+dependencies {
+    modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
+    modApi "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
+
+    modImplementation "xstopho.simpleconfigapi:simpleconfigapi-fabric:${simple_config_api}"
+    modImplementation "xstopho.stophoslib:stophoslib-fabric:${stophos_lib}"
+    include "xstopho.stophoslib:stophoslib-fabric:${stophos_lib}"
+
+    compileOnly project(":common")
 }
 
 tasks.withType(JavaCompile).configureEach {
     source(project(":common").sourceSets.main.allSource)
 }
 tasks.withType(Javadoc).configureEach {
+    options.addStringOption('Xdoclint:none', '-quiet')
     source(project(":common").sourceSets.main.allJava)
 }
 tasks.named("sourcesJar", Jar) {
@@ -55,18 +51,4 @@ tasks.named("sourcesJar", Jar) {
 
 processResources {
     from project(":common").sourceSets.main.resources
-}
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            artifactId base.archivesName.get()
-            from components.java
-        }
-    }
-    repositories {
-        maven {
-            url "file://" + System.getenv("local_maven")
-        }
-    }
 }
