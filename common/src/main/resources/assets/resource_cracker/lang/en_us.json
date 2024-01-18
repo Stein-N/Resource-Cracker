@@ -43,11 +43,11 @@
   "item.resource_cracker.material_dust_saltpeter": "Saltpeter",
 
   "item.resource_cracker.steel_ingot": "Steel Ingot",
-  "item.resource_cracker.diamond_nugget": "Diamond Nugget",
+  "item.resource_cracker.nugget_diamond": "Diamond Nugget",
 
   "item.resource_cracker.garlic": "Garlic",
 
-  "block.resource_cracker.garlic_crop": "Garlic Crop",
+  "block.resource_cracker.garlic_crop": "Garlic",
   "block.resource_cracker.steel_block": "Steel Block",
   "block.resource_cracker.lava_spring_block": "Lava Spring",
   "block.resource_cracker.water_spring_block": "Water Spring",

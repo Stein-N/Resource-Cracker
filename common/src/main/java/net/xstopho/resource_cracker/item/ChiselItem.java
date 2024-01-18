@@ -12,7 +12,7 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.xstopho.resource_cracker.config.ConstantConfig;
+import net.xstopho.resource_cracker.config.Config;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -24,7 +24,7 @@ public class ChiselItem extends Item {
     private static Item drop;
 
     public ChiselItem(int durability, Item drop) {
-        super(new Item.Properties().durability(durability));
+        super(new Properties().durability(durability));
         ChiselItem.drop = drop;
     }
 
@@ -35,7 +35,7 @@ public class ChiselItem extends Item {
         BlockPos pos = context.getClickedPos().relative(context.getClickedFace());
 
         if (block == Blocks.BRICKS) {
-            if (rnd.nextFloat() <= ConstantConfig.SALTPETER_FROM_BRICKS.get().floatValue()) {
+            if (rnd.nextFloat() <= Config.SALTPETER_FROM_BRICKS.get().floatValue()) {
                 Containers.dropItemStack(context.getLevel(), pos.getX(), pos.getY(), pos.getZ(), new ItemStack(drop));
             }
         }

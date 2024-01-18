@@ -4,7 +4,9 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -15,8 +17,8 @@ public class GarlicCropBlock extends CropBlock {
     public static final int MAX_AGE = 5;
     public static final IntegerProperty AGE = BlockStateProperties.AGE_5;
 
-    public GarlicCropBlock(Properties properties) {
-        super(properties);
+    public GarlicCropBlock() {
+        super(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT));
     }
 
     @Override

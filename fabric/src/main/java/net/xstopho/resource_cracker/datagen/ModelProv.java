@@ -16,50 +16,53 @@ public class ModelProv extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators block) {
-        block.createCropBlock(BlockRegistry.GARLIC_CROP, GarlicCropBlock.AGE, 0, 1, 2, 3, 4, 5);
+        /* Added to common project, so these don't have to be generated
 
-        block.createTrivialCube(BlockRegistry.STEEL_BLOCK);
+           block.createCropBlock(BlockRegistry.GARLIC_CROP.get(), GarlicCropBlock.AGE, 0, 1, 2, 3, 4, 5);
+           block.createTrivialCube(BlockRegistry.STEEL_BLOCK.get());
+        */
     }
 
     @Override
     public void generateItemModels(ItemModelGenerators item) {
-        item.generateFlatItem(ItemRegistry.CRACK_HAMMER_COPPER, ModelTemplates.FLAT_ITEM);
-        item.generateFlatItem(ItemRegistry.CRACK_HAMMER_GOLD, ModelTemplates.FLAT_ITEM);
-        item.generateFlatItem(ItemRegistry.CRACK_HAMMER_IRON, ModelTemplates.FLAT_ITEM);
-        item.generateFlatItem(ItemRegistry.CRACK_HAMMER_DIAMOND, ModelTemplates.FLAT_ITEM);
-        item.generateFlatItem(ItemRegistry.CRACK_HAMMER_NETHERITE, ModelTemplates.FLAT_ITEM);
-        item.generateFlatItem(ItemRegistry.CRACK_HAMMER_STEEL, ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.CRACK_HAMMER_COPPER.get(), ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.CRACK_HAMMER_GOLD.get(), ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.CRACK_HAMMER_IRON.get(), ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.CRACK_HAMMER_DIAMOND.get(), ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.CRACK_HAMMER_NETHERITE.get(), ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.CRACK_HAMMER_STEEL.get(), ModelTemplates.FLAT_ITEM);
 
-        item.generateFlatItem(ItemRegistry.CHISEL_COPPER, ModelTemplates.FLAT_ITEM);
-        item.generateFlatItem(ItemRegistry.CHISEL_GOLD, ModelTemplates.FLAT_ITEM);
-        item.generateFlatItem(ItemRegistry.CHISEL_IRON, ModelTemplates.FLAT_ITEM);
-        item.generateFlatItem(ItemRegistry.CHISEL_DIAMOND, ModelTemplates.FLAT_ITEM);
-        item.generateFlatItem(ItemRegistry.CHISEL_NETHERITE, ModelTemplates.FLAT_ITEM);
-        item.generateFlatItem(ItemRegistry.CHISEL_STEEL, ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.CHISEL_COPPER.get(), ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.CHISEL_GOLD.get(), ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.CHISEL_IRON.get(), ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.CHISEL_DIAMOND.get(), ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.CHISEL_NETHERITE.get(), ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.CHISEL_STEEL.get(), ModelTemplates.FLAT_ITEM);
 
-        item.generateFlatItem(ItemRegistry.SCYTHE_COPPER, ModelTemplates.FLAT_HANDHELD_ITEM);
-        item.generateFlatItem(ItemRegistry.SCYTHE_IRON, ModelTemplates.FLAT_HANDHELD_ITEM);
-        item.generateFlatItem(ItemRegistry.SCYTHE_GOLD, ModelTemplates.FLAT_HANDHELD_ITEM);
-        item.generateFlatItem(ItemRegistry.SCYTHE_STEEL, ModelTemplates.FLAT_HANDHELD_ITEM);
-        item.generateFlatItem(ItemRegistry.SCYTHE_DIAMOND, ModelTemplates.FLAT_HANDHELD_ITEM);
-        item.generateFlatItem(ItemRegistry.SCYTHE_NETHERITE, ModelTemplates.FLAT_HANDHELD_ITEM);
+        item.generateFlatItem(ItemRegistry.SCYTHE_COPPER.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        item.generateFlatItem(ItemRegistry.SCYTHE_IRON.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        item.generateFlatItem(ItemRegistry.SCYTHE_GOLD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        item.generateFlatItem(ItemRegistry.SCYTHE_STEEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        item.generateFlatItem(ItemRegistry.SCYTHE_DIAMOND.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        item.generateFlatItem(ItemRegistry.SCYTHE_NETHERITE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
 
-        item.generateFlatItem(ItemRegistry.MATERIAL_DUST_COPPER, ModelTemplates.FLAT_ITEM);
-        item.generateFlatItem(ItemRegistry.MATERIAL_DUST_IRON, ModelTemplates.FLAT_ITEM);
-        item.generateFlatItem(ItemRegistry.MATERIAL_DUST_GOLD, ModelTemplates.FLAT_ITEM);
-        item.generateFlatItem(ItemRegistry.MATERIAL_DUST_DIAMOND, ModelTemplates.FLAT_ITEM);
-        item.generateFlatItem(ItemRegistry.MATERIAL_DUST_STEEL, ModelTemplates.FLAT_ITEM);
-        item.generateFlatItem(ItemRegistry.MATERIAL_DUST_CARBON, ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.MATERIAL_DUST_COPPER.get(), ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.MATERIAL_DUST_IRON.get(), ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.MATERIAL_DUST_GOLD.get(), ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.MATERIAL_DUST_DIAMOND.get(), ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.MATERIAL_DUST_STEEL.get(), ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.MATERIAL_DUST_CARBON.get(), ModelTemplates.FLAT_ITEM);
 
-        item.generateFlatItem(ItemRegistry.MATERIAL_DUST_NETHERITE_SCRAP, ModelTemplates.FLAT_ITEM);
-        item.generateFlatItem(ItemRegistry.MATERIAL_DUST_NETHERITE, ModelTemplates.FLAT_ITEM);
-        item.generateFlatItem(ItemRegistry.MATERIAL_DUST_EMERALD, ModelTemplates.FLAT_ITEM);
-        item.generateFlatItem(ItemRegistry.MATERIAL_DUST_SALTPETER, ModelTemplates.FLAT_ITEM);
-        item.generateFlatItem(ItemRegistry.MATERIAL_DUST_SULFUR, ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.MATERIAL_DUST_NETHERITE_SCRAP.get(), ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.MATERIAL_DUST_NETHERITE.get(), ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.MATERIAL_DUST_EMERALD.get(), ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.MATERIAL_DUST_SALTPETER.get(), ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.MATERIAL_DUST_SULFUR.get(), ModelTemplates.FLAT_ITEM);
 
-        item.generateFlatItem(ItemRegistry.STEEL_INGOT, ModelTemplates.FLAT_ITEM);
-        item.generateFlatItem(ItemRegistry.DIAMOND_NUGGET, ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.STEEL_INGOT.get(), ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.NUGGET_DIAMOND.get(), ModelTemplates.FLAT_ITEM);
 
-        item.generateFlatItem(ItemRegistry.BEEF_JERKY, ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.BEEF_JERKY.get(), ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.GARLIC.get(), ModelTemplates.FLAT_ITEM);
     }
 }

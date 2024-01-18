@@ -43,11 +43,11 @@
   "item.resource_cracker.material_dust_saltpeter": "Potasyum Nitrat",
 
   "item.resource_cracker.steel_ingot": "Çelik Külçesi",
-  "item.resource_cracker.diamond_nugget": "Elmas Parçası",
+  "item.resource_cracker.nugget_diamond": "Elmas Parçası",
 
   "item.resource_cracker.garlic": "Sarımsak",
 
-  "block.resource_cracker.garlic_crop": "Sarımsak Tohumu",
+  "block.resource_cracker.garlic_crop": "Sarımsak",
   "block.resource_cracker.steel_block": "Çelik Bloğu",
   "block.resource_cracker.lava_spring_block": "Lav Yayı",
   "block.resource_cracker.water_spring_block": "Su Yayı",

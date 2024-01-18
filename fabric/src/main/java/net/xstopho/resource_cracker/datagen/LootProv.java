@@ -15,13 +15,12 @@ public class LootProv extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-        LootItemBlockStatePropertyCondition.Builder builder =
-                LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.GARLIC_CROP)
-                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(GarlicCropBlock.AGE, 5));
-        add(BlockRegistry.GARLIC_CROP, createCropDrops(BlockRegistry.GARLIC_CROP, ItemRegistry.GARLIC, ItemRegistry.GARLIC, builder));
+        LootItemBlockStatePropertyCondition.Builder builder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(BlockRegistry.GARLIC_CROP.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(GarlicCropBlock.AGE, 5));
+        add(BlockRegistry.GARLIC_CROP.get(), createCropDrops(BlockRegistry.GARLIC_CROP.get(), ItemRegistry.GARLIC.get(), ItemRegistry.GARLIC.get(), builder));
 
-        dropSelf(BlockRegistry.STEEL_BLOCK);
-        dropSelf(BlockRegistry.LAVA_SPRING_BLOCK);
-        dropSelf(BlockRegistry.WATER_SPRING_BLOCK);
+        dropSelf(BlockRegistry.STEEL_BLOCK.get());
+        dropSelf(BlockRegistry.LAVA_SPRING_BLOCK.get());
+        dropSelf(BlockRegistry.WATER_SPRING_BLOCK.get());
     }
 }

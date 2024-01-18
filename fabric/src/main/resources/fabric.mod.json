@@ -1,17 +1,17 @@
 {
     "schemaVersion": 1,
     "id": "${mod_id}",
-    "version": "${version}",
+    "version": "${mod_version}",
     "name": "${mod_name}",
-    "description": "${description}",
+    "description": "${mod_description}",
     "authors": [
         "${mod_author}"
     ],
     "contact": {
-        "homepage": "https://github.com/Stein-N/Resource-Cracker",
-        "sources": "https://github.com/Stein-N/Resource-Cracker"
+        "homepage": "https://fabricmc.net/",
+        "sources": "https://github.com/FabricMC/fabric-example-mod"
     },
-    "license": "${license}",
+    "license": "${mod_license}",
     "icon": "icon.png",
     "environment": "*",
     "entrypoints": {
@@ -30,11 +30,12 @@
         "${mod_id}.fabric.mixins.json"
     ],
     "depends": {
-        "fabricloader": ">=0.15",
-        "fabric": "*",
-        "minecraft": ">=1.20.3 <1.21",
+        "fabricloader": ">=0.14",
+        "fabric-api": "*",
+        "minecraft": ">=1.20",
         "java": ">=17",
-        "simpleconfigapi": ">=0.2.2"
+        "stophoslib": ">=0.0.4",
+        "simpleconfigapi": ">=0.2.5"
     },
     "suggests": {
         "another-mod": "*"

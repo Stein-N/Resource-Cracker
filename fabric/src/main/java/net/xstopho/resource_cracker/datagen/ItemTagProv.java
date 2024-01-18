@@ -3,10 +3,6 @@ package net.xstopho.resource_cracker.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.xstopho.resource_cracker.registries.BlockRegistry;
 import net.xstopho.resource_cracker.registries.ItemRegistry;
@@ -14,47 +10,44 @@ import net.xstopho.resource_cracker.registries.ItemRegistry;
 import java.util.concurrent.CompletableFuture;
 
 public class ItemTagProv extends FabricTagProvider.ItemTagProvider {
-
-    public static final TagKey<Item> CRACK_HAMMER = TagKey.create(Registries.ITEM, new ResourceLocation("c", "crack_hammers"));
-    public static final TagKey<Item> CRAFT_INGREDIENTS = TagKey.create(Registries.ITEM, new ResourceLocation("c", "craft_ingredients"));
-    public static final TagKey<Item> CHISEL = TagKey.create(Registries.ITEM, new ResourceLocation("c", "chisels"));
-    public static final TagKey<Item> SCYTHE = TagKey.create(Registries.ITEM, new ResourceLocation("c", "scythes"));
-
     public ItemTagProv(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> completableFuture) {
         super(output, completableFuture);
     }
 
     @Override
     protected void addTags(HolderLookup.Provider arg) {
-        getOrCreateTagBuilder(CRACK_HAMMER)
-                .add(ItemRegistry.CRACK_HAMMER_COPPER, ItemRegistry.CRACK_HAMMER_IRON, ItemRegistry.CRACK_HAMMER_GOLD,
-                        ItemRegistry.CRACK_HAMMER_DIAMOND, ItemRegistry.CRACK_HAMMER_NETHERITE, ItemRegistry.CRACK_HAMMER_STEEL);
+        getOrCreateTagBuilder(FabricItemTags.CRACK_HAMMER)
+                .add(ItemRegistry.CRACK_HAMMER_COPPER.get(), ItemRegistry.CRACK_HAMMER_GOLD.get(), ItemRegistry.CRACK_HAMMER_IRON.get(),
+                        ItemRegistry.CRACK_HAMMER_STEEL.get(), ItemRegistry.CRACK_HAMMER_DIAMOND.get(), ItemRegistry.CRACK_HAMMER_NETHERITE.get());
 
-        getOrCreateTagBuilder(CHISEL)
-                .add(ItemRegistry.CHISEL_COPPER, ItemRegistry.CHISEL_GOLD, ItemRegistry.CHISEL_IRON,
-                        ItemRegistry.CHISEL_DIAMOND, ItemRegistry.CHISEL_NETHERITE, ItemRegistry.CHISEL_STEEL);
+        getOrCreateTagBuilder(FabricItemTags.CHISEL)
+                .add(ItemRegistry.CHISEL_COPPER.get(), ItemRegistry.CHISEL_GOLD.get(), ItemRegistry.CHISEL_IRON.get(),
+                        ItemRegistry.CHISEL_STEEL.get(), ItemRegistry.CHISEL_DIAMOND.get(), ItemRegistry.CHISEL_NETHERITE.get());
 
-        getOrCreateTagBuilder(SCYTHE)
-                .add(ItemRegistry.SCYTHE_COPPER, ItemRegistry.SCYTHE_IRON, ItemRegistry.SCYTHE_GOLD,
-                        ItemRegistry.SCYTHE_STEEL, ItemRegistry.SCYTHE_DIAMOND, ItemRegistry.SCYTHE_NETHERITE);
+        getOrCreateTagBuilder(FabricItemTags.SCYTHE)
+                .add(ItemRegistry.SCYTHE_COPPER.get(), ItemRegistry.SCYTHE_GOLD.get(), ItemRegistry.SCYTHE_IRON.get(),
+                        ItemRegistry.SCYTHE_STEEL.get(), ItemRegistry.SCYTHE_DIAMOND.get(), ItemRegistry.SCYTHE_NETHERITE.get());
 
-        getOrCreateTagBuilder(CRAFT_INGREDIENTS)
-                .add(Items.LEATHER, Items.STRING, Items.RABBIT_HIDE);
+        getOrCreateTagBuilder(FabricItemTags.CRAFTING_INGREDIENTS)
+                .add(Items.STRING, Items.LEATHER, Items.RABBIT_HIDE);
 
-        getOrCreateTagBuilder(TagKey.create(Registries.ITEM, new ResourceLocation("c", "coal_dusts"))).add(ItemRegistry.MATERIAL_DUST_CARBON);
-        getOrCreateTagBuilder(TagKey.create(Registries.ITEM, new ResourceLocation("c", "carbon_dusts"))).add(ItemRegistry.MATERIAL_DUST_CARBON);
-        getOrCreateTagBuilder(TagKey.create(Registries.ITEM, new ResourceLocation("c", "copper_dusts"))).add(ItemRegistry.MATERIAL_DUST_COPPER);
-        getOrCreateTagBuilder(TagKey.create(Registries.ITEM, new ResourceLocation("c", "iron_dusts"))).add(ItemRegistry.MATERIAL_DUST_IRON);
-        getOrCreateTagBuilder(TagKey.create(Registries.ITEM, new ResourceLocation("c", "gold_dusts"))).add(ItemRegistry.MATERIAL_DUST_GOLD);
-        getOrCreateTagBuilder(TagKey.create(Registries.ITEM, new ResourceLocation("c", "diamond_dusts"))).add(ItemRegistry.MATERIAL_DUST_DIAMOND);
-        getOrCreateTagBuilder(TagKey.create(Registries.ITEM, new ResourceLocation("c", "diamond_nuggets"))).add(ItemRegistry.DIAMOND_NUGGET);
-        getOrCreateTagBuilder(TagKey.create(Registries.ITEM, new ResourceLocation("c", "emerald_dusts"))).add(ItemRegistry.MATERIAL_DUST_EMERALD);
-        getOrCreateTagBuilder(TagKey.create(Registries.ITEM, new ResourceLocation("c", "sulfur_dusts"))).add(ItemRegistry.MATERIAL_DUST_SULFUR);
-        getOrCreateTagBuilder(TagKey.create(Registries.ITEM, new ResourceLocation("c", "saltpeter_dusts"))).add(ItemRegistry.MATERIAL_DUST_SALTPETER);
-        getOrCreateTagBuilder(TagKey.create(Registries.ITEM, new ResourceLocation("c", "steel_dusts"))).add(ItemRegistry.MATERIAL_DUST_STEEL);
-        getOrCreateTagBuilder(TagKey.create(Registries.ITEM, new ResourceLocation("c", "steel_ingots"))).add(ItemRegistry.STEEL_INGOT);
-        getOrCreateTagBuilder(TagKey.create(Registries.ITEM, new ResourceLocation("c", "steel_blocks"))).add(BlockRegistry.STEEL_BLOCK.asItem());
-        getOrCreateTagBuilder(TagKey.create(Registries.ITEM, new ResourceLocation("c", "netherite_scrap_dusts"))).add(ItemRegistry.MATERIAL_DUST_NETHERITE_SCRAP);
-        getOrCreateTagBuilder(TagKey.create(Registries.ITEM, new ResourceLocation("c", "netherite_dusts"))).add(ItemRegistry.MATERIAL_DUST_NETHERITE);
+        getOrCreateTagBuilder(FabricItemTags.COAL_DUSTS).add(ItemRegistry.MATERIAL_DUST_CARBON.get());
+        getOrCreateTagBuilder(FabricItemTags.CARBON_DUSTS).add(ItemRegistry.MATERIAL_DUST_CARBON.get());
+        getOrCreateTagBuilder(FabricItemTags.COPPER_DUSTS).add(ItemRegistry.MATERIAL_DUST_COPPER.get());
+        getOrCreateTagBuilder(FabricItemTags.IRON_DUSTS).add(ItemRegistry.MATERIAL_DUST_IRON.get());
+
+        getOrCreateTagBuilder(FabricItemTags.GOLD_DUSTS).add(ItemRegistry.MATERIAL_DUST_GOLD.get());
+        getOrCreateTagBuilder(FabricItemTags.DIAMOND_DUSTS).add(ItemRegistry.MATERIAL_DUST_DIAMOND.get());
+        getOrCreateTagBuilder(FabricItemTags.EMERALD_DUSTS).add(ItemRegistry.MATERIAL_DUST_EMERALD.get());
+        getOrCreateTagBuilder(FabricItemTags.SULFUR_DUSTS).add(ItemRegistry.MATERIAL_DUST_SULFUR.get());
+
+        getOrCreateTagBuilder(FabricItemTags.SALTPETER_DUSTS).add(ItemRegistry.MATERIAL_DUST_SALTPETER.get());
+        getOrCreateTagBuilder(FabricItemTags.STEEL_DUSTS).add(ItemRegistry.MATERIAL_DUST_STEEL.get());
+        getOrCreateTagBuilder(FabricItemTags.NETHERITE_SCRAP_DUSTS).add(ItemRegistry.MATERIAL_DUST_NETHERITE_SCRAP.get());
+        getOrCreateTagBuilder(FabricItemTags.NETHERITE_DUSTS).add(ItemRegistry.MATERIAL_DUST_NETHERITE.get());
+
+        getOrCreateTagBuilder(FabricItemTags.DIAMOND_NUGGETS).add(ItemRegistry.NUGGET_DIAMOND.get());
+        getOrCreateTagBuilder(FabricItemTags.STEEL_INGOTS).add(ItemRegistry.STEEL_INGOT.get());
+        getOrCreateTagBuilder(FabricItemTags.STEEL_BLOCKS).add(BlockRegistry.STEEL_BLOCK.get().asItem());
     }
 }

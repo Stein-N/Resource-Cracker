@@ -9,7 +9,7 @@
       "item": "minecraft:stick"
     },
     "T": {
-      "tag": "c:craft_ingredients"
+      "tag": "c:crafting_ingredients"
     }
   },
   "pattern": [
