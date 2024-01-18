@@ -22,7 +22,6 @@ sourceSets {
         compileClasspath += main.compileClasspath
         runtimeClasspath += main.runtimeClasspath
     }
-    main.resources.srcDir file("src/main/generated")
 }
 
 loom {

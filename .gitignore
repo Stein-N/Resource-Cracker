@@ -18,4 +18,4 @@ classes/
 .settings
 *.launch
 /fabric/src/main/generated/
-/forge/src/maingenerated/
+/forge/src/main/generated/

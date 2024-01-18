@@ -77,12 +77,12 @@ public class Recipes {
         if (compress) {
             ShapedRecipeBuilder.shaped(RecipeCategory.MISC, output, 1).pattern("###").pattern("###").pattern("###")
                     .define('#', input).unlockedBy(getHasName(input), has(input))
-                    .save(exporter, location(getSimpleRecipeName(output) + "_from_" + getSimpleRecipeName(input)));
+                    .save(exporter, location("compress/" + getSimpleRecipeName(output) + "_from_" + getSimpleRecipeName(input)));
         }
         if (decompress) {
             ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, input, 9)
                     .requires(output).unlockedBy(getHasName(output), has(output))
-                    .save(exporter, location(getSimpleRecipeName(input) + "_from_" + getSimpleRecipeName(output)));
+                    .save(exporter, location("decompress/" + getSimpleRecipeName(input) + "_from_" + getSimpleRecipeName(output)));
         }
     }
 

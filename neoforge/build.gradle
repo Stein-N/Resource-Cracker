@@ -35,11 +35,6 @@ loom {
     }
 }
 
-sourceSets {
-    main.resources.srcDir project(":forge").file("src/main/generated")
-
-}
-
 tasks.withType(JavaCompile).configureEach {
     source(project(":common").sourceSets.main.allSource)
 }
@@ -51,4 +46,7 @@ tasks.named("sourcesJar", Jar) {
 }
 processResources {
     from project(":common").sourceSets.main.resources
+    if(project(":forge").file("src/main/generated").exists()) {
+        from project(":forge").file("src/main/generated")
+    }
 }
