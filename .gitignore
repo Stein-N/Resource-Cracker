@@ -17,5 +17,5 @@ classes/
 .vscode
 .settings
 *.launch
-/fabric/src/main/generated/
 /forge/src/main/generated/
+/fabric/src/main/generated/
