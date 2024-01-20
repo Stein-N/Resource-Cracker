@@ -63,5 +63,6 @@ public class ModelProv extends FabricModelProvider {
         item.generateFlatItem(ItemRegistry.NUGGET_DIAMOND.get(), ModelTemplates.FLAT_ITEM);
 
         item.generateFlatItem(ItemRegistry.BEEF_JERKY.get(), ModelTemplates.FLAT_ITEM);
+        item.generateFlatItem(ItemRegistry.GARLIC.get(), ModelTemplates.FLAT_ITEM);
     }
 }

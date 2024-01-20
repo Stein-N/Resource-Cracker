@@ -10,7 +10,7 @@ public class ForgeItemTags {
     public static final TagKey<Item> CRACK_HAMMER = getTagKey("tools/crack_hammer");
     public static final TagKey<Item> CHISEL = getTagKey("tools/chisel");
     public static final TagKey<Item> SCYTHE = getTagKey("tools/scythe");
-    public static final TagKey<Item> CRAFTING_INGREDINTS = getTagKey("tools/crafting_ingredients");
+    public static final TagKey<Item> CRAFTING_INGREDIENTS = getTagKey("tools/crafting_ingredients");
 
     public static final TagKey<Item> COAL_DUSTS = getTagKey("dusts/coal");
     public static final TagKey<Item> CARBON_DUSTS = getTagKey("dusts/carbon");

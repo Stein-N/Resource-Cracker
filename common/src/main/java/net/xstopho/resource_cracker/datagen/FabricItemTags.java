@@ -10,7 +10,7 @@ public class FabricItemTags {
     public static final TagKey<Item> CRACK_HAMMER = getTagKey("crack_hammer");
     public static final TagKey<Item> CHISEL = getTagKey("chisel");
     public static final TagKey<Item> SCYTHE = getTagKey("scythe");
-    public static final TagKey<Item> CRAFTING_INGREDINTS = getTagKey("crafting_ingredients");
+    public static final TagKey<Item> CRAFTING_INGREDIENTS = getTagKey("crafting_ingredients");
 
     public static final TagKey<Item> COAL_DUSTS = getTagKey("coal_dusts");
     public static final TagKey<Item> CARBON_DUSTS = getTagKey("carbon_dusts");

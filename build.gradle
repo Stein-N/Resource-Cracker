@@ -1,32 +1,64 @@
 plugins {
-    id 'java'
-    id "architectury-plugin" version "3.4-SNAPSHOT"
-    id "dev.architectury.loom" version "1.4-SNAPSHOT" apply false
-}
-
-architectury {
-    minecraft = minecraft_version
+    // Required for NeoGradle
+    id "org.jetbrains.gradle.plugin.idea-ext" version "1.1.7"
 }
 
 subprojects {
     apply plugin: 'java'
-    apply plugin: "dev.architectury.loom"
+    apply plugin: 'idea'
 
-    loom {
-        silentMojangMappingsLicense()
+    java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+    java.withSourcesJar()
+    java.withJavadocJar()
+
+    jar {
+        from(rootProject.file("LICENSE")) {
+            rename { "${it}_${mod_name}" }
+        }
+        manifest {
+            attributes([
+                    'Specification-Title'     : mod_name,
+                    'Specification-Vendor'    : mod_author,
+                    'Specification-Version'   : project.jar.archiveVersion,
+                    'Implementation-Title'    : project.name,
+                    'Implementation-Version'  : project.jar.archiveVersion,
+                    'Implementation-Vendor'   : mod_author,
+                    'Implementation-Timestamp': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                    'Timestamp'               : System.currentTimeMillis(),
+                    'Built-On-Java'           : "${System.getProperty('java.vm.version')} (${System.getProperty('java.vm.vendor')})",
+                    'Built-On-Minecraft'      : minecraft_version
+            ])
+        }
     }
 
-    dependencies {
-        minecraft "com.mojang:minecraft:${minecraft_version}"
-        // The following line declares the mojmap mappings, you may use other mappings as well
-        mappings loom.officialMojangMappings()
+    sourcesJar {
+        from(rootProject.file("LICENSE")) {
+            rename { "${it}_${mod_name}" }
+        }
+    }
+
+    repositories {
+        mavenCentral()
+        maven { url 'https://repo.spongepowered.org/repository/maven-public/' }
+        maven { url 'https://raw.githubusercontent.com/Stein-N/resources/main/maven' }
+    }
+
+    tasks.withType(JavaCompile).configureEach {
+        it.options.encoding = 'UTF-8'
+        it.options.getRelease().set(17)
+    }
+    tasks.withType(Javadoc).configureEach {
+        options.addStringOption('Xdoclint:none', '-quiet')
     }
 
     processResources {
-        def expandProps =[
+        def expandProps = [
+                // Project related Keys
+                "version": version,
+                "group": project.group,
+
                 // Mod related Keys
-                "mod_version": mod_version,
-                "maven_group": maven_group,
+                "mod_version": version,
                 "minecraft_version": minecraft_version,
                 "mod_name": mod_name,
                 "mod_author": mod_author,
@@ -51,32 +83,17 @@ subprojects {
                 "neoforge_version": neoforge_version,
                 "neoforge_loader_version_range": neoforge_loader_version_range
         ]
+
         filesMatching(['pack.mcmeta', 'fabric.mod.json', 'META-INF/mods.toml', '*.mixins.json']) {
             expand expandProps
         }
         inputs.properties(expandProps)
     }
-}
 
-allprojects {
-    apply plugin: "java"
-    apply plugin: "architectury-plugin"
-
-    version = mod_version
-    group = maven_group
-
-    repositories {
-        maven { url "https://maven.neoforged.net/releases/" }
-        maven { url = 'https://raw.githubusercontent.com/Stein-N/resources/main/maven' }
-    }
-
-    tasks.withType(JavaCompile) {
-        options.encoding = "UTF-8"
-        options.release = 17
-    }
-
-    java {
-        withSourcesJar()
-        withJavadocJar()
+    // Disables Gradle's custom module metadata from being published to maven. The
+    // metadata includes mapped dependencies which are not reasonably consumable by
+    // other mod developers.
+    tasks.withType(GenerateModuleMetadata).configureEach {
+        enabled = false
     }
 }

@@ -1,33 +1,15 @@
+plugins {
+    id 'fabric-loom' version '1.5-SNAPSHOT'
+}
+
 base {
-    archivesName = "${mod_id}-fabric"
-}
-
-architectury {
-    platformSetupLoomIde()
-    fabric()
-}
-
-loom {
-    if(project(":common").file("src/main/resources/${mod_id}.accesswidener").exists()){
-        accessWidenerPath.set(project(":common").file("src/main/resources/${mod_id}.accesswidener"))
-    }
-    mixin {
-        defaultRefmapName.set("${mod_id}.refmap.json")
-    }
-
-    runs {
-        client {
-            client()
-            setConfigName("Fabric Client")
-        }
-        server {
-            server()
-            setConfigName("Fabric Server")
-        }
-    }
+    archivesName = "${mod_id}-fabric-1.20-1.20.2"
 }
 
 dependencies {
+    minecraft "com.mojang:minecraft:${minecraft_version}"
+    mappings loom.officialMojangMappings()
+
     modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
     modApi "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
 
@@ -38,11 +20,42 @@ dependencies {
     compileOnly project(":common")
 }
 
+loom {
+    if (project(":common").file("src/main/resources/${mod_id}.accesswidener").exists()) {
+        accessWidenerPath.set(project(":common").file("src/main/resources/${mod_id}.accesswidener"))
+    }
+    mixin {
+        defaultRefmapName.set("${mod_id}.refmap.json")
+    }
+    runs {
+        client {
+            client()
+            setConfigName("Fabric Client")
+            ideConfigGenerated(true)
+            runDir("run")
+        }
+        server {
+            server()
+            setConfigName("Fabric Server")
+            ideConfigGenerated(true)
+            runDir("run")
+        }
+        datagen {
+            inherit server
+            name "Fabric Datagen"
+            vmArg "-Dfabric-api.datagen"
+            vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
+            vmArg "-Dfabric-api.datagen.modid=${mod_id}"
+
+            runDir "build/datagen"
+        }
+    }
+}
+
 tasks.withType(JavaCompile).configureEach {
     source(project(":common").sourceSets.main.allSource)
 }
 tasks.withType(Javadoc).configureEach {
-    options.addStringOption('Xdoclint:none', '-quiet')
     source(project(":common").sourceSets.main.allJava)
 }
 tasks.named("sourcesJar", Jar) {
@@ -51,4 +64,5 @@ tasks.named("sourcesJar", Jar) {
 
 processResources {
     from project(":common").sourceSets.main.resources
+    from file("src/main/generated")
 }

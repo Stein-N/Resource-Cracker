@@ -2,7 +2,6 @@ package net.xstopho.resource_cracker.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
@@ -11,8 +10,6 @@ import net.minecraft.world.item.Items;
 import net.xstopho.resource_cracker.registries.BlockRegistry;
 import net.xstopho.resource_cracker.registries.ItemRegistry;
 
-import java.util.function.Consumer;
-
 public class RecipeProv extends FabricRecipeProvider {
     public RecipeProv(FabricDataOutput output) {
         super(output);
@@ -20,11 +17,11 @@ public class RecipeProv extends FabricRecipeProvider {
 
     @Override
     public void buildRecipes(RecipeOutput exporter) {
-        Recipes.crackHammerRecipe(exporter, ItemRegistry.CRACK_HAMMER_COPPER.get(), Items.COPPER_INGOT, FabricItemTags.CRAFTING_INGREDINTS);
-        Recipes.crackHammerRecipe(exporter, ItemRegistry.CRACK_HAMMER_GOLD.get(), Items.GOLD_INGOT, FabricItemTags.CRAFTING_INGREDINTS);
-        Recipes.crackHammerRecipe(exporter, ItemRegistry.CRACK_HAMMER_IRON.get(), Items.IRON_INGOT, FabricItemTags.CRAFTING_INGREDINTS);
-        Recipes.crackHammerRecipe(exporter, ItemRegistry.CRACK_HAMMER_DIAMOND.get(), Items.DIAMOND, FabricItemTags.CRAFTING_INGREDINTS);
-        Recipes.crackHammerRecipe(exporter, ItemRegistry.CRACK_HAMMER_STEEL.get(), ItemRegistry.STEEL_INGOT.get(), FabricItemTags.CRAFTING_INGREDINTS);
+        Recipes.crackHammerRecipe(exporter, ItemRegistry.CRACK_HAMMER_COPPER.get(), Items.COPPER_INGOT, FabricItemTags.CRAFTING_INGREDIENTS);
+        Recipes.crackHammerRecipe(exporter, ItemRegistry.CRACK_HAMMER_GOLD.get(), Items.GOLD_INGOT, FabricItemTags.CRAFTING_INGREDIENTS);
+        Recipes.crackHammerRecipe(exporter, ItemRegistry.CRACK_HAMMER_IRON.get(), Items.IRON_INGOT, FabricItemTags.CRAFTING_INGREDIENTS);
+        Recipes.crackHammerRecipe(exporter, ItemRegistry.CRACK_HAMMER_DIAMOND.get(), Items.DIAMOND, FabricItemTags.CRAFTING_INGREDIENTS);
+        Recipes.crackHammerRecipe(exporter, ItemRegistry.CRACK_HAMMER_STEEL.get(), ItemRegistry.STEEL_INGOT.get(), FabricItemTags.CRAFTING_INGREDIENTS);
         Recipes.netheriteUpgrade(exporter, ItemRegistry.CRACK_HAMMER_NETHERITE.get(), ItemRegistry.CRACK_HAMMER_DIAMOND.get());
 
         /*  Chisel  */
@@ -36,11 +33,11 @@ public class RecipeProv extends FabricRecipeProvider {
         Recipes.netheriteUpgrade(exporter, ItemRegistry.CHISEL_NETHERITE.get(), ItemRegistry.CHISEL_DIAMOND.get());
 
         /* Scythe */
-        Recipes.scytheRecipe(exporter, ItemRegistry.SCYTHE_COPPER.get(), Items.COPPER_INGOT, FabricItemTags.CRAFTING_INGREDINTS);
-        Recipes.scytheRecipe(exporter, ItemRegistry.SCYTHE_IRON.get(), Items.IRON_INGOT, FabricItemTags.CRAFTING_INGREDINTS);
-        Recipes.scytheRecipe(exporter, ItemRegistry.SCYTHE_GOLD.get(), Items.GOLD_INGOT, FabricItemTags.CRAFTING_INGREDINTS);
-        Recipes.scytheRecipe(exporter, ItemRegistry.SCYTHE_STEEL.get(), ItemRegistry.STEEL_INGOT.get(), FabricItemTags.CRAFTING_INGREDINTS);
-        Recipes.scytheRecipe(exporter, ItemRegistry.SCYTHE_DIAMOND.get(), Items.DIAMOND, FabricItemTags.CRAFTING_INGREDINTS);
+        Recipes.scytheRecipe(exporter, ItemRegistry.SCYTHE_COPPER.get(), Items.COPPER_INGOT, FabricItemTags.CRAFTING_INGREDIENTS);
+        Recipes.scytheRecipe(exporter, ItemRegistry.SCYTHE_IRON.get(), Items.IRON_INGOT, FabricItemTags.CRAFTING_INGREDIENTS);
+        Recipes.scytheRecipe(exporter, ItemRegistry.SCYTHE_GOLD.get(), Items.GOLD_INGOT, FabricItemTags.CRAFTING_INGREDIENTS);
+        Recipes.scytheRecipe(exporter, ItemRegistry.SCYTHE_STEEL.get(), ItemRegistry.STEEL_INGOT.get(), FabricItemTags.CRAFTING_INGREDIENTS);
+        Recipes.scytheRecipe(exporter, ItemRegistry.SCYTHE_DIAMOND.get(), Items.DIAMOND, FabricItemTags.CRAFTING_INGREDIENTS);
         Recipes.netheriteUpgrade(exporter, ItemRegistry.SCYTHE_NETHERITE.get(), ItemRegistry.SCYTHE_DIAMOND.get());
 
         Recipes.materialDustRecipe(exporter, ItemRegistry.MATERIAL_DUST_CARBON.get(), Items.CHARCOAL, 2);

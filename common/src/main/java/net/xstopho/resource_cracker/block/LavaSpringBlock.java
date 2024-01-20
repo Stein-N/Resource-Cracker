@@ -21,8 +21,8 @@ import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 
 public class LavaSpringBlock extends Block {
-    public LavaSpringBlock(Properties properties) {
-        super(properties);
+    public LavaSpringBlock() {
+        super(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK));
         this.registerDefaultState(defaultBlockState().setValue(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH));
     }
 

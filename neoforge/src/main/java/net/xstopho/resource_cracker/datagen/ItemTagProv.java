@@ -34,7 +34,7 @@ public class ItemTagProv extends ItemTagsProvider {
                 .add(ItemRegistry.SCYTHE_COPPER.get(), ItemRegistry.SCYTHE_GOLD.get(), ItemRegistry.SCYTHE_IRON.get(),
                         ItemRegistry.SCYTHE_STEEL.get(), ItemRegistry.SCYTHE_DIAMOND.get(), ItemRegistry.SCYTHE_NETHERITE.get());
 
-        this.tag(ForgeItemTags.CRAFTING_INGREDINTS)
+        this.tag(ForgeItemTags.CRAFTING_INGREDIENTS)
                 .add(Items.STRING, Items.LEATHER, Items.RABBIT_HIDE);
 
         this.tag(ForgeItemTags.COAL_DUSTS).add(ItemRegistry.MATERIAL_DUST_CARBON.get());

@@ -15,21 +15,21 @@
     "icon": "icon.png",
     "environment": "*",
     "entrypoints": {
-        "main": [
-            "net.xstopho.resource_cracker.ResourceCracker"
-        ]
+        "main": [ "net.xstopho.resource_cracker.ResourceCracker" ],
+        "client": [ "net.xstopho.resource_cracker.ResourceCrackerClient" ],
+        "fabric-datagen": [ "net.xstopho.resource_cracker.ResourceCrackerDatagen" ]
     },
     "mixins": [
         "${mod_id}.mixins.json",
         "${mod_id}.fabric.mixins.json"
     ],
     "depends": {
-        "fabricloader": ">=0.14",
+        "fabricloader": ">=0.15",
         "fabric-api": "*",
-        "minecraft": ">=1.20",
+        "minecraft": ">=1.20 <1.20.3",
         "java": ">=17",
-        "stophoslib": ">=0.0.4",
-        "simpleconfigapi": ">=0.2.5"
+        "stophoslib": ">=0.0.6",
+        "simpleconfigapi": ">=0.2.7"
     },
     "suggests": {
         "another-mod": "*"

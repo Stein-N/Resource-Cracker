@@ -1,6 +1,7 @@
 build/
 *.ipr
 run/
+runs/
 *.iws
 out/
 *.iml
@@ -17,7 +18,6 @@ classes/
 .vscode
 .settings
 *.launch
-/fabric/src/main/generated/
-/forge/src/generated/
-/neoforge/src/generated/
-/.architectury-transformer/
+/fabric/src/main/generated
+/forge/src/generated
+/neoforge/src/generated
