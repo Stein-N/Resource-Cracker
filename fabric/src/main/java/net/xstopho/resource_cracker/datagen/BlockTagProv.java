@@ -21,4 +21,5 @@ public class BlockTagProv extends FabricTagProvider.BlockTagProvider{
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(BlockRegistry.STEEL_BLOCK.get(), BlockRegistry.LAVA_SPRING_BLOCK.get(), BlockRegistry.WATER_SPRING_BLOCK.get());
     }
+
 }

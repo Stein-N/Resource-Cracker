@@ -7,8 +7,6 @@ import net.minecraft.world.item.Items;
 import net.xstopho.resource_cracker.registries.BlockRegistry;
 import net.xstopho.resource_cracker.registries.ItemRegistry;
 
-import java.util.function.Consumer;
-
 public class RecipeProv extends RecipeProvider {
     public RecipeProv(PackOutput output) {
         super(output);
@@ -16,11 +14,11 @@ public class RecipeProv extends RecipeProvider {
 
     @Override
     protected void buildRecipes(RecipeOutput exporter) {
-        Recipes.crackHammerRecipe(exporter, ItemRegistry.CRACK_HAMMER_COPPER.get(), Items.COPPER_INGOT, FabricItemTags.CRAFTING_INGREDIENTS);
-        Recipes.crackHammerRecipe(exporter, ItemRegistry.CRACK_HAMMER_GOLD.get(), Items.GOLD_INGOT, FabricItemTags.CRAFTING_INGREDIENTS);
-        Recipes.crackHammerRecipe(exporter, ItemRegistry.CRACK_HAMMER_IRON.get(), Items.IRON_INGOT, FabricItemTags.CRAFTING_INGREDIENTS);
-        Recipes.crackHammerRecipe(exporter, ItemRegistry.CRACK_HAMMER_DIAMOND.get(), Items.DIAMOND, FabricItemTags.CRAFTING_INGREDIENTS);
-        Recipes.crackHammerRecipe(exporter, ItemRegistry.CRACK_HAMMER_STEEL.get(), ItemRegistry.STEEL_INGOT.get(), FabricItemTags.CRAFTING_INGREDIENTS);
+        Recipes.crackHammerRecipe(exporter, ItemRegistry.CRACK_HAMMER_COPPER.get(), Items.COPPER_INGOT, ForgeItemTags.CRAFTING_INGREDIENTS);
+        Recipes.crackHammerRecipe(exporter, ItemRegistry.CRACK_HAMMER_GOLD.get(), Items.GOLD_INGOT, ForgeItemTags.CRAFTING_INGREDIENTS);
+        Recipes.crackHammerRecipe(exporter, ItemRegistry.CRACK_HAMMER_IRON.get(), Items.IRON_INGOT, ForgeItemTags.CRAFTING_INGREDIENTS);
+        Recipes.crackHammerRecipe(exporter, ItemRegistry.CRACK_HAMMER_DIAMOND.get(), Items.DIAMOND, ForgeItemTags.CRAFTING_INGREDIENTS);
+        Recipes.crackHammerRecipe(exporter, ItemRegistry.CRACK_HAMMER_STEEL.get(), ItemRegistry.STEEL_INGOT.get(), ForgeItemTags.CRAFTING_INGREDIENTS);
         Recipes.netheriteUpgrade(exporter, ItemRegistry.CRACK_HAMMER_NETHERITE.get(), ItemRegistry.CRACK_HAMMER_DIAMOND.get());
 
         /*  Chisel  */
@@ -32,11 +30,11 @@ public class RecipeProv extends RecipeProvider {
         Recipes.netheriteUpgrade(exporter, ItemRegistry.CHISEL_NETHERITE.get(), ItemRegistry.CHISEL_DIAMOND.get());
 
         /* Scythe */
-        Recipes.scytheRecipe(exporter, ItemRegistry.SCYTHE_COPPER.get(), Items.COPPER_INGOT, FabricItemTags.CRAFTING_INGREDIENTS);
-        Recipes.scytheRecipe(exporter, ItemRegistry.SCYTHE_IRON.get(), Items.IRON_INGOT, FabricItemTags.CRAFTING_INGREDIENTS);
-        Recipes.scytheRecipe(exporter, ItemRegistry.SCYTHE_GOLD.get(), Items.GOLD_INGOT, FabricItemTags.CRAFTING_INGREDIENTS);
-        Recipes.scytheRecipe(exporter, ItemRegistry.SCYTHE_STEEL.get(), ItemRegistry.STEEL_INGOT.get(), FabricItemTags.CRAFTING_INGREDIENTS);
-        Recipes.scytheRecipe(exporter, ItemRegistry.SCYTHE_DIAMOND.get(), Items.DIAMOND, FabricItemTags.CRAFTING_INGREDIENTS);
+        Recipes.scytheRecipe(exporter, ItemRegistry.SCYTHE_COPPER.get(), Items.COPPER_INGOT, ForgeItemTags.CRAFTING_INGREDIENTS);
+        Recipes.scytheRecipe(exporter, ItemRegistry.SCYTHE_IRON.get(), Items.IRON_INGOT, ForgeItemTags.CRAFTING_INGREDIENTS);
+        Recipes.scytheRecipe(exporter, ItemRegistry.SCYTHE_GOLD.get(), Items.GOLD_INGOT, ForgeItemTags.CRAFTING_INGREDIENTS);
+        Recipes.scytheRecipe(exporter, ItemRegistry.SCYTHE_STEEL.get(), ItemRegistry.STEEL_INGOT.get(), ForgeItemTags.CRAFTING_INGREDIENTS);
+        Recipes.scytheRecipe(exporter, ItemRegistry.SCYTHE_DIAMOND.get(), Items.DIAMOND, ForgeItemTags.CRAFTING_INGREDIENTS);
         Recipes.netheriteUpgrade(exporter, ItemRegistry.SCYTHE_NETHERITE.get(), ItemRegistry.SCYTHE_DIAMOND.get());
 
         Recipes.materialDustRecipe(exporter, ItemRegistry.MATERIAL_DUST_CARBON.get(), Items.CHARCOAL, 2);
@@ -58,8 +56,8 @@ public class RecipeProv extends RecipeProvider {
         Recipes.materialDustRecipe(exporter, ItemRegistry.MATERIAL_DUST_EMERALD.get(), Items.DEEPSLATE_EMERALD_ORE, 2);
         Recipes.materialDustRecipe(exporter, ItemRegistry.MATERIAL_DUST_NETHERITE_SCRAP.get(), Items.ANCIENT_DEBRIS, 2);
 
-        Recipes.springBlockRecipe(exporter, BlockRegistry.WATER_SPRING_BLOCK.get(), Items.WATER_BUCKET, FabricItemTags.STEEL_BLOCKS);
-        Recipes.springBlockRecipe(exporter, BlockRegistry.LAVA_SPRING_BLOCK.get(), Items.LAVA_BUCKET, FabricItemTags.STEEL_BLOCKS);
+        Recipes.springBlockRecipe(exporter, BlockRegistry.WATER_SPRING_BLOCK.get(), Items.WATER_BUCKET, ForgeItemTags.STEEL_BLOCKS);
+        Recipes.springBlockRecipe(exporter, BlockRegistry.LAVA_SPRING_BLOCK.get(), Items.LAVA_BUCKET, ForgeItemTags.STEEL_BLOCKS);
 
         Recipes.processingRecipes(exporter, ItemRegistry.MATERIAL_DUST_COPPER.get(), Items.COPPER_INGOT, true, true, false, true);
         Recipes.processingRecipes(exporter, ItemRegistry.MATERIAL_DUST_IRON.get(), Items.IRON_INGOT, true, true, false, true);
@@ -80,16 +78,16 @@ public class RecipeProv extends RecipeProvider {
         // Netherite Dust Recipe
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ItemRegistry.MATERIAL_DUST_NETHERITE.get(), 1)
                 .pattern("AAA").pattern("AGG").pattern("GG ")
-                .define('A', FabricItemTags.NETHERITE_SCRAP_DUSTS)
-                .define('G', FabricItemTags.GOLD_DUSTS)
+                .define('A', ForgeItemTags.NETHERITE_SCRAP_DUSTS)
+                .define('G', ForgeItemTags.GOLD_DUSTS)
                 .unlockedBy(getHasName(ItemRegistry.MATERIAL_DUST_NETHERITE_SCRAP.get()), has(ItemRegistry.MATERIAL_DUST_NETHERITE_SCRAP.get()))
                 .save(exporter, new ResourceLocation("crafting/" + getSimpleRecipeName(ItemRegistry.MATERIAL_DUST_NETHERITE.get())));
 
         // Steeldust Recipe
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ItemRegistry.MATERIAL_DUST_STEEL.get(), 2)
                 .pattern("II").pattern("SS")
-                .define('I', FabricItemTags.IRON_DUSTS)
-                .define('S', FabricItemTags.COAL_DUSTS)
+                .define('I', ForgeItemTags.IRON_DUSTS)
+                .define('S', ForgeItemTags.COAL_DUSTS)
                 .unlockedBy(getHasName(ItemRegistry.MATERIAL_DUST_IRON.get()), has(ItemRegistry.MATERIAL_DUST_IRON.get()))
                 .save(exporter, new ResourceLocation("crafting/" + getSimpleRecipeName(ItemRegistry.MATERIAL_DUST_STEEL.get())));
 
@@ -98,7 +96,7 @@ public class RecipeProv extends RecipeProvider {
                 .pattern("HGS")
                 .define('H', Items.HONEYCOMB)
                 .define('G', Items.GREEN_DYE)
-                .define('S', FabricItemTags.SALTPETER_DUSTS)
+                .define('S', ForgeItemTags.SALTPETER_DUSTS)
                 .unlockedBy(getHasName(Items.HONEYCOMB), has(Items.HONEYCOMB))
                 .unlockedBy(getHasName(Items.GREEN_DYE), has(Items.GREEN_DYE))
                 .unlockedBy(getHasName(ItemRegistry.MATERIAL_DUST_SALTPETER.get()), has(ItemRegistry.MATERIAL_DUST_SALTPETER.get()))
@@ -107,8 +105,8 @@ public class RecipeProv extends RecipeProvider {
         // Gunpowder Recipe
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.GUNPOWDER, 3)
                 .pattern("SPC").define('C', Items.CHARCOAL)
-                .define('P', FabricItemTags.SALTPETER_DUSTS)
-                .define('S', FabricItemTags.SULFUR_DUSTS)
+                .define('P', ForgeItemTags.SALTPETER_DUSTS)
+                .define('S', ForgeItemTags.SULFUR_DUSTS)
                 .unlockedBy(getHasName(ItemRegistry.MATERIAL_DUST_SALTPETER.get()), has(ItemRegistry.MATERIAL_DUST_SALTPETER.get()))
                 .save(exporter, new ResourceLocation("crafting/" + getSimpleRecipeName(Items.GUNPOWDER)));
     }

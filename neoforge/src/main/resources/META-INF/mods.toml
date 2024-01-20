@@ -17,21 +17,21 @@ license = "${mod_license}"
 
 [[dependencies.${mod_id}]]
     modId = "neoforge"
-    mandatory = true
+    required = true
     versionRange = "${neoforge_loader_version_range}"
     ordering = "NONE"
     side = "BOTH"
 
 [[dependencies.${mod_id}]]
     modId = "minecraft"
-    mandatory = true
+    required = true
     versionRange = "${minecraft_version_range}"
     ordering = "NONE"
     side = "BOTH"
 
 [[dependencies.${mod_id}]]
     modId = "simpleconfigapi"
-    mandatory = true
+    required = true
     versionRange = "[0.2.5, )"
     ordering = "NONE"
     side = "BOTH"

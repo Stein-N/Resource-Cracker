@@ -1,6 +1,7 @@
 build/
 *.ipr
 run/
+runs/
 *.iws
 out/
 *.iml
@@ -17,5 +18,6 @@ classes/
 .vscode
 .settings
 *.launch
-/forge/src/main/generated/
-/fabric/src/main/generated/
+/fabric/src/main/generated
+/forge/src/generated
+/neoforge/src/generated
