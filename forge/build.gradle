@@ -4,7 +4,7 @@ plugins {
 }
 
 base {
-    archivesName = "${mod_id}-forge"
+    archivesName = "${mod_id}-forge-1.20.3-1.20.4"
 }
 
 jarJar.enable()

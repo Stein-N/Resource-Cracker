@@ -4,7 +4,7 @@ plugins {
 }
 
 base {
-    archivesName = "${mod_id}-neoforge"
+    archivesName = "${mod_id}-neoforge-1.20.4"
 }
 
 jarJar.enable()
