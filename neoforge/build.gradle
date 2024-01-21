@@ -16,8 +16,8 @@ if (file('src/main/resources/META-INF/accesstransformer.cfg').exists()) {
 dependencies {
     implementation "net.neoforged:neoforge:${neoforge_version}"
 
-    implementation("xstopho.simpleconfigapi:simpleconfigapi-neoforge:${simple_config_api}")
-    implementation("xstopho.stophoslib:stophoslib-neoforge:${stophos_lib}")
+    implementation "xstopho.simpleconfigapi:simpleconfigapi-neoforge:${simple_config_api}"
+    implementation "xstopho.stophoslib:stophoslib-neoforge:${stophos_lib}"
     jarJar("xstopho.stophoslib:stophoslib-neoforge:[${stophos_lib},)")
 
     compileOnly project(":common")

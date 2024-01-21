@@ -34,6 +34,8 @@ public class ItemRegistry {
 
     public static final RegistryObject<Item> STEEL_INGOT = register("steel_ingot");
     public static final RegistryObject<Item> NUGGET_DIAMOND = register("nugget_diamond");
+    public static final RegistryObject<Item> NUGGET_EMERALD = register("nugget_emerald");
+    public static final RegistryObject<Item> NUGGET_COPPER = register("nugget_copper");
 
     public static final RegistryObject<Item> CRACK_HAMMER_COPPER = register("crack_hammer_copper", () -> new CrackHammerItem(Config.CRACK_HAMMER_COPPER.get()));
     public static final RegistryObject<Item> CRACK_HAMMER_GOLD = register("crack_hammer_gold", () -> new CrackHammerItem(Config.CRACK_HAMMER_GOLD.get()));

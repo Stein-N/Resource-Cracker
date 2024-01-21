@@ -57,6 +57,8 @@ public class ItemGroupRegistry {
 
                         output.accept(ItemRegistry.STEEL_INGOT.get());
                         output.accept(ItemRegistry.NUGGET_DIAMOND.get());
+                        output.accept(ItemRegistry.NUGGET_EMERALD.get());
+                        output.accept(ItemRegistry.NUGGET_COPPER.get());
 
                         output.accept(ItemRegistry.GARLIC.get());
                         output.accept(ItemRegistry.BEEF_JERKY.get());

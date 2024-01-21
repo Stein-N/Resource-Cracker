@@ -80,6 +80,8 @@ public class RecipeProv extends RecipeProvider {
 
         Recipes.compressionRecipe(exporter, BlockRegistry.STEEL_BLOCK.get(), ItemRegistry.STEEL_INGOT.get(), true, true);
         Recipes.compressionRecipe(exporter, Items.DIAMOND, ItemRegistry.NUGGET_DIAMOND.get(), true, false);
+        Recipes.compressionRecipe(exporter, Items.EMERALD, ItemRegistry.NUGGET_EMERALD.get(), true, false);
+        Recipes.compressionRecipe(exporter, Items.COPPER_INGOT, ItemRegistry.NUGGET_COPPER.get(), true, true);
 
         // Netherite Dust Recipe
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ItemRegistry.MATERIAL_DUST_NETHERITE.get(), 1)

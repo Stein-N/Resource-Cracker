@@ -7,7 +7,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.xstopho.stophoslib.items.RecipeRemainder;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -32,7 +31,7 @@ public class CrackHammerItem extends Item implements RecipeRemainder {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag flag) {
+    public void appendHoverText(ItemStack stack, Level world, List<Component> tooltip, TooltipFlag flag) {
         tooltip.add(Component.translatable("item.crack_hammer.tooltip").withStyle(ChatFormatting.GOLD));
 
         super.appendHoverText(stack, world, tooltip, flag);

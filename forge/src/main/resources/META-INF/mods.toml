@@ -27,6 +27,6 @@ license = "${mod_license}"
 [[dependencies.${mod_id}]]
     modId = "simpleconfigapi"
     mandatory = true
-    versionRange = "[0.2.5, )"
+    versionRange = "[${simple_config_api}, )"
     ordering = "NONE"
     side = "BOTH"

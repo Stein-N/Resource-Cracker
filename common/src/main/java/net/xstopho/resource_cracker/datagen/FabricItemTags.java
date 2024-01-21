@@ -28,7 +28,10 @@ public class FabricItemTags {
     public static final TagKey<Item> NETHERITE_DUSTS = getTagKey("netherite_dusts");
 
     public static final TagKey<Item> DIAMOND_NUGGETS = getTagKey("diamond_nuggets");
+    public static final TagKey<Item> EMERALD_NUGGETS = getTagKey("emerald_nuggets");
+    public static final TagKey<Item> COPPER_NUGGETS = getTagKey("copper_nuggets");
     public static final TagKey<Item> STEEL_INGOTS = getTagKey("steel_ingots");
+
     public static final TagKey<Item> STEEL_BLOCKS = getTagKey("steel_blocks");
 
     private static TagKey<Item> getTagKey(String id) {
