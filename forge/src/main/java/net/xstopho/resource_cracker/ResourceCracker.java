@@ -43,18 +43,16 @@ public class ResourceCracker {
             ItemBlockRenderTypes.setRenderLayer(BlockRegistry.GARLIC_CROP.get(), RenderType.cutout());
         }
 
-        /* Preparation for an upcoming Update
+
         @SubscribeEvent
         public static void modelRegistry(ModelEvent.RegisterAdditional event) {
-            for (String item : ScytheInHandModel.HAND_MODEL_ITEMS) {
-                event.register(new ModelResourceLocation(new ResourceLocation(Constants.MOD_ID, "in_hand/" + item), "inventory"));
-            }
+            ScytheInHandModel.onRegisterModel(event);
         }
 
         @SubscribeEvent
         public static void renderModel(ModelEvent.ModifyBakingResult event) {
             ScytheInHandModel.onModelBakeEvent(event);
         }
-        */
+
     }
 }

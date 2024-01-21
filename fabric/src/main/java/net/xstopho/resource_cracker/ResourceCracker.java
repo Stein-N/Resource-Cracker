@@ -1,6 +1,9 @@
 package net.xstopho.resource_cracker;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.renderer.v1.material.RenderMaterial;
+import net.minecraft.client.renderer.texture.SpriteContents;
+import net.minecraft.client.resources.model.UnbakedModel;
 import net.xstopho.resource_cracker.config.Config;
 import net.xstopho.resource_cracker.modifier.LootModifier;
 import net.xstopho.resource_cracker.registries.AttributeRegistry;

@@ -6,6 +6,7 @@ import net.minecraft.client.renderer.block.model.ItemOverrides;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.client.resources.model.SimpleBakedModel;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
@@ -15,6 +16,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.ForgeHooksClient;
 import net.minecraftforge.client.event.ModelEvent;
+import net.minecraftforge.client.extensions.IForgeBakedModel;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.xstopho.resource_cracker.Constants;
 import org.jetbrains.annotations.Nullable;
@@ -24,63 +26,45 @@ import java.util.Map;
 
 @OnlyIn(Dist.CLIENT)
 public class ScytheInHandModel {
-    public static final String[] HAND_MODEL_ITEMS = new String[] {"scythe_diamond"};
+
+    @SubscribeEvent
+    public static void onRegisterModel(ModelEvent.RegisterAdditional event) {
+        event.register(location("in_hand/scythe_copper"));
+        event.register(location("in_hand/scythe_gold"));
+        event.register(location("in_hand/scythe_iron"));
+        event.register(location("in_hand/scythe_steel"));
+        event.register(location("in_hand/scythe_diamond"));
+        event.register(location("in_hand/scythe_netherite"));
+    }
 
     @SubscribeEvent
     public static void onModelBakeEvent(ModelEvent.ModifyBakingResult event) {
         Map<ResourceLocation, BakedModel> map = event.getModels();
-        for (String item : HAND_MODEL_ITEMS) {
-            ResourceLocation modelInventory = new ModelResourceLocation(new ResourceLocation(Constants.MOD_ID, item), "inventory");
-            ResourceLocation modelHand = new ModelResourceLocation(new ResourceLocation(Constants.MOD_ID, "in_hand/" + item), "inventory");
 
-            BakedModel bakedModelInventory = map.get(modelInventory);
-            BakedModel bakedModelInHand = map.get(modelHand);
-            BakedModel modelWrapper = new BakedModel() {
-                @Override
-                public List<BakedQuad> getQuads(@Nullable BlockState blockState, @Nullable Direction direction, RandomSource randomSource) {
-                    return bakedModelInventory.getQuads(blockState, direction, randomSource);
-                }
+        map.put(location("scythe_copper"), new ScytheBakedModel("scythe_copper", map));
+        map.put(location("scythe_gold"), new ScytheBakedModel("scythe_gold", map));
+        map.put(location("scythe_iron"), new ScytheBakedModel("scythe_iron", map));
+        map.put(location("scythe_steel"), new ScytheBakedModel("scythe_steel", map));
+        map.put(location("scythe_diamond"), new ScytheBakedModel("scythe_diamond", map));
+        map.put(location("scythe_netherite"), new ScytheBakedModel("scythe_netherite", map));
+    }
 
-                @Override
-                public boolean useAmbientOcclusion() {
-                    return bakedModelInventory.useAmbientOcclusion();
-                }
+    private static ResourceLocation location(String path) {
+        return new ModelResourceLocation(new ResourceLocation(Constants.MOD_ID, path), "inventory");
+    }
 
-                @Override
-                public boolean isGui3d() {
-                    return bakedModelInventory.isGui3d();
-                }
+    private static class ScytheBakedModel extends ScytheHandModel implements IForgeBakedModel {
+        public ScytheBakedModel(String item, Map<ResourceLocation, BakedModel> map) {
+            super(item, map);
+        }
 
-                @Override
-                public boolean usesBlockLight() {
-                    return bakedModelInventory.usesBlockLight();
-                }
-
-                @Override
-                public boolean isCustomRenderer() {
-                    return bakedModelInventory.isCustomRenderer();
-                }
-
-                @Override
-                public TextureAtlasSprite getParticleIcon() {
-                    return bakedModelInventory.getParticleIcon();
-                }
-
-                @Override
-                public ItemOverrides getOverrides() {
-                    return bakedModelInventory.getOverrides();
-                }
-
-                @Override
-                public BakedModel applyTransform(ItemDisplayContext transformType, PoseStack poseStack, boolean applyLeftHandTransform) {
-                    BakedModel model = bakedModelInventory;
-                    if (transformType != ItemDisplayContext.GUI && transformType != ItemDisplayContext.GROUND && transformType != ItemDisplayContext.FIXED) {
-                        model = bakedModelInHand;
-                    }
-                    return ForgeHooksClient.handleCameraTransforms(poseStack, model, transformType, applyLeftHandTransform);
-                }
-            };
-            map.put(modelInventory, modelWrapper);
+        @Override
+        public BakedModel applyTransform(ItemDisplayContext transformType, PoseStack poseStack, boolean applyLeftHandTransform) {
+            BakedModel model = this.inventoryModel;
+            if (transformType != ItemDisplayContext.GUI && transformType != ItemDisplayContext.GROUND && transformType != ItemDisplayContext.FIXED) {
+                model = this.inHandModel;
+            }
+            return ForgeHooksClient.handleCameraTransforms(poseStack, model, transformType, applyLeftHandTransform);
         }
     }
 }
