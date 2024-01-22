@@ -14,12 +14,13 @@ public class Config {
 
     public static final Supplier<Double>
             DIAMOND_NUGGET_FROM_COAL_ORE, DIAMOND_NUGGET_FROM_DIAMOND_ORE,
+            EMERALD_NUGGET_FROM_ORE, COPPER_NUGGET_FROM_ORE,
             GARLIC_FROM_ZOMBIE, SULFUR_FROM_CREEPER, SALTPETER_FROM_CREEPER,
             SALTPETER_FROM_BRICKS;
 
     public static final Supplier<Double>
             SULFUR, SALTPETER, GARLIC,
-            NUGGET_DIAMOND,
+            NUGGET_DIAMOND, NUGGET_EMERALD, NUGGET_COPPER,
             DUST_COPPER, DUST_IRON, DUST_GOLD, DUST_CARBON, DUST_STEEL, DUST_EMERALD, DUST_DIAMOND, DUST_NETHERITE_SCRAP, DUST_NETHERITE,
             HAMMER_COPPER, HAMMER_IRON, HAMMER_STEEL,
             STEEL_INGOT;
@@ -52,6 +53,8 @@ public class Config {
         DIAMOND_NUGGET_FROM_DIAMOND_ORE = BUILDER.comment("Determine the chance with which an item can drop from Ores and Mobs.\n 0.0 = 0% ~ 1.0 = 100%")
                 .define("diamond_nugget_from_diamond_ore", 0.15);
         DIAMOND_NUGGET_FROM_COAL_ORE = BUILDER.define("diamond_nugget_from_coal_ore", 0.025);
+        EMERALD_NUGGET_FROM_ORE = BUILDER.define("emerald_nugget_from_ore", 0.075);
+        COPPER_NUGGET_FROM_ORE = BUILDER.define("copper_nugget_from_ore", 0.10);
         GARLIC_FROM_ZOMBIE = BUILDER.define("garlic_from_zombie", 0.20);
         SULFUR_FROM_CREEPER = BUILDER.define("sulfur_from_creeper", 0.20);
         SALTPETER_FROM_CREEPER = BUILDER.define("saltpeter_from_creeper", 0.20);
@@ -73,6 +76,8 @@ public class Config {
         DUST_NETHERITE = BUILDER.define("netherite_dust", 0.05);
 
         NUGGET_DIAMOND = BUILDER.define("diamond_nugget", 0.10);
+        NUGGET_EMERALD = BUILDER.define("emerald_nugget", 0.15);
+        NUGGET_COPPER = BUILDER.define("copper_nugget", 0.20);
 
         STEEL_INGOT = BUILDER.define("steel_ingot", 0.10);
 

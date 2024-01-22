@@ -28,7 +28,7 @@
         "fabric-api": "*",
         "minecraft": ">=1.20 <1.20.3",
         "java": ">=17",
-        "stophoslib": ">=0.0.6",
+        "stophoslib": ">=${stophos_lib}",
         "simpleconfigapi": ">=${simple_config_api}"
     },
     "suggests": {
