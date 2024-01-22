@@ -65,9 +65,9 @@ public class Recipes {
                 .save(exporter, location("blocks/" + getSimpleRecipeName(output)));
     }
 
-    public static void materialDustRecipe(RecipeOutput exporter, ItemLike output, ItemLike input, int outputAmount) {
+    public static void materialDustRecipe(RecipeOutput exporter, ItemLike output, ItemLike input, int outputAmount, TagKey<Item> crackHammerTag) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, output, outputAmount)
-                .requires(Ingredient.of(FabricItemTags.CRACK_HAMMER))
+                .requires(Ingredient.of(crackHammerTag))
                 .requires(input)
                 .unlockedBy(getHasName(input), has(input))
                 .save(exporter, location("material_dusts/" + getSimpleRecipeName(output) + "_from_" + getSimpleRecipeName(input)));

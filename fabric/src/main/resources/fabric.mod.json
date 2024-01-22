@@ -28,8 +28,8 @@
         "fabric-api": "*",
         "minecraft": ">=1.20.3 <1.21",
         "java": ">=17",
-        "stophoslib": ">=0.0.4",
-        "simpleconfigapi": ">=0.2.5"
+        "stophoslib": ">=${stophos_lib}",
+        "simpleconfigapi": ">=${simple_config_api}"
     },
     "suggests": {
         "another-mod": "*"

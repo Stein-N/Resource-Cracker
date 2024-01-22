@@ -28,7 +28,10 @@ public class ForgeItemTags {
     public static final TagKey<Item> NETHERITE_DUSTS = getTagKey("dusts/netherite");
 
     public static final TagKey<Item> DIAMOND_NUGGETS = getTagKey("nuggets/diamond");
+    public static final TagKey<Item> EMERALD_NUGGETS = getTagKey("nuggets/emerald");
+    public static final TagKey<Item> COPPER_NUGGETS = getTagKey("nuggets/copper");
     public static final TagKey<Item> STEEL_INGOTS = getTagKey("ingots/steel");
+
     public static final TagKey<Item> STEEL_BLOCKS = getTagKey("blocks/steel");
 
     private static TagKey<Item> getTagKey(String id) {

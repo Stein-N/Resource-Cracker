@@ -53,7 +53,10 @@ public class ItemTagProv extends ItemTagsProvider {
         this.tag(ForgeItemTags.NETHERITE_DUSTS).add(ItemRegistry.MATERIAL_DUST_NETHERITE.get());
 
         this.tag(ForgeItemTags.DIAMOND_NUGGETS).add(ItemRegistry.NUGGET_DIAMOND.get());
+        this.tag(ForgeItemTags.EMERALD_NUGGETS).add(ItemRegistry.NUGGET_EMERALD.get());
+        this.tag(ForgeItemTags.COPPER_NUGGETS).add(ItemRegistry.NUGGET_COPPER.get());
         this.tag(ForgeItemTags.STEEL_INGOTS).add(ItemRegistry.STEEL_INGOT.get());
+
         this.tag(ForgeItemTags.STEEL_BLOCKS).add(BlockRegistry.STEEL_BLOCK.get().asItem());
     }
 }

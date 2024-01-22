@@ -44,6 +44,8 @@
 
   "item.resource_cracker.steel_ingot": "Stahlbarren",
   "item.resource_cracker.nugget_diamond": "Diamantensplitter",
+  "item.resource_cracker.nugget_emerald": "Smaragdsplitter",
+  "item.resource_cracker.nugget_copper": "Kupferklumpen",
 
   "item.resource_cracker.garlic": "Knoblauch",
 

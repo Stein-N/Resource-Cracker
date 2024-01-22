@@ -47,7 +47,10 @@ public class ItemTagProv extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(FabricItemTags.NETHERITE_DUSTS).add(ItemRegistry.MATERIAL_DUST_NETHERITE.get());
 
         getOrCreateTagBuilder(FabricItemTags.DIAMOND_NUGGETS).add(ItemRegistry.NUGGET_DIAMOND.get());
+        getOrCreateTagBuilder(FabricItemTags.EMERALD_NUGGETS).add(ItemRegistry.NUGGET_EMERALD.get());
+        getOrCreateTagBuilder(FabricItemTags.COPPER_NUGGETS).add(ItemRegistry.NUGGET_COPPER.get());
         getOrCreateTagBuilder(FabricItemTags.STEEL_INGOTS).add(ItemRegistry.STEEL_INGOT.get());
+
         getOrCreateTagBuilder(FabricItemTags.STEEL_BLOCKS).add(BlockRegistry.STEEL_BLOCK.get().asItem());
     }
 }
