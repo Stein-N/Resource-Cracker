@@ -16,11 +16,8 @@ public class ModelProv extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators block) {
-        /* Added to common project, so these don't have to be generated
-
-           block.createCropBlock(BlockRegistry.GARLIC_CROP.get(), GarlicCropBlock.AGE, 0, 1, 2, 3, 4, 5);
-           block.createTrivialCube(BlockRegistry.STEEL_BLOCK.get());
-        */
+        block.createCropBlock(BlockRegistry.GARLIC_CROP.get(), GarlicCropBlock.AGE, 0, 1, 2, 3, 4, 5);
+        block.createTrivialCube(BlockRegistry.STEEL_BLOCK.get());
     }
 
     @Override
