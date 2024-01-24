@@ -2,7 +2,6 @@ package net.xstopho.resource_cracker.item;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
@@ -11,18 +10,13 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class CrackHammerItem extends Item implements RecipeRemainder {
+public class CrackHammerItem extends RecipeRemainder.Item {
     public CrackHammerItem(int durability) {
         super(new Properties().defaultDurability(durability));
     }
 
     @Override
-    public boolean hasCraftingRemainingItem() {
-        return true;
-    }
-
-    @Override
-    public ItemStack getRecipeRemainder(ItemStack stack) {
+    public ItemStack getRemainder(ItemStack stack) {
         if (stack.getDamageValue() < stack.getMaxDamage() - 1) {
             ItemStack moreDamaged = stack.copy();
             moreDamaged.setDamageValue(stack.getDamageValue() + 1);

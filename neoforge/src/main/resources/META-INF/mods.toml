@@ -25,7 +25,7 @@ license = "${mod_license}"
 [[dependencies.${mod_id}]]
     modId = "minecraft"
     required = true
-    versionRange = "${minecraft_version_range}"
+    versionRange = "[1.20.4,)"
     ordering = "NONE"
     side = "BOTH"
 
