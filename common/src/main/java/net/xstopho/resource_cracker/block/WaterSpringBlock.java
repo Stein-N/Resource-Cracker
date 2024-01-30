@@ -39,14 +39,11 @@ public class WaterSpringBlock extends Block {
                 player.setItemInHand(hand, newStack);
                 return InteractionResult.SUCCESS;
             }
-            if (player.getInventory().add(newStack)) {
-                handStack.shrink(1);
-                return InteractionResult.SUCCESS;
-            } else {
+            if (!player.getInventory().add(newStack)) {
                 player.drop(newStack, false);
-                handStack.shrink(1);
-                return InteractionResult.SUCCESS;
             }
+            handStack.shrink(1);
+            return InteractionResult.SUCCESS;
         }
         if (handStack.getItem() == Items.GLASS_BOTTLE && !player.isCreative()) {
             ItemStack stack = PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.WATER);
@@ -55,14 +52,11 @@ public class WaterSpringBlock extends Block {
                 return InteractionResult.SUCCESS;
 
             }
-            if (player.getInventory().add(stack)) {
-                handStack.shrink(1);
-                return InteractionResult.SUCCESS;
-            } else {
+            if (!player.getInventory().add(stack)) {
                 player.drop(stack, false);
-                handStack.shrink(1);
-                return InteractionResult.SUCCESS;
             }
+            handStack.shrink(1);
+            return InteractionResult.SUCCESS;
         }
         return InteractionResult.PASS;
     }

@@ -15,6 +15,6 @@ public class MultiPlayerGameModeMixin {
     @Inject(method = "getPickRange", at = @At("HEAD"), cancellable = true)
     public void getPickRange(CallbackInfoReturnable<Float> cir) {
         Player player = Minecraft.getInstance().player;
-        cir.setReturnValue((float) AttributeRegistry.getValue(player, AttributeRegistry.ATTACK_RANGE.get()));
+        if(player != null) cir.setReturnValue((float) player.getAttributeValue(AttributeRegistry.ATTACK_RANGE.get()));
     }
 }
