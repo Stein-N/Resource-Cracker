@@ -1,3 +1,5 @@
+![](https://cf.way2muchnoise.eu/title/917988.svg)![](https://cf.way2muchnoise.eu/917988.svg)![](https://cf.way2muchnoise.eu/versions/917988.svg)
+
 ![](https://cdn-raw.modrinth.com/data/hwfBSwLz/images/a91fc8d68e218149ed11021f09466b8f8e3077fb.png)
 
 
@@ -28,8 +30,10 @@ But since he is still on break, I decided to create my own Mod with similar Bloc
     - [Applied Energetics 2](https://www.curseforge.com/minecraft/mc-mods/applied-energistics-2)
     - [Mekanism](https://www.curseforge.com/minecraft/mc-mods/mekanism)
 
-### Item and Tools Overview
-
-![](https://cdn.modrinth.com/data/hwfBSwLz/images/6fe9a6820d22e16591e1c7e2f701c382515c6583.png)
+<details>
+  <summary>Item and Tools Overview</summary>
+  <img src=https://cdn.modrinth.com/data/hwfBSwLz/images/de9f005fc6c22b24181fc9bb1f987c91d79fb755.png>
+  <img src=https://cdn.modrinth.com/data/hwfBSwLz/images/a4b9f074bbc921c044da78ee0a324cf7fdc296c7.gif>
+</details>
 
 ### You are allowed to use this Mod in your ModPack
