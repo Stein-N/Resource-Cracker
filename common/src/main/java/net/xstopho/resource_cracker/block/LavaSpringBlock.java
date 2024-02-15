@@ -37,14 +37,11 @@ public class LavaSpringBlock extends Block {
                 player.setItemInHand(hand, newStack);
                 return InteractionResult.SUCCESS;
             }
-            if (player.getInventory().add(newStack)) {
-                handStack.shrink(1);
-                return InteractionResult.SUCCESS;
-            } else {
+            if (!player.getInventory().add(newStack)) {
                 player.drop(newStack, false);
-                handStack.shrink(1);
-                return InteractionResult.SUCCESS;
             }
+            handStack.shrink(1);
+            return InteractionResult.SUCCESS;
         }
         return InteractionResult.PASS;
     }

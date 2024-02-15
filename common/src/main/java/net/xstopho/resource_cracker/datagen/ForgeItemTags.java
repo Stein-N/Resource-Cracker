@@ -7,7 +7,7 @@ import net.minecraft.world.item.Item;
 
 public class ForgeItemTags {
 
-    public static final TagKey<Item> CRACK_HAMMER = getTagKey("tools/crack_hammer");
+    public static final TagKey<Item> CRACK_HAMMER = getTagKey("tools/crack_hammers");
     public static final TagKey<Item> CHISEL = getTagKey("tools/chisel");
     public static final TagKey<Item> SCYTHE = getTagKey("tools/scythe");
     public static final TagKey<Item> CRAFTING_INGREDIENTS = getTagKey("tools/crafting_ingredients");

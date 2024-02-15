@@ -21,18 +21,5 @@ public class AttributeRegistry {
         return ATTRIBUTES.register(id, () -> attribute);
     }
 
-    public static double getValue(Player player, Attribute attribute) {
-        if (contains(player, attribute)) {
-            return attribute.getDefaultValue() +
-                    player.getMainHandItem().getAttributeModifiers(EquipmentSlot.MAINHAND)
-                            .get(attribute).stream().mapToDouble(AttributeModifier::getAmount).sum();
-        }
-        return 4.5;
-    }
-
-    public static boolean contains(Player player, Attribute attribute) {
-        return player.getMainHandItem().getAttributeModifiers(EquipmentSlot.MAINHAND).containsKey(attribute);
-    }
-
     public static void init() {}
 }

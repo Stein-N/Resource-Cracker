@@ -7,7 +7,7 @@ import net.minecraft.world.item.Item;
 
 public class FabricItemTags {
 
-    public static final TagKey<Item> CRACK_HAMMER = getTagKey("crack_hammer");
+    public static final TagKey<Item> CRACK_HAMMER = getTagKey("crack_hammers");
     public static final TagKey<Item> CHISEL = getTagKey("chisel");
     public static final TagKey<Item> SCYTHE = getTagKey("scythe");
     public static final TagKey<Item> CRAFTING_INGREDIENTS = getTagKey("crafting_ingredients");
