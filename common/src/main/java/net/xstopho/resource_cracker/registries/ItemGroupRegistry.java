@@ -42,6 +42,10 @@ public class ItemGroupRegistry {
                         output.accept(BlockRegistry.LAVA_SPRING_BLOCK.get());
                         output.accept(BlockRegistry.STEEL_BLOCK.get());
 
+                        output.accept(ItemRegistry.NUGGET_DIAMOND.get());
+                        output.accept(ItemRegistry.NUGGET_EMERALD.get());
+                        output.accept(ItemRegistry.NUGGET_COPPER.get());
+
                         output.accept(ItemRegistry.MATERIAL_DUST_COPPER.get());
                         output.accept(ItemRegistry.MATERIAL_DUST_IRON.get());
                         output.accept(ItemRegistry.MATERIAL_DUST_GOLD.get());
@@ -56,9 +60,6 @@ public class ItemGroupRegistry {
                         output.accept(ItemRegistry.MATERIAL_DUST_SALTPETER.get());
 
                         output.accept(ItemRegistry.STEEL_INGOT.get());
-                        output.accept(ItemRegistry.NUGGET_DIAMOND.get());
-                        output.accept(ItemRegistry.NUGGET_EMERALD.get());
-                        output.accept(ItemRegistry.NUGGET_COPPER.get());
 
                         output.accept(ItemRegistry.GARLIC.get());
                         output.accept(ItemRegistry.BEEF_JERKY.get());
