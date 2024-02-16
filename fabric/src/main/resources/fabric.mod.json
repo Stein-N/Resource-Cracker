@@ -8,8 +8,9 @@
         "${mod_author}"
     ],
     "contact": {
-        "homepage": "https://fabricmc.net/",
-        "sources": "https://github.com/FabricMC/fabric-example-mod"
+        "homepage": "https://modrinth.com/mod/resource-cracker",
+        "sources": "https://github.com/Stein-N/Resource-Cracker",
+        "issues": "https://github.com/Stein-N/Resource-Cracker/issues"
     },
     "license": "${mod_license}",
     "icon": "icon.png",

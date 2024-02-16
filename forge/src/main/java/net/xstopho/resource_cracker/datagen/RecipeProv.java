@@ -4,10 +4,13 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
+import net.minecraftforge.common.crafting.conditions.ICondition;
+import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.xstopho.resource_cracker.Constants;
 import net.xstopho.resource_cracker.registries.BlockRegistry;
 import net.xstopho.resource_cracker.registries.ItemRegistry;
 
-public class RecipeProv extends RecipeProvider {
+public class RecipeProv extends RecipeProvider implements IConditionBuilder {
     public RecipeProv(PackOutput output) {
         super(output);
     }
@@ -83,7 +86,7 @@ public class RecipeProv extends RecipeProvider {
                 .define('A', ForgeItemTags.NETHERITE_SCRAP_DUSTS)
                 .define('G', ForgeItemTags.GOLD_DUSTS)
                 .unlockedBy(getHasName(ItemRegistry.MATERIAL_DUST_NETHERITE_SCRAP.get()), has(ItemRegistry.MATERIAL_DUST_NETHERITE_SCRAP.get()))
-                .save(exporter, new ResourceLocation("crafting/" + getSimpleRecipeName(ItemRegistry.MATERIAL_DUST_NETHERITE.get())));
+                .save(exporter, location("crafting/" + getSimpleRecipeName(ItemRegistry.MATERIAL_DUST_NETHERITE.get())));
 
         // Steeldust Recipe
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ItemRegistry.MATERIAL_DUST_STEEL.get(), 2)
@@ -91,7 +94,7 @@ public class RecipeProv extends RecipeProvider {
                 .define('I', ForgeItemTags.IRON_DUSTS)
                 .define('S', ForgeItemTags.COAL_DUSTS)
                 .unlockedBy(getHasName(ItemRegistry.MATERIAL_DUST_IRON.get()), has(ItemRegistry.MATERIAL_DUST_IRON.get()))
-                .save(exporter, new ResourceLocation("crafting/" + getSimpleRecipeName(ItemRegistry.MATERIAL_DUST_STEEL.get())));
+                .save(exporter, location("crafting/" + getSimpleRecipeName(ItemRegistry.MATERIAL_DUST_STEEL.get())));
 
         // Slimeball Recipe
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.SLIME_BALL, 3)
@@ -102,7 +105,7 @@ public class RecipeProv extends RecipeProvider {
                 .unlockedBy(getHasName(Items.HONEYCOMB), has(Items.HONEYCOMB))
                 .unlockedBy(getHasName(Items.GREEN_DYE), has(Items.GREEN_DYE))
                 .unlockedBy(getHasName(ItemRegistry.MATERIAL_DUST_SALTPETER.get()), has(ItemRegistry.MATERIAL_DUST_SALTPETER.get()))
-                .save(exporter, new ResourceLocation("crafting/" + getSimpleRecipeName(Items.SLIME_BALL)));
+                .save(exporter, location("crafting/" + getSimpleRecipeName(Items.SLIME_BALL)));
 
         // Gunpowder Recipe
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.GUNPOWDER, 3)
@@ -110,6 +113,10 @@ public class RecipeProv extends RecipeProvider {
                 .define('P', ForgeItemTags.SALTPETER_DUSTS)
                 .define('S', ForgeItemTags.SULFUR_DUSTS)
                 .unlockedBy(getHasName(ItemRegistry.MATERIAL_DUST_SALTPETER.get()), has(ItemRegistry.MATERIAL_DUST_SALTPETER.get()))
-                .save(exporter, new ResourceLocation("crafting/" + getSimpleRecipeName(Items.GUNPOWDER)));
+                .save(exporter, location("crafting/" + getSimpleRecipeName(Items.GUNPOWDER)));
+    }
+
+    static ResourceLocation location(String path) {
+        return new ResourceLocation(Constants.MOD_ID, path);
     }
 }
