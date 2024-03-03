@@ -21,11 +21,11 @@ import java.util.Random;
 public class ChiselItem extends Item {
 
     private static final Random rnd = new Random();
-    private static Item drop;
+    private static ItemStack drop;
 
     public ChiselItem(int durability, Item drop) {
         super(new Properties().durability(durability));
-        ChiselItem.drop = drop;
+        ChiselItem.drop = new ItemStack(drop);
     }
 
     @Override
@@ -36,7 +36,7 @@ public class ChiselItem extends Item {
 
         if (block == Blocks.BRICKS) {
             if (rnd.nextFloat() <= Config.SALTPETER_FROM_BRICKS.get().floatValue()) {
-                Containers.dropItemStack(context.getLevel(), pos.getX(), pos.getY(), pos.getZ(), new ItemStack(drop));
+                Containers.dropItemStack(context.getLevel(), pos.getX(), pos.getY(), pos.getZ(), drop);
             }
         }
         context.getItemInHand().hurtAndBreak(1, context.getPlayer(), entity -> entity.broadcastBreakEvent(entity.getUsedItemHand()));
