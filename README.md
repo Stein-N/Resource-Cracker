@@ -1,6 +1,6 @@
 ![](https://cf.way2muchnoise.eu/title/917988.svg)![](https://cf.way2muchnoise.eu/917988.svg)![](https://cf.way2muchnoise.eu/versions/917988.svg)
 
-![](https://cdn-raw.modrinth.com/data/hwfBSwLz/images/a91fc8d68e218149ed11021f09466b8f8e3077fb.png)
+![](https://cdn.modrinth.com/data/hwfBSwLz/images/43b0d1f531fdf8c96241ca6e0720c7914e8b20e4.png)
 
 
 ### Provides Items and Tweaks to make your life in Minecraft easier.
