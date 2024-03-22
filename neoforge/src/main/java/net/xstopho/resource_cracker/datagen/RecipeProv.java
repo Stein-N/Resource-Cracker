@@ -1,6 +1,5 @@
 package net.xstopho.resource_cracker.datagen;
 
-import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
@@ -8,81 +7,30 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
+import net.neoforged.neoforge.common.conditions.ICondition;
+import net.neoforged.neoforge.common.conditions.IConditionBuilder;
+import net.neoforged.neoforge.common.crafting.ConditionalRecipeOutput;
 import net.xstopho.resource_cracker.Constants;
-import net.xstopho.resource_cracker.registries.BlockRegistry;
+import net.xstopho.resource_cracker.datagen.mods.AE2Recipes;
+import net.xstopho.resource_cracker.datagen.recipes.Recipes;
 import net.xstopho.resource_cracker.registries.ItemRegistry;
 
-import java.util.concurrent.CompletableFuture;
-
-public class RecipeProv extends RecipeProvider {
-    public RecipeProv(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
-        super(output, lookupProvider);
+public class RecipeProv extends RecipeProvider implements IConditionBuilder {
+    public RecipeProv(PackOutput output) {
+        super(output);
     }
 
     @Override
     protected void buildRecipes(RecipeOutput output) {
-        Recipes.crackHammerRecipe(output, ItemRegistry.CRACK_HAMMER_COPPER.get(), Items.COPPER_INGOT, ForgeItemTags.CRAFTING_INGREDIENTS);
-        Recipes.crackHammerRecipe(output, ItemRegistry.CRACK_HAMMER_GOLD.get(), Items.GOLD_INGOT, ForgeItemTags.CRAFTING_INGREDIENTS);
-        Recipes.crackHammerRecipe(output, ItemRegistry.CRACK_HAMMER_IRON.get(), Items.IRON_INGOT, ForgeItemTags.CRAFTING_INGREDIENTS);
-        Recipes.crackHammerRecipe(output, ItemRegistry.CRACK_HAMMER_DIAMOND.get(), Items.DIAMOND, ForgeItemTags.CRAFTING_INGREDIENTS);
-        Recipes.crackHammerRecipe(output, ItemRegistry.CRACK_HAMMER_STEEL.get(), ItemRegistry.STEEL_INGOT.get(), ForgeItemTags.CRAFTING_INGREDIENTS);
-        Recipes.netheriteUpgrade(output, ItemRegistry.CRACK_HAMMER_NETHERITE.get(), ItemRegistry.CRACK_HAMMER_DIAMOND.get());
 
-        /*  Chisel  */
-        Recipes.chiselRecipe(output, ItemRegistry.CHISEL_COPPER.get(), Items.COPPER_INGOT);
-        Recipes.chiselRecipe(output, ItemRegistry.CHISEL_GOLD.get(), Items.GOLD_INGOT);
-        Recipes.chiselRecipe(output, ItemRegistry.CHISEL_IRON.get(), Items.IRON_INGOT);
-        Recipes.chiselRecipe(output, ItemRegistry.CHISEL_DIAMOND.get(), Items.DIAMOND);
-        Recipes.chiselRecipe(output, ItemRegistry.CHISEL_STEEL.get(), ItemRegistry.STEEL_INGOT.get());
-        Recipes.netheriteUpgrade(output, ItemRegistry.CHISEL_NETHERITE.get(), ItemRegistry.CHISEL_DIAMOND.get());
+        Recipes.generateToolRecipes(output, ForgeItemTags.CRAFTING_INGREDIENTS);
+        Recipes.generateMaterialDustRecipes(output, ForgeItemTags.CRACK_HAMMER);
+        Recipes.generateSpringBlockRecipes(output, ForgeItemTags.STEEL_BLOCKS);
+        Recipes.generateProcessingRecipes(output);
+        Recipes.generateCompactingRecipes(output);
 
-        /* Scythe */
-        Recipes.scytheRecipe(output, ItemRegistry.SCYTHE_COPPER.get(), Items.COPPER_INGOT, ForgeItemTags.CRAFTING_INGREDIENTS);
-        Recipes.scytheRecipe(output, ItemRegistry.SCYTHE_IRON.get(), Items.IRON_INGOT, ForgeItemTags.CRAFTING_INGREDIENTS);
-        Recipes.scytheRecipe(output, ItemRegistry.SCYTHE_GOLD.get(), Items.GOLD_INGOT, ForgeItemTags.CRAFTING_INGREDIENTS);
-        Recipes.scytheRecipe(output, ItemRegistry.SCYTHE_STEEL.get(), ItemRegistry.STEEL_INGOT.get(), ForgeItemTags.CRAFTING_INGREDIENTS);
-        Recipes.scytheRecipe(output, ItemRegistry.SCYTHE_DIAMOND.get(), Items.DIAMOND, ForgeItemTags.CRAFTING_INGREDIENTS);
-        Recipes.netheriteUpgrade(output, ItemRegistry.SCYTHE_NETHERITE.get(), ItemRegistry.SCYTHE_DIAMOND.get());
-
-        Recipes.materialDustRecipe(output, ItemRegistry.MATERIAL_DUST_CARBON.get(), Items.CHARCOAL, 2, ForgeItemTags.CRACK_HAMMER);
-        Recipes.materialDustRecipe(output, ItemRegistry.MATERIAL_DUST_COPPER.get(), Items.RAW_COPPER, 2, ForgeItemTags.CRACK_HAMMER);
-        Recipes.materialDustRecipe(output, ItemRegistry.MATERIAL_DUST_IRON.get(), Items.RAW_IRON, 2, ForgeItemTags.CRACK_HAMMER);
-        Recipes.materialDustRecipe(output, ItemRegistry.MATERIAL_DUST_GOLD.get(), Items.RAW_GOLD, 2, ForgeItemTags.CRACK_HAMMER);
-
-        Recipes.materialDustRecipe(output, ItemRegistry.MATERIAL_DUST_COPPER.get(), Items.COPPER_INGOT, 1, ForgeItemTags.CRACK_HAMMER);
-        Recipes.materialDustRecipe(output, ItemRegistry.MATERIAL_DUST_IRON.get(), Items.IRON_INGOT, 1, ForgeItemTags.CRACK_HAMMER);
-        Recipes.materialDustRecipe(output, ItemRegistry.MATERIAL_DUST_GOLD.get(), Items.GOLD_INGOT, 1, ForgeItemTags.CRACK_HAMMER);
-        Recipes.materialDustRecipe(output, ItemRegistry.MATERIAL_DUST_STEEL.get(), ItemRegistry.STEEL_INGOT.get(), 1, ForgeItemTags.CRACK_HAMMER);
-        Recipes.materialDustRecipe(output, ItemRegistry.MATERIAL_DUST_DIAMOND.get(), Items.DIAMOND, 1, ForgeItemTags.CRACK_HAMMER);
-        Recipes.materialDustRecipe(output, ItemRegistry.MATERIAL_DUST_NETHERITE.get(), Items.NETHERITE_INGOT, 1, ForgeItemTags.CRACK_HAMMER);
-        Recipes.materialDustRecipe(output, ItemRegistry.MATERIAL_DUST_EMERALD.get(), Items.EMERALD, 1, ForgeItemTags.CRACK_HAMMER);
-
-        Recipes.materialDustRecipe(output, ItemRegistry.MATERIAL_DUST_DIAMOND.get(), Items.DIAMOND_ORE, 2, ForgeItemTags.CRACK_HAMMER);
-        Recipes.materialDustRecipe(output, ItemRegistry.MATERIAL_DUST_DIAMOND.get(), Items.DEEPSLATE_DIAMOND_ORE, 2, ForgeItemTags.CRACK_HAMMER);
-        Recipes.materialDustRecipe(output, ItemRegistry.MATERIAL_DUST_EMERALD.get(), Items.EMERALD_ORE, 2, ForgeItemTags.CRACK_HAMMER);
-        Recipes.materialDustRecipe(output, ItemRegistry.MATERIAL_DUST_EMERALD.get(), Items.DEEPSLATE_EMERALD_ORE, 2, ForgeItemTags.CRACK_HAMMER);
-        Recipes.materialDustRecipe(output, ItemRegistry.MATERIAL_DUST_NETHERITE_SCRAP.get(), Items.ANCIENT_DEBRIS, 2, ForgeItemTags.CRACK_HAMMER);
-
-        Recipes.springBlockRecipe(output, BlockRegistry.WATER_SPRING_BLOCK.get(), Items.WATER_BUCKET, ForgeItemTags.STEEL_INGOTS);
-        Recipes.springBlockRecipe(output, BlockRegistry.LAVA_SPRING_BLOCK.get(), Items.LAVA_BUCKET, ForgeItemTags.STEEL_BLOCKS);
-
-        Recipes.processingRecipes(output, ItemRegistry.MATERIAL_DUST_COPPER.get(), Items.COPPER_INGOT, true, true, false, true);
-        Recipes.processingRecipes(output, ItemRegistry.MATERIAL_DUST_IRON.get(), Items.IRON_INGOT, true, true, false, true);
-        Recipes.processingRecipes(output, ItemRegistry.MATERIAL_DUST_GOLD.get(), Items.GOLD_INGOT, true, true, false, true);
-        Recipes.processingRecipes(output, ItemRegistry.MATERIAL_DUST_DIAMOND.get(), Items.DIAMOND, true, true, false, true);
-        Recipes.processingRecipes(output, ItemRegistry.MATERIAL_DUST_EMERALD.get(), Items.EMERALD, true, true, false, true);
-        Recipes.processingRecipes(output, ItemRegistry.MATERIAL_DUST_NETHERITE_SCRAP.get(), Items.NETHERITE_SCRAP, true, true, false, true);
-        Recipes.processingRecipes(output, ItemRegistry.MATERIAL_DUST_STEEL.get(), ItemRegistry.STEEL_INGOT.get(), true, true, false, true);
-        Recipes.processingRecipes(output, ItemRegistry.GARLIC.get(), ItemRegistry.MATERIAL_DUST_SULFUR.get(), true, true, false, true);
-        Recipes.processingRecipes(output, Items.ROTTEN_FLESH, Items.LEATHER, true, true, false, true);
-
-        Recipes.blastingRecipe(output, ItemRegistry.MATERIAL_DUST_NETHERITE.get(), Items.NETHERITE_INGOT);
-        Recipes.smokingRecipe(output, Items.ROTTEN_FLESH, ItemRegistry.BEEF_JERKY.get());
-
-        Recipes.compressionRecipe(output, BlockRegistry.STEEL_BLOCK.get(), ItemRegistry.STEEL_INGOT.get(), true, true);
-        Recipes.compressionRecipe(output, Items.DIAMOND, ItemRegistry.NUGGET_DIAMOND.get(), true, false);
-        Recipes.compressionRecipe(output, Items.EMERALD, ItemRegistry.NUGGET_EMERALD.get(), true, false);
-        Recipes.compressionRecipe(output, Items.COPPER_INGOT, ItemRegistry.NUGGET_COPPER.get(), true, true);
+        // Mod Recipes
+        AE2Recipes.generate(new ConditionalRecipeOutput(output, getConditions(modLoaded("ae2"))), ForgeItemTags.CRACK_HAMMER);
 
         // Netherite Dust Recipe
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ItemRegistry.MATERIAL_DUST_NETHERITE.get(), 1)
@@ -122,5 +70,11 @@ public class RecipeProv extends RecipeProvider {
 
     static ResourceLocation location(String path) {
         return new ResourceLocation(Constants.MOD_ID, path);
+    }
+
+    static ICondition[] getConditions(ICondition... conditions) {
+        ICondition[] con = new ICondition[conditions.length];
+        System.arraycopy(conditions, 0, con, 0, con.length);
+        return con;
     }
 }

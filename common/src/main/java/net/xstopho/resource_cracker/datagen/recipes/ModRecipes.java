@@ -1,4 +1,4 @@
-package net.xstopho.resource_cracker.datagen;
+package net.xstopho.resource_cracker.datagen.recipes;
 
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -33,7 +33,7 @@ public class ModRecipes {
     }
 
     public static void defineRecipe(ItemLike output, ItemLike input) {
-        Recipes.materialDustRecipe(conditionalOutput, output, input, 1, key, id);
+        BaseRecipes.materialDustRecipe(conditionalOutput, output, input, 1, key, id);
     }
 
     public static Item item(String itemId) {
