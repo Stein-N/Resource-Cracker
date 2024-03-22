@@ -17,6 +17,13 @@ dependencies {
     modImplementation "xstopho.stophoslib:stophoslib-fabric:${stophos_lib}"
     include "xstopho.stophoslib:stophoslib-fabric:${stophos_lib}"
 
+    // Runtime Mods
+    modRuntimeOnly "dev.emi:emi-fabric:${emi}"
+    modRuntimeOnly "com.terraformersmc:modmenu:${mod_menu}"
+    modRuntimeOnly "curse.maven:techreborn-233564:4958438"
+    modRuntimeOnly "curse.maven:reborncore-237903:4958437"
+    modRuntimeOnly "teamreborn:energy:3.0.0"
+
     compileOnly project(":common")
 }
 

@@ -23,7 +23,7 @@ public class ResourceCrackerDatagen {
         ExistingFileHelper helper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> provider = event.getLookupProvider();
 
-        generator.addProvider(event.includeServer(), new RecipeProv(output, provider));
+        generator.addProvider(event.includeServer(), new RecipeProv(output));
 
         BlockTagProv blockTags = generator.addProvider(event.includeServer(), new BlockTagProv(output, provider, helper));
         generator.addProvider(event.includeServer(), new ItemTagProv(output, provider, blockTags.contentsGetter(), helper));
