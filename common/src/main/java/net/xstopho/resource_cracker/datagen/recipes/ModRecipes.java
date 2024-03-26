@@ -1,6 +1,5 @@
 package net.xstopho.resource_cracker.datagen.recipes;
 
-import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -39,10 +38,6 @@ public class ModRecipes {
     public static Item item(String itemId) {
         ResourceLocation location = new ResourceLocation(id, itemId);
         if (BuiltInRegistries.ITEM.containsKey(location)) return BuiltInRegistries.ITEM.get(location);
-        else return dummyItem(location);
-    }
-
-    static Item dummyItem(ResourceLocation location) {
-        return Registry.register(BuiltInRegistries.ITEM, location, new Item(new Item.Properties()));
+        else throw new IllegalArgumentException("Item Registry missing the following entry: " + location);
     }
 }

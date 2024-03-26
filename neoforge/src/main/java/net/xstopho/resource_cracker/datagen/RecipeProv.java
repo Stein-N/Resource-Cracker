@@ -11,7 +11,7 @@ import net.neoforged.neoforge.common.conditions.ICondition;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.neoforged.neoforge.common.crafting.ConditionalRecipeOutput;
 import net.xstopho.resource_cracker.Constants;
-import net.xstopho.resource_cracker.datagen.mods.AE2Recipes;
+import net.xstopho.resource_cracker.datagen.recipes.mods.AE2Recipes;
 import net.xstopho.resource_cracker.datagen.recipes.Recipes;
 import net.xstopho.resource_cracker.registries.ItemRegistry;
 
@@ -30,6 +30,7 @@ public class RecipeProv extends RecipeProvider implements IConditionBuilder {
         Recipes.generateCompactingRecipes(output);
 
         // Mod Recipes
+        // noinspection UnstableApiUsage
         AE2Recipes.generate(new ConditionalRecipeOutput(output, getConditions(modLoaded("ae2"))), ForgeItemTags.CRACK_HAMMER);
 
         // Netherite Dust Recipe
@@ -54,8 +55,6 @@ public class RecipeProv extends RecipeProvider implements IConditionBuilder {
                 .define('H', Items.HONEYCOMB)
                 .define('G', Items.GREEN_DYE)
                 .define('S', ForgeItemTags.SALTPETER_DUSTS)
-                .unlockedBy(getHasName(Items.HONEYCOMB), has(Items.HONEYCOMB))
-                .unlockedBy(getHasName(Items.GREEN_DYE), has(Items.GREEN_DYE))
                 .unlockedBy(getHasName(ItemRegistry.MATERIAL_DUST_SALTPETER.get()), has(ItemRegistry.MATERIAL_DUST_SALTPETER.get()))
                 .save(output, location("crafting/" + getSimpleRecipeName(Items.SLIME_BALL)));
 

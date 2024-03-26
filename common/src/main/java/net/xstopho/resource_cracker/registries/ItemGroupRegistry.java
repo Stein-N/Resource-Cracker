@@ -13,7 +13,7 @@ public class ItemGroupRegistry {
     private static final RegistryProvider<CreativeModeTab> CREATIVE_MODE_TABS = RegistryProvider.get(Registries.CREATIVE_MODE_TAB, Constants.MOD_ID);
 
     public static final RegistryObject<CreativeModeTab> RESOURCE_CRACKER = CREATIVE_MODE_TABS.register("item_group",
-            () -> CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0).title(Component.translatable("item-group.resource_cracker"))
+            () -> CreativeModeTab.builder(null, -1).title(Component.translatable("item-group.resource_cracker"))
                     .icon(() -> new ItemStack(ItemRegistry.CRACK_HAMMER_DIAMOND.get()))
                     .displayItems((itemDisplayParameters, output) -> {
 

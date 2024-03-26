@@ -29,7 +29,7 @@ public class ItemRendererMixin {
     }
 
     private BakedModel getModel(String item) {
-        return ((ItemRendererAccessor) this).getItemModelShaper().getModelManager()
+        return ((ItemRendererAccessor) this).cracker_getItemModelShaper().getModelManager()
                 .getModel(new ModelResourceLocation(Constants.MOD_ID, "in_hand/" + item, "inventory"));
     }
 }
