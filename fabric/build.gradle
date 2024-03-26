@@ -17,6 +17,12 @@ dependencies {
     modImplementation "xstopho.stophoslib:stophoslib-fabric:${stophos_lib}"
     include "xstopho.stophoslib:stophoslib-fabric:${stophos_lib}"
 
+    modRuntimeOnly "dev.emi:emi-fabric:${emi}"
+    modRuntimeOnly "com.terraformersmc:modmenu:${mod_menu}"
+    modRuntimeOnly "curse.maven:techreborn-233564:4786771"
+    modRuntimeOnly "curse.maven:reborncore-237903:4786770"
+    modRuntimeOnly "teamreborn:energy:3.0.0"
+
     compileOnly project(":common")
 }
 
@@ -32,16 +38,11 @@ loom {
             client()
             setConfigName("Fabric Client")
             ideConfigGenerated(true)
-            runDir("run")
-        }
-        server {
-            server()
-            setConfigName("Fabric Server")
-            ideConfigGenerated(true)
+            programArgs('--username', 'Dev')
             runDir("run")
         }
         datagen {
-            inherit server
+            inherit client
             name "Fabric Datagen"
             vmArg "-Dfabric-api.datagen"
             vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"

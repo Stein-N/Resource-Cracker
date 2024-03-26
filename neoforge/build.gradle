@@ -20,6 +20,9 @@ dependencies {
     implementation "xstopho.stophoslib:stophoslib-neoforge:${stophos_lib}"
     jarJar("xstopho.stophoslib:stophoslib-neoforge:[${stophos_lib},)")
 
+    runtimeOnly("maven.modrinth:mekanism:${mekanism}")
+    runtimeOnly("maven.modrinth:ae2:${ae2}")
+
     compileOnly project(":common")
 }
 
@@ -29,10 +32,6 @@ runs {
     }
     client {
         systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
-    }
-    server {
-        systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
-        programArgument '--nogui'
     }
     data {
         programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()

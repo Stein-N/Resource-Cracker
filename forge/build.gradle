@@ -24,6 +24,8 @@ dependencies {
     implementation(fg.deobf("xstopho.stophoslib:stophoslib-forge:${stophos_lib}"))
     jarJar("xstopho.stophoslib:stophoslib-forge:[${stophos_lib},)")
 
+    runtimeOnly(fg.deobf("dev.emi:emi-forge:${emi}"))
+
     compileOnly project(":common")
 }
 
@@ -48,20 +50,6 @@ minecraft {
             property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
             mods {
                 modClientRun {
-                    source sourceSets.main
-                    source project(":common").sourceSets.main
-                }
-            }
-        }
-
-        server {
-            workingDirectory project.file('run')
-            ideaModule "${rootProject.name}.${project.name}.main"
-            taskName 'Server'
-            property 'mixin.env.remapRefMap', 'true'
-            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
-            mods {
-                modServerRun {
                     source sourceSets.main
                     source project(":common").sourceSets.main
                 }
