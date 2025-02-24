@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "resource_cracker:block/water_spring_block",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "resource_cracker:block/water_spring_block"
+    },
+    "facing=south": {
+      "model": "resource_cracker:block/water_spring_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "resource_cracker:block/water_spring_block",
+      "y": 270
+    }
+  }
+}

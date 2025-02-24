@@ -1,0 +1,6 @@
+{
+  "parent": "resource_cracker:block/spring_block",
+  "textures": {
+    "fluid": "minecraft:block/water_still"
+  }
+}

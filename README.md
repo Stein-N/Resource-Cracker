@@ -30,4 +30,4 @@ Because he was on break, I decided to create my own Mod with similar Blocks/Item
   <img src=https://cdn.modrinth.com/data/hwfBSwLz/images/a4b9f074bbc921c044da78ee0a324cf7fdc296c7.gif>
 </details>
 
-### You are allowed to use this Mod in your ModPack
+### Feel free to add this Mod to your ModPack
