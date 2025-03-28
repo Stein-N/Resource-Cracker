@@ -1,7 +1,7 @@
 package net.xstopho.resource_cracker.item;
 
-import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponentGetter;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -10,6 +10,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipProvider;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.CropBlock;
@@ -17,10 +18,10 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.xstopho.resource_cracker.config.ToolConfig;
 import net.xstopho.resource_cracker.item.materials.ScytheToolMaterial;
 
-import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class ScytheItem extends Item {
+public class ScytheItem extends Item implements TooltipProvider {
     private static final Supplier<Integer> radius = () -> ToolConfig.scytheHarvestRadius;
 
     public ScytheItem(ScytheToolMaterial material, float attackDamage, float attackSpeed, Properties properties) {
@@ -55,26 +56,12 @@ public class ScytheItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, List<Component> tooltip, TooltipFlag tooltipFlag) {
-        tooltip.add(Component.translatable("item.scythe.tooltip").withStyle(ChatFormatting.GOLD));
-        tooltip.add(Component.translatable("item.scythe.tooltip.radius").withStyle(ChatFormatting.GOLD)
-                .append(Component.literal(String.valueOf(radius.get())).withStyle(ChatFormatting.RED)));
-
-        super.appendHoverText(itemStack, tooltipContext, tooltip, tooltipFlag);
-    }
-
-    @Override
-    public boolean canAttackBlock(BlockState state, Level level, BlockPos pos, Player player) {
-        return !player.isCreative();
-    }
-
-    @Override
-    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        return true;
-    }
-
-    @Override
     public void postHurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         stack.hurtAndBreak(1, attacker, EquipmentSlot.MAINHAND);
+    }
+
+    @Override
+    public void addToTooltip(TooltipContext tooltipContext, Consumer<Component> consumer, TooltipFlag tooltipFlag, DataComponentGetter dataComponentGetter) {
+        consumer.accept(Component.literal("Scythe"));
     }
 }

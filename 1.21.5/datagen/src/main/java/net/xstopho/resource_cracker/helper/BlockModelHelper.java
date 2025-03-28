@@ -1,14 +1,15 @@
 package net.xstopho.resource_cracker.helper;
 
+import com.mojang.math.Quadrant;
 import net.minecraft.client.data.models.BlockModelGenerators;
+import net.minecraft.client.data.models.MultiVariant;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
-import net.minecraft.client.data.models.blockstates.Variant;
-import net.minecraft.client.data.models.blockstates.VariantProperties;
 import net.minecraft.client.data.models.model.ItemModelUtils;
 import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.model.TextureMapping;
 import net.minecraft.client.data.models.model.TextureSlot;
+import net.minecraft.client.renderer.block.model.VariantMutator;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -37,23 +38,18 @@ public class BlockModelHelper {
 
         ResourceLocation model = new ModelTemplate(Optional.of(CrackerConstants.of("block/spring_block")),
                 Optional.empty(), TextureSlot.INSIDE).create(block, map, generator.modelOutput);
-        generator.blockStateOutput.accept(MultiVariantGenerator.multiVariant(block).with(createPropertyDispatch(model)));
+        generator.blockStateOutput.accept(MultiVariantGenerator.dispatch(block).with(createPropertyDispatch(model)));
         new ModelTemplate(Optional.of(model), Optional.empty()).create(block.asItem(), new TextureMapping(), generator.modelOutput);
     }
 
-    private static PropertyDispatch createPropertyDispatch(ResourceLocation model) {
-        return PropertyDispatch.property(BlockStateProperties.HORIZONTAL_FACING)
-                .select(Direction.NORTH, Variant.variant()
-                        .with(VariantProperties.MODEL, model))
-                .select(Direction.EAST, Variant.variant()
-                        .with(VariantProperties.MODEL, model)
-                        .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90))
-                .select(Direction.SOUTH, Variant.variant()
-                        .with(VariantProperties.MODEL, model)
-                        .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R180))
-                .select(Direction.WEST, Variant.variant()
-                        .with(VariantProperties.MODEL, model)
-                        .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270));
+    private static PropertyDispatch<MultiVariant> createPropertyDispatch(ResourceLocation location) {
+        MultiVariant model = BlockModelGenerators.plainVariant(location);
+
+        return PropertyDispatch.initial(BlockStateProperties.HORIZONTAL_FACING)
+                .select(Direction.NORTH, model)
+                .select(Direction.EAST, model.with(VariantMutator.Y_ROT.withValue(Quadrant.R90)))
+                .select(Direction.SOUTH, model.with(VariantMutator.Y_ROT.withValue(Quadrant.R180)))
+                .select(Direction.WEST, model.with(VariantMutator.Y_ROT.withValue(Quadrant.R270)));
     }
 
     private static ResourceLocation getKey(Block block) {

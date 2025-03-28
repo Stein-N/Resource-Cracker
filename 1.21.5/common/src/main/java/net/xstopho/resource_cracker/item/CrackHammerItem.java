@@ -29,12 +29,12 @@ public class CrackHammerItem extends ResourceCraftingRemainder {
         return ItemStack.EMPTY;
     }
 
-    @Override
-    public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, List<Component> tooltip, TooltipFlag tooltipFlag) {
-        tooltip.add(Component.translatable("item.crack_hammer.tooltip").withStyle(ChatFormatting.GOLD));
-
-        super.appendHoverText(itemStack, tooltipContext, tooltip, tooltipFlag);
-    }
+//    @Override
+//    public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, List<Component> tooltip, TooltipFlag tooltipFlag) {
+//        tooltip.add(Component.translatable("item.crack_hammer.tooltip").withStyle(ChatFormatting.GOLD));
+//
+//        super.appendHoverText(itemStack, tooltipContext, tooltip, tooltipFlag);
+//    }
 
     public ItemStack addDurability(ItemStack stack) {
         ItemStack copy = stack.copy();

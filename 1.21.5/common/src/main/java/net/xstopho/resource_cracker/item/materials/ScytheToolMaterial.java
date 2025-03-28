@@ -40,8 +40,12 @@ public record ScytheToolMaterial(int durability, float attackDamageBonus, int en
     public Item.Properties applyScytheProperties(Item.Properties properties, float attackDamage, float attackSpeed) {
         HolderGetter<Block> holdergetter = BuiltInRegistries.acquireBootstrapRegistrationLookup(BuiltInRegistries.BLOCK);
         return this.applyCommonProperties(properties)
-                .component(DataComponents.TOOL, new Tool(List.of(Tool.Rule.minesAndDrops(HolderSet.direct(Blocks.COBWEB.builtInRegistryHolder()), 15.0F),
-                        Tool.Rule.overrideSpeed(holdergetter.getOrThrow(BlockTags.SWORD_EFFICIENT), 1.5F)), 1.0F, 2))
+                .component(DataComponents.TOOL, new Tool(
+                        List.of(Tool.Rule.minesAndDrops(HolderSet.direct(Blocks.COBWEB.builtInRegistryHolder()), 15.0F),
+                                Tool.Rule.overrideSpeed(holdergetter.getOrThrow(BlockTags.SWORD_EFFICIENT), 1.5F)
+                        ),
+                        1.0F, 2, false))
+
                 .attributes(this.createSwordAttributes(attackDamage, attackSpeed));
     }
 

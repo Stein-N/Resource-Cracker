@@ -25,6 +25,6 @@ public abstract class ItemStackMixin {
 
     @Inject(method = "addDetailsToTooltip", at = @At("TAIL"))
     public void resource_cracker$addDetailsToTooltip(Item.TooltipContext context, TooltipDisplay display, Player player, TooltipFlag flag, Consumer<Component> consumer) {
-        this.addToTooltip(DataComponentRegistry.TOOLTIP_CONTAINER.get(), context, display, consumer, flag);
+        //this.addToTooltip(DataComponentRegistry.TOOLTIP_CONTAINER.get(), context, display, consumer, flag);
     }
 }

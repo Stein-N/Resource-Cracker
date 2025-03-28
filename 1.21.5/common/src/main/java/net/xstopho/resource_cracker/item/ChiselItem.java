@@ -49,12 +49,12 @@ public class ChiselItem extends Item {
         return InteractionResult.SUCCESS;
     }
 
-    @Override
-    public void appendHoverText(ItemStack stack, TooltipContext ccontext, List<Component> tooltip, TooltipFlag flag) {
-        tooltip.add(Component.translatable("item.chisel.tooltip").withStyle(ChatFormatting.GOLD));
-
-        super.appendHoverText(stack, ccontext, tooltip, flag);
-    }
+//    @Override
+//    public void appendHoverText(ItemStack stack, TooltipContext ccontext, List<Component> tooltip, TooltipFlag flag) {
+//        tooltip.add(Component.translatable("item.chisel.tooltip").withStyle(ChatFormatting.GOLD));
+//
+//        super.appendHoverText(stack, ccontext, tooltip, flag);
+//    }
 
     public ItemStack addDurability(ItemStack stack) {
         ItemStack copy = stack.copy();
