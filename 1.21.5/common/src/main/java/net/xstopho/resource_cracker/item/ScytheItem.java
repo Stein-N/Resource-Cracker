@@ -1,7 +1,8 @@
 package net.xstopho.resource_cracker.item;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.component.DataComponentGetter;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -9,23 +10,26 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.component.TooltipProvider;
+import net.minecraft.world.item.component.ItemLore;
 import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.xstopho.resource_cracker.config.ToolConfig;
 import net.xstopho.resource_cracker.item.materials.ScytheToolMaterial;
 
-import java.util.function.Consumer;
+import java.util.List;
 import java.util.function.Supplier;
 
-public class ScytheItem extends Item implements TooltipProvider {
+public class ScytheItem extends Item {
     private static final Supplier<Integer> radius = () -> ToolConfig.scytheHarvestRadius;
 
     public ScytheItem(ScytheToolMaterial material, float attackDamage, float attackSpeed, Properties properties) {
-        super(material.applyScytheProperties(properties, attackDamage, attackSpeed));
+        super(material.applyScytheProperties(properties, attackDamage, attackSpeed)
+                .component(DataComponents.LORE, new ItemLore(List.of(
+                        Component.translatable("item.scythe.tooltip").withStyle(ChatFormatting.GOLD),
+                        Component.translatable("item.scythe.tooltip.radius").withStyle(ChatFormatting.GOLD)
+                                .append(Component.literal(String.valueOf(radius.get())).withStyle(ChatFormatting.RED))
+                ))));
     }
 
     @Override
@@ -58,10 +62,5 @@ public class ScytheItem extends Item implements TooltipProvider {
     @Override
     public void postHurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         stack.hurtAndBreak(1, attacker, EquipmentSlot.MAINHAND);
-    }
-
-    @Override
-    public void addToTooltip(TooltipContext tooltipContext, Consumer<Component> consumer, TooltipFlag tooltipFlag, DataComponentGetter dataComponentGetter) {
-        consumer.accept(Component.literal("Scythe"));
     }
 }

@@ -9,7 +9,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.ItemLore;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -27,7 +27,9 @@ public class ChiselItem extends Item {
     private final Supplier<Float> saltpeterChance;
 
     public ChiselItem(Supplier<Integer> durability, Properties properties) {
-        super(properties);
+        super(properties.component(DataComponents.LORE, new ItemLore(List.of(
+                Component.translatable("item.chisel.tooltip").withStyle(ChatFormatting.GOLD)
+        ))));
         this.durability = durability;
         this.saltpeterChance = () -> LootConfig.saltpeterFromBricks;
     }
@@ -48,13 +50,6 @@ public class ChiselItem extends Item {
 
         return InteractionResult.SUCCESS;
     }
-
-//    @Override
-//    public void appendHoverText(ItemStack stack, TooltipContext ccontext, List<Component> tooltip, TooltipFlag flag) {
-//        tooltip.add(Component.translatable("item.chisel.tooltip").withStyle(ChatFormatting.GOLD));
-//
-//        super.appendHoverText(stack, ccontext, tooltip, flag);
-//    }
 
     public ItemStack addDurability(ItemStack stack) {
         ItemStack copy = stack.copy();

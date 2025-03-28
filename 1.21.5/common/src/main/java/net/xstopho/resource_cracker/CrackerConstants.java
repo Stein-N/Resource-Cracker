@@ -6,7 +6,6 @@ import net.xstopho.resource_cracker.config.ToolConfig;
 import net.xstopho.resource_cracker.modifier.LootModifier;
 import net.xstopho.resource_cracker.registries.BlockRegistry;
 import net.xstopho.resource_cracker.registries.CreativeTabRegistry;
-import net.xstopho.resource_cracker.registries.DataComponentRegistry;
 import net.xstopho.resource_cracker.registries.ItemRegistry;
 import net.xstopho.resourceconfigapi.api.ConfigRegistry;
 import org.slf4j.Logger;
@@ -24,8 +23,6 @@ public class CrackerConstants {
     public static void commonInit() {
         ConfigRegistry.register(ToolConfig.class, MOD_ID);
         ConfigRegistry.register(LootConfig.class, MOD_ID);
-
-        DataComponentRegistry.init();
 
         BlockRegistry.init();
         ItemRegistry.init();

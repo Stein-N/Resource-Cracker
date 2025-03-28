@@ -5,6 +5,7 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.ItemLore;
 import net.xstopho.resourcelibrary.item.ResourceCraftingRemainder;
 
 import java.util.List;
@@ -14,7 +15,9 @@ public class CrackHammerItem extends ResourceCraftingRemainder {
     private final Supplier<Integer> durability;
 
     public CrackHammerItem(Supplier<Integer> durability, Properties properties) {
-        super(properties);
+        super(properties.component(DataComponents.LORE, new ItemLore(List.of(
+                Component.translatable("item.crack_hammer.tooltip").withStyle(ChatFormatting.GOLD)
+        ))));
         this.durability = durability;
     }
 
@@ -28,13 +31,6 @@ public class CrackHammerItem extends ResourceCraftingRemainder {
 
         return ItemStack.EMPTY;
     }
-
-//    @Override
-//    public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, List<Component> tooltip, TooltipFlag tooltipFlag) {
-//        tooltip.add(Component.translatable("item.crack_hammer.tooltip").withStyle(ChatFormatting.GOLD));
-//
-//        super.appendHoverText(itemStack, tooltipContext, tooltip, tooltipFlag);
-//    }
 
     public ItemStack addDurability(ItemStack stack) {
         ItemStack copy = stack.copy();
