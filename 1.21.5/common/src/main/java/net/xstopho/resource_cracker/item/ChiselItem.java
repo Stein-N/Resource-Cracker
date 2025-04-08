@@ -14,6 +14,8 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.xstopho.resource_cracker.config.LootConfig;
+import net.xstopho.resource_cracker.item.components.TooltipContainer;
+import net.xstopho.resource_cracker.registries.DataComponentRegistry;
 import net.xstopho.resource_cracker.registries.ItemRegistry;
 import org.jetbrains.annotations.NotNull;
 
@@ -27,9 +29,9 @@ public class ChiselItem extends Item {
     private final Supplier<Float> saltpeterChance;
 
     public ChiselItem(Supplier<Integer> durability, Properties properties) {
-        super(properties.component(DataComponents.LORE, new ItemLore(List.of(
-                Component.translatable("item.chisel.tooltip").withStyle(ChatFormatting.GOLD)
-        ))));
+        super(properties.component(DataComponentRegistry.TOOLTIP_CONTAINER.get(), new TooltipContainer(List.of(
+                        Component.translatable("item.chisel.tooltip").withStyle(ChatFormatting.GOLD)
+                ))));
         this.durability = durability;
         this.saltpeterChance = () -> LootConfig.saltpeterFromBricks;
     }

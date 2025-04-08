@@ -15,7 +15,9 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.xstopho.resource_cracker.config.ToolConfig;
+import net.xstopho.resource_cracker.item.components.TooltipContainer;
 import net.xstopho.resource_cracker.item.materials.ScytheToolMaterial;
+import net.xstopho.resource_cracker.registries.DataComponentRegistry;
 
 import java.util.List;
 import java.util.function.Supplier;
@@ -25,7 +27,7 @@ public class ScytheItem extends Item {
 
     public ScytheItem(ScytheToolMaterial material, float attackDamage, float attackSpeed, Properties properties) {
         super(material.applyScytheProperties(properties, attackDamage, attackSpeed)
-                .component(DataComponents.LORE, new ItemLore(List.of(
+                .component(DataComponentRegistry.TOOLTIP_CONTAINER.get(), new TooltipContainer(List.of(
                         Component.translatable("item.scythe.tooltip").withStyle(ChatFormatting.GOLD),
                         Component.translatable("item.scythe.tooltip.radius").withStyle(ChatFormatting.GOLD)
                                 .append(Component.literal(String.valueOf(radius.get())).withStyle(ChatFormatting.RED))
