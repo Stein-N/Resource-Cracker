@@ -92,6 +92,9 @@ public class ItemTags extends ItemTagsProvider {
         this.tag(CrackerItemTags.LEATHER).add(Items.LEATHER, Items.RABBIT_HIDE);
         this.tag(CrackerItemTags.STRING).add(Items.STRING);
 
+        this.tag(CrackerItemTags.COPPER_TOOL_MATERIALS).add(Items.COPPER_INGOT);
+        this.tag(CrackerItemTags.STEEL_TOOL_MATERIALS).add(ItemRegistry.STEEL_INGOT.get());
+
         this.tag(CrackerItemTags.DUSTS)
                 .addTag(CrackerItemTags.COAL_DUSTS)
                 .addTag(CrackerItemTags.CARBON_DUSTS)

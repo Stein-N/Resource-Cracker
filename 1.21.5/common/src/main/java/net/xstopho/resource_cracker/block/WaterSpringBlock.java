@@ -26,8 +26,13 @@ public class WaterSpringBlock extends SpringBlock {
     protected InteractionResult useItemOn(ItemStack stack, BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand hand, BlockHitResult blockHitResult) {
         Item itemInHand = player.getItemInHand(hand).getItem();
 
-        if (itemInHand == Items.BUCKET && !player.isCreative()) return addOrDropItem(player, new ItemStack(Items.WATER_BUCKET));
-        if (itemInHand == Items.GLASS_BOTTLE && !player.isCreative()) return addOrDropItem(player, PotionContents.createItemStack(Items.POTION, Potions.WATER));
+        if (itemInHand == Items.BUCKET && !player.isCreative()) {
+            return addOrDropItem(player, new ItemStack(Items.WATER_BUCKET));
+        }
+
+        if (itemInHand == Items.GLASS_BOTTLE && !player.isCreative()) {
+            return addOrDropItem(player, PotionContents.createItemStack(Items.POTION, Potions.WATER));
+        }
 
         return InteractionResult.PASS;
     }

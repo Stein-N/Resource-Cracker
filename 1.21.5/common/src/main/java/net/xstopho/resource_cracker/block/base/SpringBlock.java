@@ -27,7 +27,9 @@ public class SpringBlock extends Block {
             player.setItemInHand(InteractionHand.MAIN_HAND, stack);
             return InteractionResult.SUCCESS;
         }
-        if (!player.getInventory().add(stack)) player.drop(stack, false);
+        if (!player.getInventory().add(stack)) {
+            player.drop(stack, false);
+        }
         handStack.shrink(1);
         return InteractionResult.SUCCESS;
     }

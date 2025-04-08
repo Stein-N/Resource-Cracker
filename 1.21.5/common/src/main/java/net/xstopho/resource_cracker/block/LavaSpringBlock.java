@@ -24,7 +24,9 @@ public class LavaSpringBlock extends SpringBlock {
     protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos blockPos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         Item itemInHand = player.getItemInHand(hand).getItem();
 
-        if (itemInHand == Items.BUCKET && !player.isCreative()) return addOrDropItem(player, new ItemStack(Items.LAVA_BUCKET));
+        if (itemInHand == Items.BUCKET && !player.isCreative()) {
+            return addOrDropItem(player, new ItemStack(Items.LAVA_BUCKET));
+        }
 
         return InteractionResult.PASS;
     }

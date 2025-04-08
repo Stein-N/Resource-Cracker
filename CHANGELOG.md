@@ -1,2 +1,3 @@
-#### v2.5.1
-- add custom TooltipContainer Component as a replacement for ItemLore Component
+#### v2.5.2
+- adding missing ItemTags
+- fixing issue where Scythe didn't get damaged
