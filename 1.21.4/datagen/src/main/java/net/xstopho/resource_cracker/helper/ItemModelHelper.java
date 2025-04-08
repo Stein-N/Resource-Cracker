@@ -1,7 +1,10 @@
 package net.xstopho.resource_cracker.helper;
 
 import net.minecraft.client.data.models.ItemModelGenerators;
-import net.minecraft.client.data.models.model.*;
+import net.minecraft.client.data.models.model.ItemModelUtils;
+import net.minecraft.client.data.models.model.ModelTemplate;
+import net.minecraft.client.data.models.model.TextureMapping;
+import net.minecraft.client.data.models.model.TextureSlot;
 import net.minecraft.client.renderer.item.ItemModel;
 import net.minecraft.client.renderer.item.SelectItemModel;
 import net.minecraft.client.renderer.item.properties.select.DisplayContext;

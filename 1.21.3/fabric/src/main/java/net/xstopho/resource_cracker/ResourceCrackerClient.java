@@ -5,7 +5,6 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.client.renderer.RenderType;
 import net.xstopho.resource_cracker.registries.BlockRegistry;
-import net.xstopho.resource_cracker.registries.ItemModelRenderRegistry;
 
 public class ResourceCrackerClient implements ClientModInitializer {
     @Override

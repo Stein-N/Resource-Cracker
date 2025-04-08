@@ -11,8 +11,6 @@ import net.xstopho.resourceconfigapi.api.ConfigRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.function.Supplier;
-
 public class CrackerConstants {
     public static final String MOD_ID = "resource_cracker";
     public static final String MOD_NAME = "Resource Cracker/Tools";

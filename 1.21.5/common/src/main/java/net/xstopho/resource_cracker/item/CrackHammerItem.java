@@ -4,8 +4,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.component.ItemLore;
 import net.xstopho.resource_cracker.item.components.TooltipContainer;
 import net.xstopho.resource_cracker.registries.DataComponentRegistry;
 import net.xstopho.resourcelibrary.item.ResourceCraftingRemainder;

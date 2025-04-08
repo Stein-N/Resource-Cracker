@@ -1,6 +1,5 @@
 package net.xstopho.resource_cracker.rendering;
 
-import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
@@ -8,8 +7,6 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.ModelEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.xstopho.resource_cracker.CrackerConstants;
-
-import java.util.Map;
 
 @OnlyIn(Dist.CLIENT)
 public class ScytheBakedModelRenderer {

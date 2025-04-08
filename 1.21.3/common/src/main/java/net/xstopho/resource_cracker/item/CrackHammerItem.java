@@ -1,6 +1,5 @@
 package net.xstopho.resource_cracker.item;
 
-import com.fasterxml.jackson.databind.annotation.JsonAppend;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;

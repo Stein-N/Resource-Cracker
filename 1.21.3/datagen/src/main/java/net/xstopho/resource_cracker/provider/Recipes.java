@@ -5,7 +5,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.world.item.Items;
 import net.xstopho.resource_cracker.helper.BaseRecipes;
 import net.xstopho.resource_cracker.item.tags.CrackerItemTags;

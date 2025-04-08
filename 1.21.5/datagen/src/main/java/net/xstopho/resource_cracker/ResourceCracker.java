@@ -6,8 +6,6 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.xstopho.resource_cracker.provider.*;
-import net.xstopho.resource_cracker.registries.BlockRegistry;
-import net.xstopho.resource_cracker.registries.ItemRegistry;
 
 @Mod(CrackerConstants.MOD_ID)
 public class ResourceCracker {

@@ -5,7 +5,6 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.xstopho.resource_cracker.CrackerConstants;
 import net.xstopho.resourcelibrary.items.RecipeRemainder;
 
 import java.util.List;
