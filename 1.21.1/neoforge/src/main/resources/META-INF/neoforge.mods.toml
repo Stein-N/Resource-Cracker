@@ -16,7 +16,7 @@ license = "${mod_license}"
 [[dependencies.${mod_id}]]
     modId = "neoforge"
     required = true
-    versionRange = "[${neoforge_version},)"
+    versionRange = "[21, 21.2)"
     ordering = "NONE"
     side = "BOTH"
 
