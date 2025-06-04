@@ -1,3 +1,7 @@
+#### v2.5.3
+- fix durability bug for Chisels and CrackHammer when found in Chests
+- port to Forge 1.21.5
+
 #### v2.5.1
 - add custom TooltipContainer Component as a replacement for ItemLore Component
 
