@@ -36,6 +36,10 @@ public class CrackHammerItem extends ResourceCraftingRemainder {
         super.appendHoverText(itemStack, tooltipContext, tooltip, tooltipFlag);
     }
 
+    public int getDurability() {
+        return this.durability.get();
+    }
+
     public ItemStack addDurability(ItemStack stack) {
         ItemStack copy = stack.copy();
         copy.set(DataComponents.MAX_DAMAGE, this.durability.get());

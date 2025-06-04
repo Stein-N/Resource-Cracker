@@ -56,6 +56,10 @@ public class ChiselItem extends Item {
         super.appendHoverText(stack, ccontext, tooltip, flag);
     }
 
+    public int getDurability() {
+        return this.durability.get();
+    }
+
     public ItemStack addDurability(ItemStack stack) {
         ItemStack copy = stack.copy();
         copy.set(DataComponents.MAX_DAMAGE, this.durability.get());

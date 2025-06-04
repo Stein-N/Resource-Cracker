@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[2,)"
+loaderVersion = "[55, 56)"
 license = "${mod_license}"
 
 [[mods]]
@@ -10,33 +10,30 @@ license = "${mod_license}"
     description = '''${mod_description}'''
     logoFile = "icon.png"
 
-[[mixins]]
-    config = "${mod_id}.mixins.json"
-
 [[dependencies.${mod_id}]]
-    modId = "neoforge"
-    required = true
-    versionRange = "[21.5, 21.6)"
+    modId = "forge"
+    mandatory = true
+    versionRange = "[55, 56)"
     ordering = "NONE"
     side = "BOTH"
 
 [[dependencies.${mod_id}]]
     modId = "minecraft"
-    required = true
+    mandatory = true
     versionRange = "${minecraft_version_range}"
     ordering = "NONE"
     side = "BOTH"
 
 [[dependencies.${mod_id}]]
     modId = "resourceconfigapi"
-    required = true
+    mandatory = true
     versionRange = "[${resource_config_api}, )"
     ordering = "NONE"
     side = "BOTH"
 
 [[dependencies.${mod_id}]]
     modId = "resourcelibrary"
-    required = true
+    mandatory = true
     versionRange = "[${resource_library}, )"
     ordering = "NONE"
     side = "BOTH"
