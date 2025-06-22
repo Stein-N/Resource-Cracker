@@ -4,8 +4,8 @@ plugins {
 }
 
 dependencies {
-    implementation "net.xstopho.resourceconfigapi:resourceconfigapi-neoforge:${resource_config_api}"
-    implementation "net.xstopho.resourcelibrary:resourcelibrary-neoforge:${resource_library}"
+    implementation "net.xstopho.resourceconfigapi:resourceconfigapi-neoforge:${minecraft_version}-${resource_config_api}"
+    implementation "net.xstopho.resourcelibrary:resourcelibrary-neoforge:${minecraft_version}-${resource_library}"
 
     implementation project(":1.21.1:common")
 }

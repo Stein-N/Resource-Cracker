@@ -10,8 +10,8 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${fabric_loader_21_5}"
     modApi "net.fabricmc.fabric-api:fabric-api:${fabric_21_5}+${minecraft_version}"
 
-    modImplementation "net.xstopho.resourceconfigapi:resourceconfigapi-fabric:${resource_config_api}"
-    modImplementation "net.xstopho.resourcelibrary:resourcelibrary-fabric:${resource_library}"
+    modImplementation "net.xstopho.resourceconfigapi:resourceconfigapi-fabric:${minecraft_version}-${resource_config_api}"
+    modImplementation "net.xstopho.resourcelibrary:resourcelibrary-fabric:${minecraft_version}-${resource_library}"
 }
 
 loom {
@@ -22,7 +22,7 @@ loom {
     def aw = file("src/main/resources/${mod_id}.accesswidener")
     if (aw.exists()) accessWidenerPath.set(aw)
 
-    runs {
+/*    runs {
         client {
             client()
             setConfigName("Fabric Client")
@@ -36,7 +36,7 @@ loom {
             ideConfigGenerated(true)
             runDir("runs/server")
         }
-    }
+    }*/
 }
 
 publishMods {

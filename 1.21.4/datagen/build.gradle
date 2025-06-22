@@ -4,8 +4,8 @@ plugins {
 }
 
 dependencies {
-    implementation "net.xstopho.resourceconfigapi:resourceconfigapi-neoforge:${resource_config_api}"
-    implementation "net.xstopho.resourcelibrary:resourcelibrary-neoforge:${resource_library}"
+    implementation "net.xstopho.resourceconfigapi:resourceconfigapi-neoforge:${minecraft_version}-${resource_config_api}"
+    implementation "net.xstopho.resourcelibrary:resourcelibrary-neoforge:${minecraft_version}-${resource_library}"
 
     implementation project(":1.21.4:common")
 }
@@ -21,7 +21,7 @@ neoForge {
         mappingsVersion = parchment_21_4
     }
 
-    runs {
+/*    runs {
         data {
             clientData()
             ideName = "Common Datagen (1.21.4)"
@@ -31,7 +31,7 @@ neoForge {
     }
     mods {
         "${mod_id}" { sourceSet sourceSets.main }
-    }
+    }*/
 }
 
 compileJava {
