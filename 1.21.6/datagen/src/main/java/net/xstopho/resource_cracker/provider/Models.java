@@ -4,16 +4,21 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.TexturedModel;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.level.material.Fluids;
 import net.xstopho.resource_cracker.CrackerConstants;
 import net.xstopho.resource_cracker.block.GarlicCropBlock;
 import net.xstopho.resource_cracker.helper.BlockModelHelper;
 import net.xstopho.resource_cracker.helper.ItemModelHelper;
+import net.xstopho.resource_cracker.helper.ResourceBlockModels;
 import net.xstopho.resource_cracker.registries.BlockRegistry;
 import net.xstopho.resource_cracker.registries.ItemRegistry;
 import org.jetbrains.annotations.NotNull;
 
 public class Models extends ModelProvider {
+    private ResourceBlockModels resourceModels;
 
     public Models(PackOutput packOutput) {
         super(packOutput, CrackerConstants.MOD_ID);
@@ -63,8 +68,9 @@ public class Models extends ModelProvider {
     }
 
     private void createBlockModels(BlockModelGenerators block) {
-        BlockModelHelper.createLavaSpring(block, BlockRegistry.LAVA_SPRING_BLOCK.get());
-        BlockModelHelper.createWaterSpring(block, BlockRegistry.WATER_SPRING_BLOCK.get());
+        ResourceBlockModels modelHelper = new ResourceBlockModels(block);
+        modelHelper.createSpringBlock(BlockRegistry.LAVA_SPRING_BLOCK, Fluids.LAVA);
+        modelHelper.createTintedSpringBlock(BlockRegistry.WATER_SPRING_BLOCK, Fluids.WATER, 0x3F76E4);
 
         block.createTrivialCube(BlockRegistry.STEEL_BLOCK.get());
         block.createCropBlock(BlockRegistry.GARLIC_CROP.get(), GarlicCropBlock.AGE, 0, 1, 2, 3, 4, 5);
@@ -72,6 +78,7 @@ public class Models extends ModelProvider {
 
     @Override
     protected void registerModels(@NotNull BlockModelGenerators blockModels, @NotNull ItemModelGenerators itemModels) {
+        this.resourceModels = new ResourceBlockModels(blockModels);
         createBlockModels(blockModels);
         createItemModels(itemModels);
     }

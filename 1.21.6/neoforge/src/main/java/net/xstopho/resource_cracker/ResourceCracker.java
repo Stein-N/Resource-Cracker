@@ -17,15 +17,8 @@ public class ResourceCracker {
         CrackerConstants.commonInit();
     }
 
-    @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @EventBusSubscriber(value = Dist.CLIENT)
     public static class ResourceCrackerClient {
-
-        @SubscribeEvent
-        public static void renderSetup(FMLClientSetupEvent event) {
-            ItemBlockRenderTypes.setRenderLayer(BlockRegistry.GARLIC_CROP.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(BlockRegistry.LAVA_SPRING_BLOCK.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(BlockRegistry.WATER_SPRING_BLOCK.get(), RenderType.cutout());
-        }
 
         @SubscribeEvent
         public static void colorBlockTexture(RegisterColorHandlersEvent.Block event) {

@@ -24,7 +24,7 @@
         "minecraft": "${minecraft_version}",
         "java": ">=21",
 
-        "resourceconfigapi": ">=${resource_config_api}",
-        "resourcelibrary": ">=${resource_library}"
+        "resourceconfigapi": ">=${minecraft_version}-${resource_config_api}",
+        "resourcelibrary": ">=${minecraft_version}-${resource_library}"
     }
 }

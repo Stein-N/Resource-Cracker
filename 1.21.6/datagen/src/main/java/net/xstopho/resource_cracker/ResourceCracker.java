@@ -14,7 +14,7 @@ public class ResourceCracker {
         CrackerConstants.commonInit();
     }
 
-    @EventBusSubscriber(modid = CrackerConstants.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
+    @EventBusSubscriber(modid = CrackerConstants.MOD_ID)
     public static class Datagen {
 
         @SubscribeEvent

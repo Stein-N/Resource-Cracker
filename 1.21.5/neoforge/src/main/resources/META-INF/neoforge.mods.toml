@@ -30,13 +30,13 @@ license = "${mod_license}"
 [[dependencies.${mod_id}]]
     modId = "resourceconfigapi"
     required = true
-    versionRange = "[${resource_config_api}, )"
+    versionRange = "[${minecraft_version}-${resource_config_api}, )"
     ordering = "NONE"
     side = "BOTH"
 
 [[dependencies.${mod_id}]]
     modId = "resourcelibrary"
     required = true
-    versionRange = "[${resource_library}, )"
+    versionRange = "[${minecraft_version}-${resource_library}, )"
     ordering = "NONE"
     side = "BOTH"
