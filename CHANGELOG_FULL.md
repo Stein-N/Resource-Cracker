@@ -1,3 +1,7 @@
+#### v2.6.0
+- update to 1.21.6
+- apply changes for resource_library on all versions
+
 #### v2.5.3
 - fix durability bug for Chisels and CrackHammer when found in Chests
 - port to Forge 1.21.5
