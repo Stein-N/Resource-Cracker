@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "resource_cracker:item/chisel_gold"
+  }
+}

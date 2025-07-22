@@ -1,0 +1,7 @@
+{
+  "parent": "resource_cracker:block/spring_block",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "inside": "minecraft:block/water_still"
+  }
+}

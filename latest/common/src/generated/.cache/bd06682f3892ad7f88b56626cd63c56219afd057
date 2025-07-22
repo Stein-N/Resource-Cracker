@@ -1,0 +1,3 @@
+// 1.21.8	2025-07-22T13:45:01.6309297	Tags for minecraft:block mod id resource_cracker
+d80f1b190531678dbb4b0ac1086623aae71b209b data/minecraft/tags/block/mineable/pickaxe.json
+d80f1b190531678dbb4b0ac1086623aae71b209b data/minecraft/tags/block/needs_iron_tool.json

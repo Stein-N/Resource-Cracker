@@ -1,0 +1,5 @@
+// 1.21.1	2025-07-22T13:45:20.2929426	Loot Tables
+2637070a0e63f51cb63ae4c474e9f2b46ba08bfe data/resource_cracker/loot_table/blocks/garlic_crop.json
+f06fa192f57a60b94c8d3afa5784339061d89711 data/resource_cracker/loot_table/blocks/lava_spring_block.json
+45cb9d95504ef023526dd2877de377e229f7bbc4 data/resource_cracker/loot_table/blocks/steel_block.json
+329ababa966766f4bfac97ec8988117666269ee6 data/resource_cracker/loot_table/blocks/water_spring_block.json

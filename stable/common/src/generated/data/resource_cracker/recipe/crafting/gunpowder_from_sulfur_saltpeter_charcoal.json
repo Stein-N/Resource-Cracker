@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:charcoal"
+    },
+    "P": {
+      "tag": "c:dusts/saltpeter"
+    },
+    "S": {
+      "tag": "c:dusts/sulfur"
+    }
+  },
+  "pattern": [
+    "SPC"
+  ],
+  "result": {
+    "count": 3,
+    "id": "minecraft:gunpowder"
+  }
+}

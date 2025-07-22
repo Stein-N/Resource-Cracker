@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "resource_cracker:item/scythe_copper"
+  }
+}

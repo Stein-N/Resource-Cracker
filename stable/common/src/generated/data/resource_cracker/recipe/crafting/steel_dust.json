@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "tag": "c:dusts/carbon"
+    },
+    "I": {
+      "tag": "c:dusts/iron"
+    }
+  },
+  "pattern": [
+    "CC",
+    "II"
+  ],
+  "result": {
+    "count": 4,
+    "id": "resource_cracker:material_dust_steel"
+  }
+}

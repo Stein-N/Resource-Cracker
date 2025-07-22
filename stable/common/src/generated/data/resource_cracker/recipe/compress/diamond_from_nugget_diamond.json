@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "resource_cracker:nugget_diamond"
+    },
+    {
+      "item": "resource_cracker:nugget_diamond"
+    },
+    {
+      "item": "resource_cracker:nugget_diamond"
+    },
+    {
+      "item": "resource_cracker:nugget_diamond"
+    },
+    {
+      "item": "resource_cracker:nugget_diamond"
+    },
+    {
+      "item": "resource_cracker:nugget_diamond"
+    },
+    {
+      "item": "resource_cracker:nugget_diamond"
+    },
+    {
+      "item": "resource_cracker:nugget_diamond"
+    },
+    {
+      "item": "resource_cracker:nugget_diamond"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:diamond"
+  }
+}

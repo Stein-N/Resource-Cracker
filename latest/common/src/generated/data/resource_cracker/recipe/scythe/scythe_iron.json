@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "S": "minecraft:stick",
+    "T": "#c:tools/scythe/crafting_ingredients"
+  },
+  "pattern": [
+    "IIT",
+    " SI",
+    "S  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "resource_cracker:scythe_iron"
+  }
+}
