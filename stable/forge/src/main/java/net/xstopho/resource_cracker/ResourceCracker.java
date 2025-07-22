@@ -22,6 +22,7 @@ public class ResourceCracker {
     public static class ResourceCrackerClient {
 
         @SubscribeEvent
+        @SuppressWarnings("all")
         public static void renderSetup(FMLClientSetupEvent event) {
             ItemBlockRenderTypes.setRenderLayer(BlockRegistry.GARLIC_CROP.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(BlockRegistry.WATER_SPRING_BLOCK.get(), RenderType.cutout());
