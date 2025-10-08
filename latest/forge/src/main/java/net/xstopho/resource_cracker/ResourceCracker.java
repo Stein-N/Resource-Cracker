@@ -13,7 +13,7 @@ public class ResourceCracker {
         CrackerConstants.commonInit();
     }
 
-    @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @Mod.EventBusSubscriber(value = Dist.CLIENT)
     public static class ResourceCrackerClient {
 
         @SubscribeEvent
