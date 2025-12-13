@@ -12,7 +12,7 @@ import net.minecraft.client.data.models.model.TextureSlot;
 import net.minecraft.client.renderer.block.model.VariantMutator;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.Fluid;
@@ -34,11 +34,11 @@ public class ResourceBlockModels {
     }
 
     public void createTintedSpringBlock(RegistryObject<Block> block, Fluid fluid, int value) {
-        ResourceLocation modelLocation = this.createSpringBlock(block, fluid, "minecraft:cutout");
+        Identifier modelLocation = this.createSpringBlock(block, fluid, "minecraft:cutout");
         generator.itemModelOutput.accept(block.get().asItem(), ItemModelUtils.tintedModel(modelLocation, ItemModelUtils.constantTint(value)));
     }
 
-    private ResourceLocation createSpringBlock(RegistryObject<Block> block, Fluid fluid, @NotNull String renderType) {
+    private Identifier createSpringBlock(RegistryObject<Block> block, Fluid fluid, @NotNull String renderType) {
         TextureMapping textureMap = new TextureMapping();
         textureMap.put(TextureSlot.INSIDE, getKey(fluid).withSuffix("_still"));
 
@@ -47,13 +47,13 @@ public class ResourceBlockModels {
                 Optional.empty(), TextureSlot.INSIDE)
                 .extend().renderType(renderType).build();
 
-        ResourceLocation modelLocation = modelTemplate.create(block.get(), textureMap, generator.modelOutput);
+        Identifier modelLocation = modelTemplate.create(block.get(), textureMap, generator.modelOutput);
         generator.blockStateOutput.accept(MultiVariantGenerator.dispatch(block.get()).with(createPropertyDispatch(modelLocation)));
 
         return modelLocation;
     }
 
-    private PropertyDispatch<MultiVariant> createPropertyDispatch(ResourceLocation location) {
+    private PropertyDispatch<MultiVariant> createPropertyDispatch(Identifier location) {
         MultiVariant model = BlockModelGenerators.plainVariant(location);
 
         return PropertyDispatch.initial(BlockStateProperties.HORIZONTAL_FACING)
@@ -63,7 +63,7 @@ public class ResourceBlockModels {
                 .select(Direction.WEST, model.with(VariantMutator.Y_ROT.withValue(Quadrant.R270)));
     }
 
-    private ResourceLocation getKey(Fluid fluid) {
+    private Identifier getKey(Fluid fluid) {
         return BuiltInRegistries.FLUID.getKey(fluid).withPrefix("block/");
     }
 }

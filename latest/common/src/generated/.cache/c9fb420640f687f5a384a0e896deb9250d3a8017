@@ -1,4 +1,4 @@
-// 1.21.9	2025-10-05T12:20:17.848101	Tags for minecraft:item mod id resource_cracker
+// 1.21.11	2025-12-13T13:20:56.8630561	Tags for minecraft:item mod id resource_cracker
 1b6c17098a42dcd6d3cdced3f21175ef5cf57505 data/c/tags/item/blocks/steel.json
 6222fd0d7d2ce08ee1f70be68a61f4e167dda650 data/c/tags/item/copper_tool_materials.json
 f3e3d6c216f1f32deae88a4959d5bbf8fe345a2a data/c/tags/item/dusts.json
@@ -35,8 +35,7 @@ f781f23ff6f22bdbd1aca157e273bd61a18ad436 data/c/tags/item/tools.json
 66ebe8cdc6d453ca9fd971a39cd4af73c5be99e6 data/c/tags/item/tools/scythe.json
 a7842cdea55d1133d0e94eac6e9d6c8a949d9da4 data/c/tags/item/tools/scythe/crafting_ingredients.json
 03201b2cf76ff416c78891db080ef894c5369436 data/minecraft/tags/item/breaks_decorated_pots.json
-2663840d9f94dedb3cd831093cd4f909f996165b data/minecraft/tags/item/enchantable/sharp_weapon.json
-66ebe8cdc6d453ca9fd971a39cd4af73c5be99e6 data/minecraft/tags/item/enchantable/sword.json
+09ab0cef539e364ecb6341aa19607d0c23f6a46f data/minecraft/tags/item/enchantable/sharp_weapon.json
 2663840d9f94dedb3cd831093cd4f909f996165b data/minecraft/tags/item/enchantable/weapon.json
 66ebe8cdc6d453ca9fd971a39cd4af73c5be99e6 data/minecraft/tags/item/swords.json
 aabe86cdb7a48cc4072a77bcad9c58d042f14ee2 data/minecraft/tags/item/villager_plantable_seeds.json

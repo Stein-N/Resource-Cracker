@@ -4,7 +4,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -113,6 +113,6 @@ public abstract class BaseRecipes extends RecipeProvider {
     }
 
     protected ResourceKey<Recipe<?>> path(String path) {
-        return ResourceKey.create(Registries.RECIPE, ResourceLocation.fromNamespaceAndPath(CrackerConstants.MOD_ID, path));
+        return ResourceKey.create(Registries.RECIPE, Identifier.fromNamespaceAndPath(CrackerConstants.MOD_ID, path));
     }
 }

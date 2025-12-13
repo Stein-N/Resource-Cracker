@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.item.ItemModel;
 import net.minecraft.client.renderer.item.SelectItemModel;
 import net.minecraft.client.renderer.item.properties.select.DisplayContext;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.xstopho.resource_cracker.CrackerConstants;
@@ -19,8 +19,8 @@ import java.util.Optional;
 
 public class ItemModelHelper {
 
-    private static final ResourceLocation PARENT_FLAT = ResourceLocation.withDefaultNamespace("item/handheld");
-    private static final ResourceLocation PARENT_FLAT_LARGE = ResourceLocation.fromNamespaceAndPath(CrackerConstants.MOD_ID, "item/in_hand/handheld_large");
+    private static final Identifier PARENT_FLAT = Identifier.withDefaultNamespace("item/handheld");
+    private static final Identifier PARENT_FLAT_LARGE = Identifier.fromNamespaceAndPath(CrackerConstants.MOD_ID, "item/in_hand/handheld_large");
 
     public static void generateScytheModels(ItemModelGenerators generator, Item item) {
         createBaseModels(generator, item);
@@ -47,17 +47,17 @@ public class ItemModelHelper {
     }
 
     private static ItemModel.Unbaked inventoryModel(Item item) {
-        ResourceLocation modelLocation = getModelLocation(item, "item/");
+        Identifier modelLocation = getModelLocation(item, "item/");
         return ItemModelUtils.plainModel(modelLocation);
     }
 
     private static ItemModel.Unbaked inHandModel(Item item) {
-        ResourceLocation modelLocation = getModelLocation(item, "item/in_hand/");
+        Identifier modelLocation = getModelLocation(item, "item/in_hand/");
         return ItemModelUtils.plainModel(modelLocation);
     }
 
-    private static ResourceLocation getModelLocation(Item item, String prefix) {
-        ResourceLocation location = BuiltInRegistries.ITEM.getKey(item);
+    private static Identifier getModelLocation(Item item, String prefix) {
+        Identifier location = BuiltInRegistries.ITEM.getKey(item);
         return location.withPrefix(prefix);
     }
 }

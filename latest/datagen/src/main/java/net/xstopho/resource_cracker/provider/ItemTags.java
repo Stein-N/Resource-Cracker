@@ -59,7 +59,7 @@ public class ItemTags extends ItemTagsProvider {
                 ItemRegistry.SCYTHE_DIAMOND.get(),
                 ItemRegistry.SCYTHE_NETHERITE.get());
 
-        this.tag(net.minecraft.tags.ItemTags.SWORD_ENCHANTABLE).add(
+        this.tag(net.minecraft.tags.ItemTags.SHARP_WEAPON_ENCHANTABLE).add(
                 ItemRegistry.SCYTHE_COPPER.get(),
                 ItemRegistry.SCYTHE_GOLD.get(),
                 ItemRegistry.SCYTHE_IRON.get(),
