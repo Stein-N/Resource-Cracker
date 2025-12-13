@@ -4,7 +4,7 @@ import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
@@ -24,8 +24,8 @@ import java.util.List;
 
 public record ScytheMaterial(int durability, float damageBonus, int enchantmentValue, TagKey<Item> repairItem) {
 
-    private static final ResourceLocation EXTENDED_ENTITY_REACH_ID = CrackerConstants.of("extended_entity_reach");
-    private static final ResourceLocation EXTENDED_BLOCK_REACH_ID = CrackerConstants.of("extended_block_reach");
+    private static final Identifier EXTENDED_ENTITY_REACH_ID = CrackerConstants.of("extended_entity_reach");
+    private static final Identifier EXTENDED_BLOCK_REACH_ID = CrackerConstants.of("extended_block_reach");
 
     public static final ScytheMaterial COPPER = new ScytheMaterial(100, 0.0F, 5, CrackerItemTags.COPPER_TOOL_MATERIALS);
     public static final ScytheMaterial GOLD = new ScytheMaterial(32, 0.0F, 22, ItemTags.GOLD_TOOL_MATERIALS);

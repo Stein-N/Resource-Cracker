@@ -1,7 +1,7 @@
 package net.xstopho.resource_cracker;
 
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
 import net.xstopho.resource_cracker.config.LootConfig;
 import net.xstopho.resource_cracker.config.ToolConfig;
@@ -22,8 +22,8 @@ public class CrackerConstants {
     public static final String MOD_NAME = "Resource Cracker/Tools";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_NAME);
 
-    public static ResourceLocation of(String id) {
-        return ResourceLocation.fromNamespaceAndPath(MOD_ID, id);
+    public static Identifier of(String id) {
+        return Identifier.fromNamespaceAndPath(MOD_ID, id);
     }
 
     public static void commonInit() {

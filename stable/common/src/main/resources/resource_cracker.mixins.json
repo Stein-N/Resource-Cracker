@@ -5,8 +5,8 @@
   "refmap": "${mod_id}.refmap.json",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "ShapedRecipeMixin",
-    "RepairItemRecipeMixin"
+    "RepairItemRecipeMixin",
+    "ShapedRecipeMixin"
   ],
   "injectors": {
     "defaultRequire": 1
