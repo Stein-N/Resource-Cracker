@@ -1,2 +1,2 @@
-#### v2.6.1
-  - update to 1.21.11
+#### v3.0.1
+  - fix supported versions
