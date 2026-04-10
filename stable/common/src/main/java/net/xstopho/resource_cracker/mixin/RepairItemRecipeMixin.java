@@ -1,7 +1,6 @@
 package net.xstopho.resource_cracker.mixin;
 
 import com.mojang.datafixers.util.Pair;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.CraftingInput;
 import net.minecraft.world.item.crafting.RepairItemRecipe;

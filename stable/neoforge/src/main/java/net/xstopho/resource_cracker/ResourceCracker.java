@@ -1,27 +1,11 @@
 package net.xstopho.resource_cracker;
 
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
-import net.xstopho.resource_cracker.registries.BlockRegistry;
-
-import java.util.List;
 
 @Mod(CrackerConstants.MOD_ID)
 public class ResourceCracker {
 
     public ResourceCracker() {
         CrackerConstants.commonInit();
-    }
-
-    @EventBusSubscriber(value = Dist.CLIENT)
-    public static class ResourceCrackerClient {
-
-        @SubscribeEvent
-        public static void colorBlockTexture(RegisterColorHandlersEvent.BlockTintSources event) {
-            event.register(List.of(state -> 0x3F76E4), BlockRegistry.WATER_SPRING_BLOCK.get());
-        }
     }
 }

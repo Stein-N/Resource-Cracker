@@ -14,8 +14,7 @@
     "icon": "icon.png",
     "environment": "*",
     "entrypoints": {
-        "main": [ "net.xstopho.resource_cracker.ResourceCracker" ],
-        "client": [ "net.xstopho.resource_cracker.ResourceCrackerClient" ]
+        "main": [ "net.xstopho.resource_cracker.ResourceCracker" ]
     },
     "mixins": [ "${mod_id}.mixins.json" ],
     "depends": {
