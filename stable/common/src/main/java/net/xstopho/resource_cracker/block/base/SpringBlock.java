@@ -2,7 +2,7 @@ package net.xstopho.resource_cracker.block.base;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -21,15 +21,17 @@ public class SpringBlock extends Block {
         super(properties);
     }
 
-    public static ItemInteractionResult addOrDropItem(Player player, ItemStack stack) {
+    public static InteractionResult addOrDropItem(Player player, ItemStack stack) {
         ItemStack handStack = player.getItemInHand(InteractionHand.MAIN_HAND);
         if (handStack.getCount() == 1) {
             player.setItemInHand(InteractionHand.MAIN_HAND, stack);
-            return ItemInteractionResult.SUCCESS;
+            return InteractionResult.SUCCESS;
         }
-        if (!player.getInventory().add(stack)) player.drop(stack, false);
+        if (!player.getInventory().add(stack)) {
+            player.drop(stack, false);
+        }
         handStack.shrink(1);
-        return ItemInteractionResult.SUCCESS;
+        return InteractionResult.SUCCESS;
     }
 
     @Nullable

@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "G": {
-      "tag": "c:dusts/gold"
-    },
-    "N": {
-      "tag": "c:dusts/netherite_scrap"
-    }
+    "G": "#c:dusts/gold",
+    "N": "#c:dusts/netherite_scrap"
   },
   "pattern": [
     "NNN",
@@ -15,7 +11,6 @@
     "G  "
   ],
   "result": {
-    "count": 1,
     "id": "resource_cracker:material_dust_netherite"
   }
 }

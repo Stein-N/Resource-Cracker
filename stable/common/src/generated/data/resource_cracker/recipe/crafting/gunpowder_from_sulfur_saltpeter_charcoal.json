@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "C": {
-      "item": "minecraft:charcoal"
-    },
-    "P": {
-      "tag": "c:dusts/saltpeter"
-    },
-    "S": {
-      "tag": "c:dusts/sulfur"
-    }
+    "C": "minecraft:charcoal",
+    "P": "#c:dusts/saltpeter",
+    "S": "#c:dusts/sulfur"
   },
   "pattern": [
     "SPC"

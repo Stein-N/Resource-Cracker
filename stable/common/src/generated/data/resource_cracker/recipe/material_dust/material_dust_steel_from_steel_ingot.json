@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "resource_cracker:steel_ingot",
+    "#c:tools/crack_hammer"
+  ],
+  "result": {
+    "id": "resource_cracker:material_dust_steel"
+  }
+}

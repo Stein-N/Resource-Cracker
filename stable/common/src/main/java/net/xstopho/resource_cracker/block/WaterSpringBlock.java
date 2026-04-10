@@ -3,7 +3,7 @@ package net.xstopho.resource_cracker.block;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -23,12 +23,17 @@ public class WaterSpringBlock extends SpringBlock {
     }
 
     @Override
-    protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos blockPos, Player player, InteractionHand hand, BlockHitResult hitResult) {
+    protected InteractionResult useItemOn(ItemStack stack, BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand hand, BlockHitResult blockHitResult) {
         Item itemInHand = player.getItemInHand(hand).getItem();
 
-        if (itemInHand == Items.BUCKET && !player.isCreative()) return addOrDropItem(player, new ItemStack(Items.WATER_BUCKET));
-        if (itemInHand == Items.GLASS_BOTTLE && !player.isCreative()) return addOrDropItem(player, PotionContents.createItemStack(Items.POTION, Potions.WATER));
+        if (itemInHand == Items.BUCKET && !player.isCreative()) {
+            return addOrDropItem(player, new ItemStack(Items.WATER_BUCKET));
+        }
 
-        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        if (itemInHand == Items.GLASS_BOTTLE && !player.isCreative()) {
+            return addOrDropItem(player, PotionContents.createItemStack(Items.POTION, Potions.WATER));
+        }
+
+        return InteractionResult.PASS;
     }
 }

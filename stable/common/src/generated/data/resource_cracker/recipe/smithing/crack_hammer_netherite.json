@@ -1,16 +1,9 @@
 {
   "type": "minecraft:smithing_transform",
-  "addition": {
-    "item": "minecraft:netherite_ingot"
-  },
-  "base": {
-    "item": "resource_cracker:crack_hammer_diamond"
-  },
+  "addition": "minecraft:netherite_ingot",
+  "base": "resource_cracker:crack_hammer_diamond",
   "result": {
-    "count": 1,
     "id": "resource_cracker:crack_hammer_netherite"
   },
-  "template": {
-    "item": "minecraft:netherite_upgrade_smithing_template"
-  }
+  "template": "minecraft:netherite_upgrade_smithing_template"
 }

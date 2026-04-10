@@ -9,11 +9,12 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.xstopho.resource_cracker.config.LootConfig;
+import net.xstopho.resource_cracker.item.components.TooltipContainer;
+import net.xstopho.resource_cracker.registries.DataComponentRegistry;
 import net.xstopho.resource_cracker.registries.ItemRegistry;
 import org.jetbrains.annotations.NotNull;
 
@@ -26,15 +27,12 @@ public class ChiselItem extends Item {
     private final Supplier<Integer> durability;
     private final Supplier<Float> saltpeterChance;
 
-    public ChiselItem(Supplier<Integer> durability) {
-        super(new Properties());
+    public ChiselItem(Supplier<Integer> durability, Properties properties) {
+        super(properties.component(DataComponentRegistry.TOOLTIP_CONTAINER.get(), new TooltipContainer(List.of(
+                        Component.translatable("item.chisel.tooltip").withStyle(ChatFormatting.GOLD)
+                ))));
         this.durability = durability;
         this.saltpeterChance = () -> LootConfig.saltpeterFromBricks;
-    }
-
-    @Override
-    public boolean isEnchantable(ItemStack stack) {
-        return false;
     }
 
     @NotNull
@@ -54,22 +52,15 @@ public class ChiselItem extends Item {
         return InteractionResult.SUCCESS;
     }
 
-    @Override
-    public void appendHoverText(ItemStack stack, TooltipContext ccontext, List<Component> tooltip, TooltipFlag flag) {
-        tooltip.add(Component.translatable("item.chisel.tooltip").withStyle(ChatFormatting.GOLD));
-
-        super.appendHoverText(stack, ccontext, tooltip, flag);
-    }
-
     public int getDurability() {
-        return durability.get();
+        return this.durability.get();
     }
 
-    public ItemStack addDurability() {
-        ItemStack stack = this.getDefaultInstance();
-        stack.set(DataComponents.MAX_DAMAGE, getDurability());
-        stack.set(DataComponents.MAX_STACK_SIZE, 1);
-        stack.set(DataComponents.DAMAGE, 0);
-        return stack;
+    public ItemStack addDurability(ItemStack stack) {
+        ItemStack copy = stack.copy();
+        copy.set(DataComponents.MAX_DAMAGE, this.durability.get());
+        copy.set(DataComponents.MAX_STACK_SIZE, 1);
+        copy.set(DataComponents.DAMAGE, 0);
+        return copy;
     }
 }

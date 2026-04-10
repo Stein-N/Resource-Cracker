@@ -3,22 +3,24 @@ package net.xstopho.resource_cracker.provider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.world.item.Items;
 import net.xstopho.resource_cracker.helper.BaseRecipes;
-import net.xstopho.resource_cracker.helper.CrackerItemTags;
+import net.xstopho.resource_cracker.item.tags.CrackerItemTags;
 import net.xstopho.resource_cracker.registries.BlockRegistry;
 import net.xstopho.resource_cracker.registries.ItemRegistry;
 
 import java.util.concurrent.CompletableFuture;
 
 public class Recipes extends BaseRecipes {
-    public Recipes(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
-        super(output, registries);
+
+    protected Recipes(HolderLookup.Provider provider, RecipeOutput recipeOutput) {
+        super(provider, recipeOutput);
     }
 
     @Override
-    public void createRecipes() {
+    protected void buildRecipes() {
         /////////////
         //  Tools  //
         /////////////
@@ -28,7 +30,7 @@ public class Recipes extends BaseRecipes {
         crackHammerRecipe(ItemRegistry.CRACK_HAMMER_IRON.get(), Items.IRON_INGOT);
         crackHammerRecipe(ItemRegistry.CRACK_HAMMER_DIAMOND.get(), Items.DIAMOND);
         crackHammerRecipe(ItemRegistry.CRACK_HAMMER_STEEL.get(), ItemRegistry.STEEL_INGOT.get());
-        netheriteUpgradeRecipe(ItemRegistry.CRACK_HAMMER_NETHERITE.get(), ItemRegistry.CRACK_HAMMER_DIAMOND.get(), Items.NETHERITE_INGOT);
+        smithingUpgrade(ItemRegistry.CRACK_HAMMER_NETHERITE.get(), ItemRegistry.CRACK_HAMMER_DIAMOND.get(), Items.NETHERITE_INGOT);
 
         /*  Chisel  */
         chiselRecipe(ItemRegistry.CHISEL_COPPER.get(), Items.COPPER_INGOT);
@@ -36,7 +38,7 @@ public class Recipes extends BaseRecipes {
         chiselRecipe(ItemRegistry.CHISEL_IRON.get(), Items.IRON_INGOT);
         chiselRecipe(ItemRegistry.CHISEL_DIAMOND.get(), Items.DIAMOND);
         chiselRecipe(ItemRegistry.CHISEL_STEEL.get(), ItemRegistry.STEEL_INGOT.get());
-        netheriteUpgradeRecipe(ItemRegistry.CHISEL_NETHERITE.get(), ItemRegistry.CHISEL_DIAMOND.get(), Items.NETHERITE_INGOT);
+        smithingUpgrade(ItemRegistry.CHISEL_NETHERITE.get(), ItemRegistry.CHISEL_DIAMOND.get(), Items.NETHERITE_INGOT);
 
         /* Scythe */
         scytheRecipe(ItemRegistry.SCYTHE_COPPER.get(), Items.COPPER_INGOT);
@@ -44,7 +46,7 @@ public class Recipes extends BaseRecipes {
         scytheRecipe(ItemRegistry.SCYTHE_GOLD.get(), Items.GOLD_INGOT);
         scytheRecipe(ItemRegistry.SCYTHE_STEEL.get(), ItemRegistry.STEEL_INGOT.get());
         scytheRecipe(ItemRegistry.SCYTHE_DIAMOND.get(), Items.DIAMOND);
-        netheriteUpgradeRecipe(ItemRegistry.SCYTHE_NETHERITE.get(), ItemRegistry.SCYTHE_DIAMOND.get(), Items.NETHERITE_INGOT);
+        smithingUpgrade(ItemRegistry.SCYTHE_NETHERITE.get(), ItemRegistry.SCYTHE_DIAMOND.get(), Items.NETHERITE_INGOT);
 
         ////////////////////////
         //   Material Dusts   //
@@ -110,31 +112,31 @@ public class Recipes extends BaseRecipes {
         ///////////////
         smokingRecipe(ItemRegistry.BEEF_JERKY.get(), Items.ROTTEN_FLESH);
 
-        ////////////////
-        //  Compress  //
-        ////////////////
+        ///////////////////
+        //  Compressing  //
+        ///////////////////
         compressRecipe(BlockRegistry.STEEL_BLOCK.get(), ItemRegistry.STEEL_INGOT.get());
         compressRecipe(Items.DIAMOND, ItemRegistry.NUGGET_DIAMOND.get());
         compressRecipe(Items.EMERALD, ItemRegistry.NUGGET_EMERALD.get());
         compressRecipe(Items.COPPER_INGOT, ItemRegistry.NUGGET_COPPER.get());
 
-        //////////////////
-        //  Decompress  //
-        //////////////////
+        /////////////////////
+        //  Decompressing  //
+        /////////////////////
         decompressRecipe(ItemRegistry.STEEL_INGOT.get(), BlockRegistry.STEEL_BLOCK.get());
         decompressRecipe(ItemRegistry.NUGGET_COPPER.get(), Items.COPPER_INGOT);
 
         ////////////
         //  Misc  //
         ////////////
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ItemRegistry.MATERIAL_DUST_STEEL.get(), 4)
+        this.shaped(RecipeCategory.MISC, ItemRegistry.MATERIAL_DUST_STEEL.get(), 4)
                 .pattern("CC").pattern("II")
                 .define('C', CrackerItemTags.CARBON_DUSTS)
                 .define('I', CrackerItemTags.IRON_DUSTS)
                 .unlockedBy("has_carbon_dust", has(CrackerItemTags.CARBON_DUSTS))
                 .save(this.recipeOutput, path("crafting/steel_dust"));
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.GUNPOWDER, 3)
+        this.shaped(RecipeCategory.MISC, Items.GUNPOWDER, 3)
                 .pattern("SPC")
                 .define('S', CrackerItemTags.SULFUR_DUSTS)
                 .define('P', CrackerItemTags.SALTPETER_DUSTS)
@@ -142,7 +144,7 @@ public class Recipes extends BaseRecipes {
                 .unlockedBy(getHasName(Items.CHARCOAL), has(Items.CHARCOAL))
                 .save(this.recipeOutput, path("crafting/gunpowder_from_sulfur_saltpeter_charcoal"));
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.SLIME_BALL, 2)
+        this.shaped(RecipeCategory.MISC, Items.SLIME_BALL, 2)
                 .pattern("HCS")
                 .define('H', Items.HONEYCOMB)
                 .define('C', Items.GREEN_DYE)
@@ -150,11 +152,28 @@ public class Recipes extends BaseRecipes {
                 .unlockedBy("has_saltpeter_dust", has(CrackerItemTags.SALTPETER_DUSTS))
                 .save(this.recipeOutput, path("crafting/slimeball_from_comb_dye_saltpeter"));
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ItemRegistry.MATERIAL_DUST_NETHERITE.get(), 1)
+        this.shaped(RecipeCategory.MISC, ItemRegistry.MATERIAL_DUST_NETHERITE.get(), 1)
                 .pattern("NNN").pattern("NGG").pattern("G  ")
                 .define('N', CrackerItemTags.NETHERITE_SCRAP_DUSTS)
                 .define('G', CrackerItemTags.GOLD_DUSTS)
                 .unlockedBy("has_netherite_scrap_dust", has(CrackerItemTags.NETHERITE_SCRAP_DUSTS))
                 .save(this.recipeOutput, path("crafting/netherite_dust_from_scrap_gold_dust"));
+    }
+
+    public static class Runner extends RecipeProvider.Runner {
+
+        public Runner(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> provider) {
+            super(packOutput, provider);
+        }
+
+        @Override
+        protected RecipeProvider createRecipeProvider(HolderLookup.Provider provider, RecipeOutput recipeOutput) {
+            return new Recipes(provider, recipeOutput);
+        }
+
+        @Override
+        public String getName() {
+            return "Resource Cracker Recipes";
+        }
     }
 }

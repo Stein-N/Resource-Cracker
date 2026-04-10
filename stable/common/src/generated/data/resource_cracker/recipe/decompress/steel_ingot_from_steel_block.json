@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "resource_cracker:steel_block"
-    }
+    "resource_cracker:steel_block"
   ],
   "result": {
     "count": 9,

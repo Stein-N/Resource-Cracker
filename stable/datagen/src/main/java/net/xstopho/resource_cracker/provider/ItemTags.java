@@ -2,12 +2,11 @@ package net.xstopho.resource_cracker.provider;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.common.data.ItemTagsProvider;
 import net.xstopho.resource_cracker.CrackerConstants;
-import net.xstopho.resource_cracker.helper.CrackerItemTags;
+import net.xstopho.resource_cracker.item.tags.CrackerItemTags;
 import net.xstopho.resource_cracker.registries.BlockRegistry;
 import net.xstopho.resource_cracker.registries.ItemRegistry;
 import org.jetbrains.annotations.NotNull;
@@ -15,8 +14,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.concurrent.CompletableFuture;
 
 public class ItemTags extends ItemTagsProvider {
-    public ItemTags(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> blockTags, ExistingFileHelper fileHelper) {
-        super(output, lookupProvider, blockTags, CrackerConstants.MOD_ID, fileHelper);
+    public ItemTags(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> tagLookupCompletableFuture) {
+        super(output, lookupProvider, CrackerConstants.MOD_ID);
     }
 
     @Override
@@ -60,7 +59,7 @@ public class ItemTags extends ItemTagsProvider {
                 ItemRegistry.SCYTHE_DIAMOND.get(),
                 ItemRegistry.SCYTHE_NETHERITE.get());
 
-        this.tag(net.minecraft.tags.ItemTags.SWORD_ENCHANTABLE).add(
+        this.tag(net.minecraft.tags.ItemTags.SHARP_WEAPON_ENCHANTABLE).add(
                 ItemRegistry.SCYTHE_COPPER.get(),
                 ItemRegistry.SCYTHE_GOLD.get(),
                 ItemRegistry.SCYTHE_IRON.get(),
@@ -92,6 +91,9 @@ public class ItemTags extends ItemTagsProvider {
         this.tag(CrackerItemTags.STEEL_BLOCKS).add(BlockRegistry.STEEL_BLOCK.get().asItem());
         this.tag(CrackerItemTags.LEATHER).add(Items.LEATHER, Items.RABBIT_HIDE);
         this.tag(CrackerItemTags.STRING).add(Items.STRING);
+
+        this.tag(CrackerItemTags.COPPER_TOOL_MATERIALS).add(Items.COPPER_INGOT);
+        this.tag(CrackerItemTags.STEEL_TOOL_MATERIALS).add(ItemRegistry.STEEL_INGOT.get());
 
         this.tag(CrackerItemTags.DUSTS)
                 .addTag(CrackerItemTags.COAL_DUSTS)

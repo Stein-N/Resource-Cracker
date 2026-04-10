@@ -3,7 +3,7 @@ package net.xstopho.resource_cracker.block;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -21,11 +21,13 @@ public class LavaSpringBlock extends SpringBlock {
     }
 
     @Override
-    protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos blockPos, Player player, InteractionHand hand, BlockHitResult hitResult) {
+    protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos blockPos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         Item itemInHand = player.getItemInHand(hand).getItem();
 
-        if (itemInHand == Items.BUCKET && !player.isCreative()) return addOrDropItem(player, new ItemStack(Items.LAVA_BUCKET));
+        if (itemInHand == Items.BUCKET && !player.isCreative()) {
+            return addOrDropItem(player, new ItemStack(Items.LAVA_BUCKET));
+        }
 
-        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        return InteractionResult.PASS;
     }
 }

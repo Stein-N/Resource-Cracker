@@ -1,6 +1,7 @@
 package net.xstopho.resource_cracker;
 
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
 import net.xstopho.resource_cracker.config.LootConfig;
 import net.xstopho.resource_cracker.config.ToolConfig;
@@ -9,7 +10,7 @@ import net.xstopho.resource_cracker.item.CrackHammerItem;
 import net.xstopho.resource_cracker.modifier.LootModifier;
 import net.xstopho.resource_cracker.registries.BlockRegistry;
 import net.xstopho.resource_cracker.registries.CreativeTabRegistry;
-import net.xstopho.resource_cracker.registries.ItemModelRenderRegistry;
+import net.xstopho.resource_cracker.registries.DataComponentRegistry;
 import net.xstopho.resource_cracker.registries.ItemRegistry;
 import net.xstopho.resourceconfigapi.api.ConfigRegistry;
 import net.xstopho.resourcelibrary.event.LootTableModifierCallback;
@@ -21,9 +22,15 @@ public class CrackerConstants {
     public static final String MOD_NAME = "Resource Cracker/Tools";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_NAME);
 
-    public static void initCommon() {
+    public static Identifier of(String id) {
+        return Identifier.fromNamespaceAndPath(MOD_ID, id);
+    }
+
+    public static void commonInit() {
         ConfigRegistry.register(ToolConfig.class, MOD_ID);
         ConfigRegistry.register(LootConfig.class, MOD_ID);
+
+        DataComponentRegistry.init();
 
         BlockRegistry.init();
         ItemRegistry.init();
@@ -46,9 +53,5 @@ public class CrackerConstants {
         stack.set(DataComponents.MAX_DAMAGE, durability);
         stack.set(DataComponents.MAX_STACK_SIZE, 1);
         stack.set(DataComponents.DAMAGE, 0);
-    }
-
-    public static void initClient() {
-        ItemModelRenderRegistry.init();
     }
 }

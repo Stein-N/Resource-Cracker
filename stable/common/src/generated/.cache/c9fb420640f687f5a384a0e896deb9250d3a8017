@@ -1,5 +1,6 @@
-// 1.21.1	2025-07-22T13:45:20.2904209	Tags for minecraft:item mod id resource_cracker
+// 26.1.2	2026-04-10T21:39:19.4977843	Tags for minecraft:item mod id resource_cracker
 1b6c17098a42dcd6d3cdced3f21175ef5cf57505 data/c/tags/item/blocks/steel.json
+6222fd0d7d2ce08ee1f70be68a61f4e167dda650 data/c/tags/item/copper_tool_materials.json
 f3e3d6c216f1f32deae88a4959d5bbf8fe345a2a data/c/tags/item/dusts.json
 d4bf00e4959295ccd58b1044274947ce007e1827 data/c/tags/item/dusts/carbon.json
 d4bf00e4959295ccd58b1044274947ce007e1827 data/c/tags/item/dusts/coal.json
@@ -25,6 +26,7 @@ ab4320a07cb8cb414311c9515e5207231bf8dc22 data/c/tags/item/nuggets.json
 33ec84a397a191b6de7928b216f01f290fe87b98 data/c/tags/item/nuggets/copper.json
 61257bb1f7e97520574f53b190313c4e8e01d90b data/c/tags/item/nuggets/diamond.json
 4b91113718ef50305f0ccd1c18e3631ff4545c64 data/c/tags/item/nuggets/emerald.json
+74e5b44cc6f67121564dd9437fe069967296be9c data/c/tags/item/steel_tool_materials.json
 6bb01ece43dc060b7f6e508c68ea0179c30e853f data/c/tags/item/string.json
 f781f23ff6f22bdbd1aca157e273bd61a18ad436 data/c/tags/item/tools.json
 9ce97b3b512b773caf5d5f89de22ad3b67207336 data/c/tags/item/tools/chisel.json
@@ -33,8 +35,7 @@ f781f23ff6f22bdbd1aca157e273bd61a18ad436 data/c/tags/item/tools.json
 66ebe8cdc6d453ca9fd971a39cd4af73c5be99e6 data/c/tags/item/tools/scythe.json
 a7842cdea55d1133d0e94eac6e9d6c8a949d9da4 data/c/tags/item/tools/scythe/crafting_ingredients.json
 03201b2cf76ff416c78891db080ef894c5369436 data/minecraft/tags/item/breaks_decorated_pots.json
-2663840d9f94dedb3cd831093cd4f909f996165b data/minecraft/tags/item/enchantable/sharp_weapon.json
-66ebe8cdc6d453ca9fd971a39cd4af73c5be99e6 data/minecraft/tags/item/enchantable/sword.json
+09ab0cef539e364ecb6341aa19607d0c23f6a46f data/minecraft/tags/item/enchantable/sharp_weapon.json
 2663840d9f94dedb3cd831093cd4f909f996165b data/minecraft/tags/item/enchantable/weapon.json
 66ebe8cdc6d453ca9fd971a39cd4af73c5be99e6 data/minecraft/tags/item/swords.json
 aabe86cdb7a48cc4072a77bcad9c58d042f14ee2 data/minecraft/tags/item/villager_plantable_seeds.json

@@ -35,7 +35,7 @@ publishMods {
             clientRequired = true
             serverRequired = true
 
-            javaVersions.add(JavaVersion.VERSION_21)
+            javaVersions.add(JavaVersion.VERSION_25)
 
             minecraftVersions.add(minecraft_version)
             requires("resource-library")

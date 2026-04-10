@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "C": {
-      "item": "minecraft:green_dye"
-    },
-    "H": {
-      "item": "minecraft:honeycomb"
-    },
-    "S": {
-      "tag": "c:dusts/saltpeter"
-    }
+    "C": "minecraft:green_dye",
+    "H": "minecraft:honeycomb",
+    "S": "#c:dusts/saltpeter"
   },
   "pattern": [
     "HCS"

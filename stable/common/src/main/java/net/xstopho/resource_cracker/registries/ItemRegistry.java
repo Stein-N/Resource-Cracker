@@ -1,24 +1,26 @@
 package net.xstopho.resource_cracker.registries;
 
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemNameBlockItem;
-import net.minecraft.world.item.Tiers;
 import net.xstopho.resource_cracker.CrackerConstants;
 import net.xstopho.resource_cracker.config.ToolConfig;
 import net.xstopho.resource_cracker.item.ChiselItem;
 import net.xstopho.resource_cracker.item.CrackHammerItem;
 import net.xstopho.resource_cracker.item.ScytheItem;
 import net.xstopho.resource_cracker.item.food.CrackerFoodProperties;
-import net.xstopho.resource_cracker.item.tier.CrackerToolTier;
+import net.xstopho.resource_cracker.item.materials.ScytheMaterial;
 import net.xstopho.resourcelibrary.registration.RegistryObject;
 import net.xstopho.resourcelibrary.registration.RegistryProvider;
 
-import java.util.function.Supplier;
+import java.util.function.Function;
 
 public class ItemRegistry {
 
-    public static final RegistryProvider<Item> ITEMS = RegistryProvider.get(Registries.ITEM, CrackerConstants.MOD_ID);
+    public static final RegistryProvider<Item> ITEMS = RegistryProvider.get(CrackerConstants.MOD_ID, BuiltInRegistries.ITEM);
 
     public static final RegistryObject<Item> MATERIAL_DUST_COPPER = register("material_dust_copper");
     public static final RegistryObject<Item> MATERIAL_DUST_IRON = register("material_dust_iron");
@@ -37,37 +39,44 @@ public class ItemRegistry {
     public static final RegistryObject<Item> NUGGET_EMERALD = register("nugget_emerald");
     public static final RegistryObject<Item> NUGGET_COPPER = register("nugget_copper");
 
-    public static final RegistryObject<Item> CRACK_HAMMER_COPPER = register("crack_hammer_copper", () -> new CrackHammerItem(() -> ToolConfig.copperHammer));
-    public static final RegistryObject<Item> CRACK_HAMMER_GOLD = register("crack_hammer_gold", () -> new CrackHammerItem(() -> ToolConfig.goldHammer));
-    public static final RegistryObject<Item> CRACK_HAMMER_IRON = register("crack_hammer_iron", () -> new CrackHammerItem(() -> ToolConfig.ironHammer));
-    public static final RegistryObject<Item> CRACK_HAMMER_STEEL = register("crack_hammer_steel", () -> new CrackHammerItem(() -> ToolConfig.steelHammer));
-    public static final RegistryObject<Item> CRACK_HAMMER_DIAMOND = register("crack_hammer_diamond", () -> new CrackHammerItem(() -> ToolConfig.diamondHammer));
-    public static final RegistryObject<Item> CRACK_HAMMER_NETHERITE = register("crack_hammer_netherite", () -> new CrackHammerItem(() -> ToolConfig.netheriteHammer));
+    public static final RegistryObject<Item> CRACK_HAMMER_COPPER = register("crack_hammer_copper", properties -> new CrackHammerItem(() -> ToolConfig.copperHammer, properties));
+    public static final RegistryObject<Item> CRACK_HAMMER_GOLD = register("crack_hammer_gold", properties -> new CrackHammerItem(() -> ToolConfig.goldHammer, properties));
+    public static final RegistryObject<Item> CRACK_HAMMER_IRON = register("crack_hammer_iron", properties -> new CrackHammerItem(() -> ToolConfig.ironHammer, properties));
+    public static final RegistryObject<Item> CRACK_HAMMER_STEEL = register("crack_hammer_steel", properties -> new CrackHammerItem(() -> ToolConfig.steelHammer, properties));
+    public static final RegistryObject<Item> CRACK_HAMMER_DIAMOND = register("crack_hammer_diamond", properties -> new CrackHammerItem(() -> ToolConfig.diamondHammer, properties));
+    public static final RegistryObject<Item> CRACK_HAMMER_NETHERITE = register("crack_hammer_netherite", properties -> new CrackHammerItem(() -> ToolConfig.netheriteHammer, properties.fireResistant()));
 
-    public static final RegistryObject<Item> CHISEL_COPPER = register("chisel_copper", () -> new ChiselItem(() -> ToolConfig.copperChisel));
-    public static final RegistryObject<Item> CHISEL_GOLD = register("chisel_gold", () -> new ChiselItem(() -> ToolConfig.goldChisel));
-    public static final RegistryObject<Item> CHISEL_IRON = register("chisel_iron", () -> new ChiselItem(() -> ToolConfig.ironChisel));
-    public static final RegistryObject<Item> CHISEL_STEEL = register("chisel_steel", () -> new ChiselItem(() -> ToolConfig.steelChisel));
-    public static final RegistryObject<Item> CHISEL_DIAMOND = register("chisel_diamond", () -> new ChiselItem(() -> ToolConfig.diamondChisel));
-    public static final RegistryObject<Item> CHISEL_NETHERITE = register("chisel_netherite", () -> new ChiselItem(() -> ToolConfig.netheriteChisel));
+    public static final RegistryObject<Item> CHISEL_COPPER = register("chisel_copper", properties -> new ChiselItem(() -> ToolConfig.copperChisel, properties));
+    public static final RegistryObject<Item> CHISEL_GOLD = register("chisel_gold", properties -> new ChiselItem(() -> ToolConfig.goldChisel, properties));
+    public static final RegistryObject<Item> CHISEL_IRON = register("chisel_iron", properties -> new ChiselItem(() -> ToolConfig.ironChisel, properties));
+    public static final RegistryObject<Item> CHISEL_STEEL = register("chisel_steel", properties -> new ChiselItem(() -> ToolConfig.steelChisel, properties));
+    public static final RegistryObject<Item> CHISEL_DIAMOND = register("chisel_diamond", properties -> new ChiselItem(() -> ToolConfig.diamondChisel, properties));
+    public static final RegistryObject<Item> CHISEL_NETHERITE = register("chisel_netherite", properties -> new ChiselItem(() -> ToolConfig.netheriteChisel, properties.fireResistant()));
 
-    public static final RegistryObject<Item> SCYTHE_COPPER = register("scythe_copper", () -> new ScytheItem(Tiers.GOLD, 2, -1.8f));
-    public static final RegistryObject<Item> SCYTHE_GOLD = register("scythe_gold", () -> new ScytheItem(Tiers.GOLD, 3, -1.8f));
-    public static final RegistryObject<Item> SCYTHE_IRON = register("scythe_iron", () -> new ScytheItem(Tiers.IRON, 3, -1.8f));
-    public static final RegistryObject<Item> SCYTHE_STEEL = register("scythe_steel", () -> new ScytheItem(CrackerToolTier.STEEL, 3, -1.8f));
-    public static final RegistryObject<Item> SCYTHE_DIAMOND = register("scythe_diamond", () -> new ScytheItem(Tiers.DIAMOND, 4, -1.8f));
-    public static final RegistryObject<Item> SCYTHE_NETHERITE = register("scythe_netherite", () -> new ScytheItem(Tiers.NETHERITE, 5, -1.8f));
+    public static final RegistryObject<Item> SCYTHE_COPPER = register("scythe_copper", properties -> new ScytheItem(ScytheMaterial.COPPER, 2, -1.8f, properties));
+    public static final RegistryObject<Item> SCYTHE_GOLD = register("scythe_gold", properties -> new ScytheItem(ScytheMaterial.GOLD, 3, -1.8f, properties));
+    public static final RegistryObject<Item> SCYTHE_IRON = register("scythe_iron", properties -> new ScytheItem(ScytheMaterial.IRON, 3, -1.8f, properties));
+    public static final RegistryObject<Item> SCYTHE_STEEL = register("scythe_steel", properties -> new ScytheItem(ScytheMaterial.STEEL, 3, -1.8f, properties));
+    public static final RegistryObject<Item> SCYTHE_DIAMOND = register("scythe_diamond", properties -> new ScytheItem(ScytheMaterial.DIAMOND, 4, -1.8f, properties));
+    public static final RegistryObject<Item> SCYTHE_NETHERITE = register("scythe_netherite", properties -> new ScytheItem(ScytheMaterial.NETHERITE, 5, -1.8f, properties.fireResistant()));
 
-    public static final RegistryObject<Item> GARLIC = register("garlic", () -> new ItemNameBlockItem(BlockRegistry.GARLIC_CROP.get(),
-            new Item.Properties().food(CrackerFoodProperties.GARLIC)));
-    public static final RegistryObject<Item> BEEF_JERKY = register("beef_jerky", () -> new Item(new Item.Properties().food(CrackerFoodProperties.BEEF_JERKY)));
+    public static final RegistryObject<Item> GARLIC = register("garlic", properties -> new BlockItem(BlockRegistry.GARLIC_CROP.get(), properties.food(CrackerFoodProperties.GARLIC)));
+    public static final RegistryObject<Item> BEEF_JERKY = register("beef_jerky", properties -> new Item(properties.food(CrackerFoodProperties.BEEF_JERKY)));
 
-    private static RegistryObject<Item> register(String id, Supplier<Item> item) {
-        return ITEMS.register(id, item);
+    public static RegistryObject<Item> register(String id, Function<Item.Properties, Item> function, Item.Properties properties) {
+        return ITEMS.register(id, () -> function.apply(properties.setId(createKey(id))));
     }
 
-    private static RegistryObject<Item> register(String id) {
-        return register(id, () -> new Item(new Item.Properties()));
+    public static RegistryObject<Item> register(String id, Function<Item.Properties, Item> function) {
+        return register(id, function, new Item.Properties());
+    }
+
+    public static RegistryObject<Item> register(String id) {
+        return register(id, Item::new);
+    }
+
+    private static ResourceKey<Item> createKey(String id) {
+        return ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(ITEMS.getModId(), id));
     }
 
     public static void init() {}

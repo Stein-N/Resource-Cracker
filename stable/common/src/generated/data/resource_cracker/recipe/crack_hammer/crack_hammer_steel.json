@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "I": "resource_cracker:steel_ingot",
+    "S": "minecraft:stick",
+    "T": "#c:tools/crack_hammer/crafting_ingredients"
+  },
+  "pattern": [
+    " IT",
+    " SI",
+    "S  "
+  ],
+  "result": {
+    "id": "resource_cracker:crack_hammer_steel"
+  }
+}

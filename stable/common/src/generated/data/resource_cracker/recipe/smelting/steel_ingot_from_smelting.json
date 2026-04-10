@@ -3,11 +3,8 @@
   "category": "misc",
   "cookingtime": 200,
   "experience": 0.7,
-  "ingredient": {
-    "item": "resource_cracker:material_dust_steel"
-  },
+  "ingredient": "resource_cracker:material_dust_steel",
   "result": {
-    "count": 1,
     "id": "resource_cracker:steel_ingot"
   }
 }

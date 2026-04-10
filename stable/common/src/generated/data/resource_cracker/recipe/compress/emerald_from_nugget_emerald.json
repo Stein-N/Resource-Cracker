@@ -2,36 +2,17 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "resource_cracker:nugget_emerald"
-    },
-    {
-      "item": "resource_cracker:nugget_emerald"
-    },
-    {
-      "item": "resource_cracker:nugget_emerald"
-    },
-    {
-      "item": "resource_cracker:nugget_emerald"
-    },
-    {
-      "item": "resource_cracker:nugget_emerald"
-    },
-    {
-      "item": "resource_cracker:nugget_emerald"
-    },
-    {
-      "item": "resource_cracker:nugget_emerald"
-    },
-    {
-      "item": "resource_cracker:nugget_emerald"
-    },
-    {
-      "item": "resource_cracker:nugget_emerald"
-    }
+    "resource_cracker:nugget_emerald",
+    "resource_cracker:nugget_emerald",
+    "resource_cracker:nugget_emerald",
+    "resource_cracker:nugget_emerald",
+    "resource_cracker:nugget_emerald",
+    "resource_cracker:nugget_emerald",
+    "resource_cracker:nugget_emerald",
+    "resource_cracker:nugget_emerald",
+    "resource_cracker:nugget_emerald"
   ],
   "result": {
-    "count": 1,
     "id": "minecraft:emerald"
   }
 }

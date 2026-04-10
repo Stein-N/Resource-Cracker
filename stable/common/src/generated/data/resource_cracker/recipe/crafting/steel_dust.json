@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "C": {
-      "tag": "c:dusts/carbon"
-    },
-    "I": {
-      "tag": "c:dusts/iron"
-    }
+    "C": "#c:dusts/carbon",
+    "I": "#c:dusts/iron"
   },
   "pattern": [
     "CC",
