@@ -1,0 +1,42 @@
+plugins {
+    id 'loader'
+    id 'net.fabricmc.fabric-loom'
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${minecraft_version}"
+
+    implementation "net.fabricmc:fabric-loader:${fabric_loader}"
+    implementation "net.fabricmc.fabric-api:fabric-api:${fabric_api}+${minecraft_version}"
+
+    implementation "net.morthen.resourceconfigapi:resourceconfigapi-fabric:${minecraft_version}-${resource_config_api}"
+    implementation "net.morthen.resourcelibrary:resourcelibrary-fabric:${minecraft_version}-${resource_library}"
+
+    implementation "com.terraformersmc:modmenu:${mod_menu}"
+}
+
+loom {
+    def aw = file("src/main/resources/${mod_id}.accesswidener")
+    if (aw.exists()) accessWidenerPath.set(aw)
+
+    runs {
+        client {
+            client()
+            setDisplayName("Fabric Client")
+            setGenerateRunConfig(true)
+            setProgramArguments(['--username', 'Dev'])
+            setRunDirectory(file('../common/runs/client'))
+        }
+        server {
+            server()
+            setDisplayName("Fabric Server")
+            setGenerateRunConfig(true)
+            setRunDirectory(file('../common/runs/server'))
+        }
+    }
+}
+
+publishMods {
+    file = jar.archiveFile
+    modLoaders.addAll("fabric", "quilt")
+}

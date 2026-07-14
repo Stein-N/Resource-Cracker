@@ -11,19 +11,18 @@ java {
     toolchain.languageVersion = JavaLanguageVersion.of(java_version)
 }
 
+idea.module {
+    downloadJavadoc = true
+    downloadSources = true
+}
 
 repositories {
     mavenCentral()
-    maven { url 'https://raw.githubusercontent.com/xStopho-Mods/resources/main/maven' }
-    maven {url "https://maven.terraformersmc.com/" }
-}
+    mavenLocal()
 
-tasks.named('javadoc', Javadoc) {
-    options.addStringOption('Xdoclint:none', '-quiet')
-}
-
-tasks.withType(GenerateModuleMetadata).configureEach {
-    enabled = false
+    maven { url 'https://raw.githubusercontent.com/Morthen-Mods/resources/main/maven/maven' }
+    maven { url "https://repo.spongepowered.org/maven" }
+    maven { url "https://maven.terraformersmc.com/" }
 }
 
 jar {
@@ -44,7 +43,7 @@ jar {
     }
 }
 
-processResources {
+tasks.withType(ProcessResources).configureEach {
     var expandProps = [
             // Project related Keys
             "version": version,
@@ -63,11 +62,11 @@ processResources {
             "fabric_api": fabric_api,
             "fabric_loader": fabric_loader,
             "neoforge": neoforge,
+            "forge": forge,
 
             // Dependencies
             "resource_config_api": resource_config_api,
             "resource_library": resource_library
-
     ]
 
     filesMatching(['pack.mcmeta', 'fabric.mod.json', 'META-INF/neoforge.mods.toml', 'META-INF/mods.toml', '*.mixins.json']) {

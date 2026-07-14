@@ -1,0 +1,20 @@
+plugins {
+    id 'common'
+    id 'net.neoforged.moddev'
+}
+
+neoForge {
+    neoFormVersion = neoform
+
+    def at = file('src/main/resources/META-INF/accesstransformer.cfg')
+    if (at.exists()) accessTransformers = [at.absolutePath]
+}
+
+dependencies {
+    compileOnly "org.spongepowered:mixin:${mixin_version}"
+    compileOnly "io.github.llamalad7:mixinextras-common:${mixin_extras}"
+    annotationProcessor "io.github.llamalad7:mixinextras-common:${mixin_extras}"
+
+    compileOnly "net.morthen.resourceconfigapi:resourceconfigapi-common:${minecraft_version}-${resource_config_api}"
+    compileOnly "net.morthen.resourcelibrary:resourcelibrary-common:${minecraft_version}-${resource_library}"
+}

@@ -1,0 +1,18 @@
+modLoader = "javafml"
+loaderVersion = "[51,)"
+license = "MIT"
+
+[[mods]]
+    modId = "${mod_id}_test"
+    version = "1.0-TEST"
+    displayName = "${mod_name} Test"
+    logoFile = "icon_forge.png"
+    authors = "${mod_author}"
+    description = "Simple Testmod"
+
+[[dependencies.${mod_id}_test]]
+    modId = "forge"
+    mandatory = true
+    versionRange = "[50,)"
+    ordering = "NONE"
+    side = "BOTH"

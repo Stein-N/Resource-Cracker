@@ -1,9 +1,0 @@
-modLoader = "javafml"
-loaderVersion = "[1,)"
-license = "MIT"
-
-[[mods]]
-    modId = "resource_cracker"
-    version = "1.0.0"
-    displayName = "Resource Carcker"
-    authors = "xStopho"

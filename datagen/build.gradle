@@ -1,0 +1,38 @@
+plugins {
+    id 'common'
+    id 'net.neoforged.moddev'
+}
+
+dependencies {
+    implementation "net.morthen.resourceconfigapi:resourceconfigapi-neoforge:${minecraft_version}-${resource_config_api}"
+    implementation "net.morthen.resourcelibrary:resourcelibrary-neoforge:${minecraft_version}-${resource_library}"
+
+    implementation project(":common")
+}
+
+neoForge {
+    version = neoforge
+
+    def at = file('../common/src/main/resources/META-INF/accesstransformer.cfg')
+    if (at.exists()) accessTransformers = [at]
+
+    runs {
+        data {
+            clientData()
+            ideName = "Common Datagen"
+            gameDirectory = file('../common/runs/data')
+            programArguments = ['--mod', project.mod_id, '--all', '--output', file('../common/src/generated/').getAbsolutePath(), '--existing', file('../common/src/main/resources/').getAbsolutePath()]
+        }
+    }
+    mods {
+        "${mod_id}" { sourceSet sourceSets.main }
+    }
+}
+
+compileJava {
+    source(project(':common').sourceSets.main.allSource)
+}
+
+processResources {
+    from project(":common").sourceSets.main.resources
+}
