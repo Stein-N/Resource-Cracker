@@ -20,10 +20,10 @@ import java.util.function.Consumer;
 @Mixin(ItemStack.class)
 public abstract class ItemStackMixin {
 
-    @Shadow
+    @Shadow(remap = false)
     public abstract <T extends TooltipProvider> void addToTooltip(DataComponentType<T> component, Item.TooltipContext context, TooltipDisplay display, Consumer<Component> consumer, TooltipFlag flag);
 
-    @Inject(method = "addDetailsToTooltip", at = @At("HEAD"))
+    @Inject(method = "addDetailsToTooltip", at = @At("HEAD"), remap = false)
     public void resource_backpacks$addDetailsToTooltip(Item.TooltipContext context, TooltipDisplay display, Player player, TooltipFlag flag, Consumer<Component> consumer, CallbackInfo info) {
         this.addToTooltip(DataComponentRegistry.TOOLTIP_CONTAINER.get(), context, display, consumer, flag);
     }

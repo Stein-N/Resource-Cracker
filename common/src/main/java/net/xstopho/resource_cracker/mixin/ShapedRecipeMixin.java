@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(ShapedRecipe.class)
 public abstract class ShapedRecipeMixin {
 
-    @Inject(method = "assemble", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "assemble", at = @At("HEAD"), cancellable = true, remap = false)
     private void onAssemble(CraftingInput input, CallbackInfoReturnable<ItemStack> cir) {
         ItemStackTemplate result = ((ShapedRecipeAccessor) this).cracker_getResult();
         ItemStack stack = result.create();

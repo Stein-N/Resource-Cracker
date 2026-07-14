@@ -15,12 +15,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(RepairItemRecipe.class)
 public class RepairItemRecipeMixin {
 
-    @Shadow
+    @Shadow(remap = false)
     public static Pair<ItemStack, ItemStack> getItemsToCombine(CraftingInput input) {
         throw new AbstractMethodError();
     }
 
-    @Inject(method = "assemble", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "assemble", at = @At("HEAD"), cancellable = true, remap = false)
     private void onAssemble(CraftingInput input, CallbackInfoReturnable<ItemStack> cir) {
         Pair<ItemStack, ItemStack> pair = getItemsToCombine(input);
 
