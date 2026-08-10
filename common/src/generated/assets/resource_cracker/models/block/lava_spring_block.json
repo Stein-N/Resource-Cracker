@@ -1,6 +1,0 @@
-{
-  "parent": "resource_cracker:block/spring_block",
-  "textures": {
-    "inside": "minecraft:block/lava_still"
-  }
-}

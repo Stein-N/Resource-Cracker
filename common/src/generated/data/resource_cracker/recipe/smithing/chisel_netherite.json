@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smithing_transform",
-  "addition": "minecraft:netherite_ingot",
-  "base": "resource_cracker:chisel_diamond",
-  "result": {
-    "id": "resource_cracker:chisel_netherite"
-  },
-  "template": "minecraft:netherite_upgrade_smithing_template"
-}

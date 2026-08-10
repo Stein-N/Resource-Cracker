@@ -3,7 +3,7 @@ loaderVersion = "[1,)"
 license = "MIT"
 
 [[mods]]
-    modId = "resource_cracker"
-    version = "1.0.0"
-    displayName = "Resource Carcker"
-    authors = "xStopho"
+    modId = "${mod_id}"
+    version = "0.1-DATAGEN"
+    displayName = "${mod_name}"
+    authors = "${mod_author}"
