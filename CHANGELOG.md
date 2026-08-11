@@ -1,2 +1,3 @@
-#### v3.0.1
-  - fix supported versions
+#### v3.1.0
+  - remove copper nugget
+  - update to 26.2

@@ -1,3 +1,6 @@
+#### v3.0.1
+- fix supported versions
+
 #### v3.0.0
 - port to 26.1.2
 
