@@ -1,0 +1,6 @@
+{
+  "parent": "resource_cracker:item/in_hand/handheld_large",
+  "textures": {
+    "layer0": "resource_cracker:item/in_hand/scythe_gold"
+  }
+}

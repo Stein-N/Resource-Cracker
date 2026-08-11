@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "C": "minecraft:green_dye",
+    "H": "minecraft:honeycomb",
+    "S": "#c:dust/saltpeter"
+  },
+  "pattern": [
+    "HCS"
+  ],
+  "result": {
+    "count": 2,
+    "id": "minecraft:slime_ball"
+  }
+}

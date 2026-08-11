@@ -1,0 +1,6 @@
+{
+  "parent": "resource_cracker:block/spring_block",
+  "textures": {
+    "inside": "resource_cracker:block/water_still"
+  }
+}

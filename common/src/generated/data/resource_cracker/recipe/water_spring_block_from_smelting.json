@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": "minecraft:water_bucket",
+    "I": "#c:ingots/steel"
+  },
+  "pattern": [
+    "III",
+    "IBI",
+    "III"
+  ],
+  "result": {
+    "id": "resource_cracker:water_spring_block"
+  }
+}

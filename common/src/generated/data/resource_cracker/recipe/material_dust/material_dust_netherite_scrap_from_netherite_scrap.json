@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:netherite_scrap",
+    "#c:tool/crack_hammer"
+  ],
+  "result": {
+    "id": "resource_cracker:material_dust_netherite_scrap"
+  }
+}

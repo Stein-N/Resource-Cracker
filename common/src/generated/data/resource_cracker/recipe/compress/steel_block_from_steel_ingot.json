@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "resource_cracker:steel_ingot",
+    "resource_cracker:steel_ingot",
+    "resource_cracker:steel_ingot",
+    "resource_cracker:steel_ingot",
+    "resource_cracker:steel_ingot",
+    "resource_cracker:steel_ingot",
+    "resource_cracker:steel_ingot",
+    "resource_cracker:steel_ingot",
+    "resource_cracker:steel_ingot"
+  ],
+  "result": {
+    "id": "resource_cracker:steel_block"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "resource_cracker:block/water_spring_block"
+  }
+}

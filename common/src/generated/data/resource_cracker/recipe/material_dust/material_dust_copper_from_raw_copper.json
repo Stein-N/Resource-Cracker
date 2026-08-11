@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:raw_copper",
+    "#c:tool/crack_hammer"
+  ],
+  "result": {
+    "count": 2,
+    "id": "resource_cracker:material_dust_copper"
+  }
+}

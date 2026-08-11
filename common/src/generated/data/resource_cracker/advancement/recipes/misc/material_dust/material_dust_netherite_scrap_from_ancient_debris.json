@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_crack_hammer": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:tool/crack_hammer"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "resource_cracker:material_dust/material_dust_netherite_scrap_from_ancient_debris"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_crack_hammer"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "resource_cracker:material_dust/material_dust_netherite_scrap_from_ancient_debris"
+    ]
+  }
+}

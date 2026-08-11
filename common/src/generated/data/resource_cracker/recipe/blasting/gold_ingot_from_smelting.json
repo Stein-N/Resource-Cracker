@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:blasting",
+  "experience": 0.7,
+  "ingredient": "resource_cracker:material_dust_gold",
+  "result": {
+    "id": "minecraft:gold_ingot"
+  }
+}

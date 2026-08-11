@@ -1,0 +1,16 @@
+{
+  "values": [
+    "#c:dust/coal",
+    "#c:dust/carbon",
+    "#c:dust/copper",
+    "#c:dust/iron",
+    "#c:dust/gold",
+    "#c:dust/diamond",
+    "#c:dust/emerald",
+    "#c:dust/sulfur",
+    "#c:dust/saltpeter",
+    "#c:dust/steel",
+    "#c:dust/netherite_scrap",
+    "#c:dust/netherite"
+  ]
+}
