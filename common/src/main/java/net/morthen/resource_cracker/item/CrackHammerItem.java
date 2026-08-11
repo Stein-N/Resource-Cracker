@@ -16,7 +16,9 @@ public class CrackHammerItem extends ResourceCraftingRemainder {
     private final Supplier<Integer> durability;
 
     public CrackHammerItem(Supplier<Integer> durability, Properties properties) {
-        super(properties.component(DataComponentRegistry.TOOLTIP_CONTAINER.get(), new TooltipContainer(List.of(
+        super(properties
+                .component(DataComponents.MAX_STACK_SIZE, 1)
+                .component(DataComponentRegistry.TOOLTIP_CONTAINER.get(), new TooltipContainer(List.of(
                 Component.translatable("item.crack_hammer.tooltip").withStyle(ChatFormatting.GOLD)
         ))));
         this.durability = durability;
@@ -24,6 +26,10 @@ public class CrackHammerItem extends ResourceCraftingRemainder {
 
     @Override
     public ItemStackTemplate getRemainingItem(ItemStack itemStack) {
+        if (!itemStack.has(DataComponents.MAX_DAMAGE)) {
+            this.addDurability(itemStack);
+        }
+
         if (itemStack.getDamageValue() < itemStack.getMaxDamage() -1) {
             ItemStack damaged = itemStack.copy();
             damaged.setDamageValue(itemStack.getDamageValue() + 1);
@@ -33,15 +39,8 @@ public class CrackHammerItem extends ResourceCraftingRemainder {
         return super.getCraftingRemainder();
     }
 
-    public int getDurability() {
-        return this.durability.get();
-    }
-
-    public ItemStack addDurability(ItemStack stack) {
-        ItemStack copy = stack.copy();
-        copy.set(DataComponents.MAX_DAMAGE, this.durability.get());
-        copy.set(DataComponents.MAX_STACK_SIZE, 1);
-        copy.set(DataComponents.DAMAGE, 0);
-        return copy;
+    private void addDurability(ItemStack stack) {
+        stack.set(DataComponents.MAX_DAMAGE, this.durability.get());
+        stack.set(DataComponents.DAMAGE, 0);
     }
 }

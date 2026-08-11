@@ -28,7 +28,9 @@ public class ChiselItem extends Item {
     private final Supplier<Float> saltpeterChance;
 
     public ChiselItem(Supplier<Integer> durability, Properties properties) {
-        super(properties.component(DataComponentRegistry.TOOLTIP_CONTAINER.get(), new TooltipContainer(List.of(
+        super(properties
+                .component(DataComponents.MAX_STACK_SIZE, 1)
+                .component(DataComponentRegistry.TOOLTIP_CONTAINER.get(), new TooltipContainer(List.of(
                         Component.translatable("item.chisel.tooltip").withStyle(ChatFormatting.GOLD)
                 ))));
         this.durability = durability;
@@ -39,6 +41,11 @@ public class ChiselItem extends Item {
     @Override
     public InteractionResult useOn(UseOnContext context) {
         if (context.getPlayer() == null) return InteractionResult.FAIL;
+        ItemStack stack = context.getItemInHand();
+
+        if (!stack.has(DataComponents.MAX_DAMAGE)) {
+            this.addDurability(stack);
+        }
 
         Block block = context.getLevel().getBlockState(context.getClickedPos()).getBlock();
         BlockPos pos = context.getClickedPos().relative(context.getClickedFace());
@@ -47,20 +54,14 @@ public class ChiselItem extends Item {
             Containers.dropItemStack(context.getLevel(), pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemRegistry.MATERIAL_DUST_SALTPETER.get()));
         }
 
-        context.getItemInHand().hurtAndBreak(1, context.getPlayer(), EquipmentSlot.MAINHAND);
+        stack.hurtAndBreak(1, context.getPlayer(), EquipmentSlot.MAINHAND);
 
         return InteractionResult.SUCCESS;
     }
 
-    public int getDurability() {
-        return this.durability.get();
-    }
-
-    public ItemStack addDurability(ItemStack stack) {
-        ItemStack copy = stack.copy();
-        copy.set(DataComponents.MAX_DAMAGE, this.durability.get());
-        copy.set(DataComponents.MAX_STACK_SIZE, 1);
-        copy.set(DataComponents.DAMAGE, 0);
-        return copy;
+    private void addDurability(ItemStack stack) {
+        stack.set(DataComponents.MAX_DAMAGE, this.durability.get());
+        stack.set(DataComponents.MAX_STACK_SIZE, 1);
+        stack.set(DataComponents.DAMAGE, 0);
     }
 }

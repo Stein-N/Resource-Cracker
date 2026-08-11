@@ -5,9 +5,7 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "ItemStackMixin",
-    "RepairItemRecipeMixin",
-    "ShapedRecipeAccessor",
-    "ShapedRecipeMixin"
+    "RepairItemRecipeMixin"
   ],
   "injectors": {
     "defaultRequire": 1
