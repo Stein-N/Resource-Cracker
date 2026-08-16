@@ -2,6 +2,8 @@ package net.morthen.resource_cracker.item;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderSet;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.Containers;
@@ -10,6 +12,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.item.enchantment.Repairable;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.morthen.resource_cracker.config.LootConfig;
@@ -26,14 +29,17 @@ public class ChiselItem extends Item {
     public static final Random rnd = new Random();
     private final Supplier<Integer> durability;
     private final Supplier<Float> saltpeterChance;
+    private final Holder<Item> repairItem;
 
-    public ChiselItem(Supplier<Integer> durability, Properties properties) {
+    public ChiselItem(Supplier<Integer> durability, Holder<Item> repairItem, Properties properties) {
         super(properties
                 .component(DataComponents.MAX_STACK_SIZE, 1)
                 .component(DataComponentRegistry.TOOLTIP_CONTAINER.get(), new TooltipContainer(List.of(
                         Component.translatable("item.chisel.tooltip").withStyle(ChatFormatting.GOLD)
                 ))));
         this.durability = durability;
+        this.repairItem = repairItem;
+
         this.saltpeterChance = () -> LootConfig.saltpeterFromBricks;
     }
 
@@ -44,7 +50,7 @@ public class ChiselItem extends Item {
         ItemStack stack = context.getItemInHand();
 
         if (!stack.has(DataComponents.MAX_DAMAGE)) {
-            this.addDurability(stack);
+            this.addToolComponents(stack);
         }
 
         Block block = context.getLevel().getBlockState(context.getClickedPos()).getBlock();
@@ -59,9 +65,11 @@ public class ChiselItem extends Item {
         return InteractionResult.SUCCESS;
     }
 
-    private void addDurability(ItemStack stack) {
+    private void addToolComponents(ItemStack stack) {
         stack.set(DataComponents.MAX_DAMAGE, this.durability.get());
-        stack.set(DataComponents.MAX_STACK_SIZE, 1);
         stack.set(DataComponents.DAMAGE, 0);
+
+        stack.set(DataComponents.REPAIRABLE, new Repairable(HolderSet.direct(this.repairItem)));
+        stack.set(DataComponents.REPAIR_COST, 1);
     }
 }

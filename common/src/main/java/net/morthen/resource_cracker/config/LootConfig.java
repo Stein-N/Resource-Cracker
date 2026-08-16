@@ -8,11 +8,6 @@ import net.morthen.resourceconfigapi.api.ConfigType;
 @Config(fileName = "block_mob_loot", type = ConfigType.COMMON)
 public class LootConfig {
 
-
-    @ConfigEntry(category = "Block Loot", needsWorldRestart = true)
-    @RangedEntry(minValue = 0, maxValue = 1)
-    public static float copperNuggetFromOre = 0.1f;
-
     @ConfigEntry(category = "Block Loot", needsWorldRestart = true)
     @RangedEntry(minValue = 0, maxValue = 1)
     public static float diamondNuggetFromCoalOre = 0.03f;
@@ -33,10 +28,6 @@ public class LootConfig {
     @ConfigEntry(category = "Mob Loot", needsWorldRestart = true)
     @RangedEntry(minValue = 0, maxValue = 1)
     public static float garlicFromZombie = 0.1f;
-
-    @ConfigEntry(category = "Mob Loot", needsWorldRestart = true)
-    @RangedEntry(minValue = 0, maxValue = 1)
-    public static float copperNuggetFromZombie = 0.1f;
 
     @ConfigEntry(category = "Mob Loot", needsWorldRestart = true)
     @RangedEntry(minValue = 0, maxValue = 1)
@@ -90,10 +81,6 @@ public class LootConfig {
     @ConfigEntry(category = "Structure Loot", needsWorldRestart = true)
     @RangedEntry(minValue = 0, maxValue = 1)
     public static float netheriteDust = 0.05f;
-
-    @ConfigEntry(category = "Structure Loot", needsWorldRestart = true)
-    @RangedEntry(minValue = 0, maxValue = 1)
-    public static float copperNugget = 0.2f;
 
     @ConfigEntry(category = "Structure Loot", needsWorldRestart = true)
     @RangedEntry(minValue = 0, maxValue = 1)

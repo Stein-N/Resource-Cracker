@@ -4,8 +4,7 @@
   "package": "net.morthen.resource_cracker.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "ItemStackMixin",
-    "RepairItemRecipeMixin"
+    "ItemStackMixin"
   ],
   "injectors": {
     "defaultRequire": 1

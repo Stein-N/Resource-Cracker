@@ -2,6 +2,9 @@ package net.morthen.resource_cracker.item;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderSet;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -10,6 +13,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.item.enchantment.Repairable;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.morthen.resource_cracker.config.ToolConfig;
@@ -23,7 +27,7 @@ import java.util.function.Supplier;
 public class ScytheItem extends Item {
     private static final Supplier<Integer> radius = () -> ToolConfig.scytheHarvestRadius;
 
-    public ScytheItem(ScytheMaterial material, float attackDamage, float attackSpeed, Properties properties) {
+    public ScytheItem(ScytheMaterial material, float attackDamage, float attackSpeed, Holder<Item> repairItem, Properties properties) {
         super(material.applyScytheProperties(properties, attackDamage, attackSpeed)
                 .component(DataComponentRegistry.TOOLTIP_CONTAINER.get(), new TooltipContainer(List.of(
                         Component.translatable("item.scythe.tooltip").withStyle(ChatFormatting.GOLD),
