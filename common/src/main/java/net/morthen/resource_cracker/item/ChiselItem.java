@@ -11,13 +11,12 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.component.ItemLore;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.enchantment.Repairable;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.morthen.resource_cracker.config.LootConfig;
-import net.morthen.resource_cracker.item.components.TooltipContainer;
-import net.morthen.resource_cracker.registries.DataComponentRegistry;
 import net.morthen.resource_cracker.registries.ItemRegistry;
 import org.jetbrains.annotations.NotNull;
 
@@ -34,7 +33,7 @@ public class ChiselItem extends Item {
     public ChiselItem(Supplier<Integer> durability, Holder<Item> repairItem, Properties properties) {
         super(properties
                 .component(DataComponents.MAX_STACK_SIZE, 1)
-                .component(DataComponentRegistry.TOOLTIP_CONTAINER.get(), new TooltipContainer(List.of(
+                .component(DataComponents.LORE, new ItemLore(List.of(), List.of(
                         Component.translatable("item.chisel.tooltip").withStyle(ChatFormatting.GOLD)
                 ))));
         this.durability = durability;

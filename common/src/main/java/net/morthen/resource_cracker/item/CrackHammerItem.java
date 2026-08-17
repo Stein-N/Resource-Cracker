@@ -8,10 +8,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemStackTemplate;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.component.ItemLore;
 import net.minecraft.world.item.enchantment.Repairable;
-import net.morthen.resource_cracker.item.components.TooltipContainer;
-import net.morthen.resource_cracker.registries.DataComponentRegistry;
 import net.morthen.resourcelibrary.item.ResourceCraftingRemainder;
 
 import java.util.List;
@@ -24,9 +22,7 @@ public class CrackHammerItem extends ResourceCraftingRemainder {
     public CrackHammerItem(Supplier<Integer> durability, Holder<Item> repairItem, Properties properties) {
         super(properties
                 .component(DataComponents.MAX_STACK_SIZE, 1)
-                .component(DataComponentRegistry.TOOLTIP_CONTAINER.get(), new TooltipContainer(List.of(
-                Component.translatable("item.crack_hammer.tooltip").withStyle(ChatFormatting.GOLD)
-        ))));
+                .component(DataComponents.LORE, new ItemLore(List.of(), List.of(Component.translatable("item.crack_hammer.tooltip").withStyle(ChatFormatting.GOLD)))));
         this.durability = durability;
         this.repairItem = repairItem;
     }
