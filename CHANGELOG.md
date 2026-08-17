@@ -1,2 +1,2 @@
-#### v3.1.2
-  - remove redundant config options
+#### v3.1.3
+  - fix Scythe Tooltip not updating when changing Radius setting
