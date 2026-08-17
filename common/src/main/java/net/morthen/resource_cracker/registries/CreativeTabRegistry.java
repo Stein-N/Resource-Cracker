@@ -3,11 +3,8 @@ package net.morthen.resource_cracker.registries;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.morthen.resource_cracker.CrackerConstants;
-import net.morthen.resource_cracker.item.ChiselItem;
-import net.morthen.resource_cracker.item.CrackHammerItem;
 import net.morthen.resourcelibrary.registration.RegistryObject;
 import net.morthen.resourcelibrary.registration.RegistryProvider;
 

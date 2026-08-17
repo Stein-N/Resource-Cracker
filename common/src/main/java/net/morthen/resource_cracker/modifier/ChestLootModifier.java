@@ -1,11 +1,9 @@
 package net.morthen.resource_cracker.modifier;
 
-import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.morthen.resource_cracker.config.LootConfig;
 import net.morthen.resource_cracker.registries.ItemRegistry;
 import net.morthen.resourcelibrary.modifier.LootTableModifier;
-import net.morthen.resourcelibrary.registration.RegistryObject;
 
 import java.util.List;
 

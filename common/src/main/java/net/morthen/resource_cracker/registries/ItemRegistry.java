@@ -53,12 +53,12 @@ public class ItemRegistry {
     public static final RegistryObject<Item> CHISEL_DIAMOND = register("chisel_diamond", properties -> new ChiselItem(() -> ToolConfig.diamondChisel, Holder.direct(Items.DIAMOND), properties));
     public static final RegistryObject<Item> CHISEL_NETHERITE = register("chisel_netherite", properties -> new ChiselItem(() -> ToolConfig.netheriteChisel, Holder.direct(Items.NETHERITE_INGOT), properties.fireResistant()));
 
-    public static final RegistryObject<Item> SCYTHE_COPPER = register("scythe_copper", properties -> new ScytheItem(ScytheMaterial.COPPER, 2, -1.8f, Holder.direct(Items.COPPER_INGOT), properties));
-    public static final RegistryObject<Item> SCYTHE_GOLD = register("scythe_gold", properties -> new ScytheItem(ScytheMaterial.GOLD, 3, -1.8f, Holder.direct(Items.GOLD_INGOT), properties));
-    public static final RegistryObject<Item> SCYTHE_IRON = register("scythe_iron", properties -> new ScytheItem(ScytheMaterial.IRON, 3, -1.8f, Holder.direct(Items.IRON_INGOT), properties));
-    public static final RegistryObject<Item> SCYTHE_STEEL = register("scythe_steel", properties -> new ScytheItem(ScytheMaterial.STEEL, 3, -1.8f, Holder.direct(STEEL_INGOT.get()), properties));
-    public static final RegistryObject<Item> SCYTHE_DIAMOND = register("scythe_diamond", properties -> new ScytheItem(ScytheMaterial.DIAMOND, 4, -1.8f, Holder.direct(Items.DIAMOND), properties));
-    public static final RegistryObject<Item> SCYTHE_NETHERITE = register("scythe_netherite", properties -> new ScytheItem(ScytheMaterial.NETHERITE, 5, -1.8f, Holder.direct(Items.NETHERITE_INGOT), properties.fireResistant()));
+    public static final RegistryObject<Item> SCYTHE_COPPER = register("scythe_copper", properties -> new ScytheItem(ScytheMaterial.COPPER, 2, -1.8f, properties));
+    public static final RegistryObject<Item> SCYTHE_GOLD = register("scythe_gold", properties -> new ScytheItem(ScytheMaterial.GOLD, 3, -1.8f, properties));
+    public static final RegistryObject<Item> SCYTHE_IRON = register("scythe_iron", properties -> new ScytheItem(ScytheMaterial.IRON, 3, -1.8f, properties));
+    public static final RegistryObject<Item> SCYTHE_STEEL = register("scythe_steel", properties -> new ScytheItem(ScytheMaterial.STEEL, 3, -1.8f, properties));
+    public static final RegistryObject<Item> SCYTHE_DIAMOND = register("scythe_diamond", properties -> new ScytheItem(ScytheMaterial.DIAMOND, 4, -1.8f, properties));
+    public static final RegistryObject<Item> SCYTHE_NETHERITE = register("scythe_netherite", properties -> new ScytheItem(ScytheMaterial.NETHERITE, 5, -1.8f, properties.fireResistant()));
 
     public static final RegistryObject<Item> GARLIC = register("garlic", properties -> new BlockItem(BlockRegistry.GARLIC_CROP.get(), properties.food(CrackerFoodProperties.GARLIC)));
     public static final RegistryObject<Item> BEEF_JERKY = register("beef_jerky", properties -> new Item(properties.food(CrackerFoodProperties.BEEF_JERKY)));

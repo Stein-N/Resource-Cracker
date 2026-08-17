@@ -2,8 +2,6 @@ package net.morthen.resource_cracker.item;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Holder;
-import net.minecraft.core.HolderSet;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
@@ -12,12 +10,12 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.component.ItemLore;
 import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.item.enchantment.Repairable;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.morthen.resource_cracker.config.ToolConfig;
-import net.morthen.resource_cracker.item.components.TooltipContainer;
+import net.morthen.resource_cracker.item.components.ScytheTooltipContainer;
 import net.morthen.resource_cracker.item.materials.ScytheMaterial;
 import net.morthen.resource_cracker.registries.DataComponentRegistry;
 
@@ -27,13 +25,9 @@ import java.util.function.Supplier;
 public class ScytheItem extends Item {
     private static final Supplier<Integer> radius = () -> ToolConfig.scytheHarvestRadius;
 
-    public ScytheItem(ScytheMaterial material, float attackDamage, float attackSpeed, Holder<Item> repairItem, Properties properties) {
+    public ScytheItem(ScytheMaterial material, float attackDamage, float attackSpeed, Properties properties) {
         super(material.applyScytheProperties(properties, attackDamage, attackSpeed)
-                .component(DataComponentRegistry.TOOLTIP_CONTAINER.get(), new TooltipContainer(List.of(
-                        Component.translatable("item.scythe.tooltip").withStyle(ChatFormatting.GOLD),
-                        Component.translatable("item.scythe.tooltip.radius").withStyle(ChatFormatting.GOLD)
-                                .append(Component.literal(String.valueOf(radius.get())).withStyle(ChatFormatting.RED))
-                ))));
+                .component(DataComponentRegistry.SCYTHE_TOOLTIP_CONTAINER.get(), new ScytheTooltipContainer(radius)));
     }
 
     @Override
